@@ -29,9 +29,6 @@
       build = "sudo nixos-rebuild switch --flake ~/.config/nixos#nixos";
       update = "sudo nixos-rebuild switch --flake ~/.config/nixos#nixos --upgrade";
       
-      # Shell management
-      reload = "source $HOME/.zshrc"; # This will be removed later, as .zshrc will be gone
-      
       # Directory navigation
       ".." = "cd ..";
       "..." = "cd ../..";
@@ -100,20 +97,6 @@
         fi
         git commit -m "$*"
       }
-      
-      # Quick update shortcut
-      # update() {
-      #   sudo nixos-rebuild switch --flake ~/.config/nixos#nixos
-      # }
-      
-      # Add your custom command functions here
-      # (These appear to be custom scripts/aliases in your system)
-      # gemini() { ... }
-      # ass() { ... }
-      # ff() { ... }
-      # int() { ... }
-      # hyb() { ... }
-      # dgpu() { ... }
       
       # If you have zoxide installed
       if command -v zoxide &> /dev/null;

@@ -16,11 +16,11 @@ inputs = {
 		inputs.nixpkgs.follows = "nixpkgs";
 	};
 
-    # zen-browser
-    zen-browser = {
-        url = "github:0xc000022070/zen-browser-flake";
-        inputs.nixpkgs.follows = "nixpkgs";
-    };
+  # zen-browser
+  zen-browser = {
+    url = "github:0xc000022070/zen-browser-flake";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
 };
 
 outputs = { self, nixpkgs, home-manager, niri, ... }@inputs: {
@@ -31,7 +31,7 @@ outputs = { self, nixpkgs, home-manager, niri, ... }@inputs: {
 			modules = [
 				./configuration.nix
 				home-manager.nixosModules.home-manager
-                niri.nixosModules.niri
+        niri.nixosModules.niri
 				{
 					home-manager.useGlobalPkgs = true;
 					home-manager.useUserPackages = true;

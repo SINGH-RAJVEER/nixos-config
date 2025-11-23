@@ -15,5 +15,4 @@ while true; do
 
     echo "{\"text\": \"󰌌   $display_percentage%\"}"
 
-    sleep 1
 done

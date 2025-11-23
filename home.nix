@@ -1,0 +1,110 @@
+{ config, pkgs, inputs, ... } :
+
+{
+   imports = [
+     ./configs/wofi.nix
+     ./configs/starship.nix
+     ./configs/waybar.nix
+     ./configs/hypr/hyprlock.nix
+     ./configs/nvim.nix
+   ];
+
+  home = {
+    username = "rajveer";
+    homeDirectory = "/home/rajveer";
+  };
+
+  home.packages = with pkgs; [
+    # TUIs
+    eza
+    zoxide
+    fzf
+    bat
+    ripgrep
+    xh
+    delta
+    gemini-cli
+    opencode
+    ncdu
+    yazi
+
+    # system
+    git
+    zsh
+    networkmanagerapplet
+    swww
+    pavucontrol
+    blueman
+    exfatprogs
+    brightnessctl
+    qemu
+    swaynotificationcenter
+
+    # development
+    rustup
+    gcc
+    cmake
+    bun
+    python314
+    go
+    jdk
+    uv
+    insomnia
+    mongodb-compass
+    mongosh
+    vscode
+    code-cursor
+    zed-editor
+
+    # GUIs
+    ghostty
+    brave
+    anytype
+    mpv
+    thunderbird
+    deja-dup
+    steam
+    libreoffice
+    nautilus
+    papers
+    mission-center
+    discord
+    qbittorrent
+    image-roll
+    gnome-calculator
+    gnome-disk-utility
+  ];
+
+  # GTK theme configuration
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
+  };
+
+  gtk = {
+    enable = true;
+    theme.name = "Adwaita-dark";
+    gtk3.extraConfig.gtk-application-prefer-dark-theme = 1;
+    gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
+  };
+
+  # Qt theme configuration
+  qt = {
+    enable = true;
+    platformTheme.name = "adwaita";
+    style.name = "adwaita-dark";
+  };
+
+  # cursor
+  home.pointerCursor = {
+    gtk.enable = true;
+    x11.enable = true;
+    package = pkgs.adwaita-icon-theme;
+    name = "Adwaita";
+    size = 20;
+  };
+
+
+  home.stateVersion = "25.05";
+}

@@ -13,8 +13,7 @@
         margin = "0";
 
         modules-left = [
-          "hyprland/workspaces"
-          "hyprland/mode"
+          "niri/workspaces"
         ];
 
         modules-center = [
@@ -34,128 +33,124 @@
           "custom/battery"
           "custom/uptime"
         ];
+          "niri/workspaces" = {
+            all-outputs = true;
+            format = "{index}";
+          };
 
-        "hyprland/workspaces" = {
-          disable-scroll = true;
-          all-outputs = true;
-          format = "{name}";
-        };
+          "niri/window" = {
+            format = "<span style=\"italic\">{}</span>";
+          };
 
-        "hyprland/mode" = {
-          format = "<span style=\"italic\">{}</span>";
-        };
+          "custom/uptime" = {
+            format = "󰔟  {}";
+            exec = "uptime -p | sed 's/up //; s/ days/d/; s/ hours/h/; s/ minutes/m/'";
+            interval = 60;
+          };
 
-        "custom/uptime" = {
-          format = "󰔟  {}";
-          exec = "uptime -p | sed 's/up //; s/ days/d/; s/ hours/h/; s/ minutes/m/'";
-          interval = 60;
-        };
+          "custom/kbdbrt" = {
+            exec = "/home/rajveer/.config/nixos/scripts/get_kbd_bgt.sh";
+            format = "{}";
+            return-type = "json";
+            on-click = "/home/rajveer/.config/nixos/scripts/toggle_kbd_bgt.sh";
+          };
 
-        "custom/kbdbrt" = {
-          exec = "/home/rajveer/.config/nixos/scripts/get_kbd_bgt.sh";
-          format = "{}";
-          return-type = "json";
-          on-click = "/home/rajveer/.config/nixos/scripts/toggle_kbd_bgt.sh";
-        };
-
-        clock = {
-          format = "{:%A, %B %d, %H:%M}";
-          tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-          calendar = {
-            mode = "month";
-            mode-mon-col = 3;
-            weeks-pos = "right";
-            format = {
-              months = "<b>{}</b>";
-              days = "{}";
-              weeks = "<b>W{}</b>";
-              weekdays = "<b>{}</b>";
-              today = "<b><u>{}</u></b>";
+          clock = {
+            format = "{:%A, %B %d, %H:%M}";
+            tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+            calendar = {
+              mode = "month";
+              mode-mon-col = 3;
+              weeks-pos = "right";
+              format = {
+                months = "<b>{}</b>";
+                days = "{}";
+                weeks = "<b>W{}</b>";
+                weekdays = "<b>{}</b>";
+                today = "<b><u>{}</u></b>";
+              };
             };
           };
-        };
 
-        cpu = {
-          format = "󰍛  {usage}%";
-          tooltip = true;
-          interval = 5;
-        };
-
-        memory = {
-          format = "󰘚  {}%";
-          interval = 3;
-        };
-
-        "custom/hotspot" = {
-          format = "󰀂 ";
-          on-click = "nmcli connection up Hotspot";
-          on-click-middle = "nmcli connection down Hotspot";
-        };
-
-        "custom/battery" = {
-          exec = "/home/rajveer/.config/nixos/scripts/custom_battery.sh";
-          format = "{}";
-          return-type = "json";
-          on-click = "/home/rajveer/.config/nixos/scripts/toggle_ass.sh";
-        };
-
-        network = {
-          format-wifi = "{icon}  {essid}";
-          format-ethernet = "󰈀  {ifname}";
-          format-linked = "󰈀  {ifname} (No IP)";
-          format-disconnected = "󰖪  Disconnected";
-          format-icons = [ "󰤯" "󰤟" "󰤢" "󰤥" ];
-          tooltip-format = "{ifname}: {ipaddr}";
-          on-click = "nm-applet &";
-          on-click-middle = "pkill nm-applet";
-        };
-
-        pulseaudio = {
-          format = "{icon}  {volume}%";
-          format-muted = "󰝟";
-          format-icons = {
-            headphone = "󰋋";
-            hands-free = "󰥰";
-            headset = "󰋎";
-            phone = "󰏲";
-            portable = "󰄝";
-            default = [ "󰕿" "󰖀" "󰕾" ];
+          cpu = {
+            format = "󰍛  {usage}%";
+            tooltip = true;
+            interval = 5;
           };
-          on-click = "pavucontrol";
-          on-click-right = "pactl set-sink-mute @DEFAULT_SINK@ toggle";
-          on-scroll-up = "pactl set-sink-volume @DEFAULT_SINK@ +2%";
-          on-scroll-down = "pactl set-sink-volume @DEFAULT_SINK@ -2%";
-        };
 
-        backlight = {
-          format = "{icon}   {percent}%";
-          format-icons = [ "󰃞" "󰃟" "󰃠" ];
-          on-scroll-up = "brightnessctl set +1%";
-          on-scroll-down = "brightnessctl set 1%-";
-        };
+          memory = {
+            format = "󰘚  {}%";
+            interval = 3;
+          };
 
-        tray = {
-          icon-size = "18";
-          spacing = "5";
-        };
+          "custom/hotspot" = {
+            format = "󰀂 ";
+            on-click = "nmcli connection up Hotspot";
+            on-click-middle = "nmcli connection down Hotspot";
+          };
 
-        bluetooth = {
-          #format = "{icon}  {status} {device_alias}";
-          format-disabled = "󰂲  off";
-          format-connected = "󰂯  {device_alias}";
-          format-connected-battery = "󰂯  {device_alias} {device_battery_percentage}%";
-          #format-icons = [ "󰂯" "󰂲" ];
+          "custom/battery" = {
+            exec = "/home/rajveer/.config/nixos/scripts/custom_battery.sh";
+            format = "{}";
+            return-type = "json";
+            on-click = "/home/rajveer/.config/nixos/scripts/toggle_ass.sh";
+          };
 
-          # tooltop
-          tooltip-format = "{controller_alias}\t{controller_address}\n\n{num_connections} connected";
-          tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}";
-          tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
-          tooltip-format-enumerate-connected-battery = "{device_alias}\t{device_address}\t{device_battery_percentage}%";
+          network = {
+            format-wifi = "{icon}  {essid}";
+            format-ethernet = "󰈀  {ifname}";
+            format-linked = "󰈀  {ifname} (No IP)";
+            format-disconnected = "󰖪  Disconnected";
+            format-icons = [ "󰤯" "󰤟" "󰤢" "󰤥" ];
+            tooltip-format = "{ifname}: {ipaddr}";
+            on-click = "nm-applet &";
+            on-click-middle = "pkill nm-applet";
+          };
 
-          on-click = "blueman-manager";
+          pulseaudio = {
+            format = "{icon}  {volume}%";
+            format-muted = "󰝟";
+            format-icons = {
+              headphone = "󰋋";
+              hands-free = "󰥰";
+              headset = "󰋎";
+              phone = "󰏲";
+              portable = "󰄝";
+              default = [ "󰕿" "󰖀" "󰕾" ];
+            };
+            on-click = "pavucontrol";
+            on-click-right = "pactl set-sink-mute @DEFAULT_SINK@ toggle";
+            on-scroll-up = "pactl set-sink-volume @DEFAULT_SINK@ +2%";
+            on-scroll-down = "pactl set-sink-volume @DEFAULT_SINK@ -2%";
+          };
+
+          backlight = {
+            format = "{icon}   {percent}%";
+            format-icons = [ "󰃞" "󰃟" "󰃠" ];
+            on-scroll-up = "brightnessctl set +1%";
+            on-scroll-down = "brightnessctl set 1%-";
+          };
+
+          tray = {
+            icon-size = "18";
+            spacing = "5";
+          };
+
+          bluetooth = {
+            format-disabled = "󰂲  off";
+            format-connected = "󰂯  {device_alias}";
+            format-connected-battery = "󰂯  {device_alias} {device_battery_percentage}%";
+
+            # tooltop
+            tooltip-format = "{controller_alias}\t{controller_address}\n\n{num_connections} connected";
+            tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}";
+            tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
+            tooltip-format-enumerate-connected-battery = "{device_alias}\t{device_address}\t{device_battery_percentage}%";
+
+            on-click = "blueman-manager";
+          };
         };
       };
-    };
 
     style = ''
       /* Grey and White Colorscheme */

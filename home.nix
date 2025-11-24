@@ -39,6 +39,7 @@
     brightnessctl
     qemu
     swaynotificationcenter
+    xwayland-satellite
 
     # development
     rustup
@@ -62,7 +63,6 @@
     anytype
     mpv
     thunderbird
-    deja-dup
     steam
     libreoffice
     nautilus
@@ -105,6 +105,6 @@
     size = 20;
   };
 
-
   home.stateVersion = "25.05";
 }
+

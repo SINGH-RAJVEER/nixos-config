@@ -35,12 +35,7 @@
 
       #scroll {
           background-color: @background;
-          scrollbar-width: none;
           margin-top: 10px;
-      }
-
-      #scroll::-webkit-scrollbar {
-          display: none;
       }
 
       #text {

@@ -161,12 +161,7 @@
   };
 
   programs = {
-    # Hyprland
-#    hyprland = {
-#      enable = true;
-#      xwayland.enable = true;
-#    };
-
+    # niri
     niri = {
         enable = true;
     };

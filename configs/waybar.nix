@@ -6,9 +6,8 @@
 
     settings = {
       mainBar = {
-        layer = "top";
-        position = "bottom";
-        height = 30;
+        position = "top";
+        height = 28;
         spacing = "1";
         margin = "0";
 
@@ -31,7 +30,6 @@
           "cpu"
           "memory"
           "custom/battery"
-          "custom/uptime"
         ];
           "niri/workspaces" = {
             all-outputs = true;
@@ -39,13 +37,7 @@
           };
 
           "niri/window" = {
-            format = "<span style=\"italic\">{}</span>";
-          };
-
-          "custom/uptime" = {
-            format = "󰔟  {}";
-            exec = "uptime -p | sed 's/up //; s/ days/d/; s/ hours/h/; s/ minutes/m/'";
-            interval = 60;
+            format = "{}";
           };
 
           "custom/kbdbrt" = {
@@ -133,7 +125,7 @@
 
           tray = {
             icon-size = "18";
-            spacing = "5";
+            spacing = 10;
           };
 
           bluetooth = {
@@ -180,7 +172,7 @@
       }
 
       /* Common module styling */
-      #mode, #clock, #tray, #network, #bluetooth, #pulseaudio, #backlight, #cpu, #custom-hotspot, #custom-playerctl, #memory, #custom-battery, #custom-uptime, #custom-playerctl, #custom-kbdbrt {
+      #mode, #clock, #tray, #network, #bluetooth, #pulseaudio, #backlight, #cpu, #custom-hotspot, #custom-playerctl, #memory, #custom-battery, #custom-playerctl, #custom-kbdbrt {
         padding: 0 10px;
         margin: 3px;
         background-color: @background-light;
@@ -223,24 +215,12 @@
       }
 
        /* Module-specific styling */
-       #mode, #clock, #cpu,
-       #memory, #custom-battery, #network, #pulseaudio,
-       #backlight, #custom-uptime, #bluetooth {
+       #mode, #clock, #cpu, #memory, #custom-battery, #network, #pulseaudio, #backlight, #bluetooth {
          color: @foreground;
        }
 
-      #network.disconnected {
+      #network.disconnected, #pulseaudio.muted {
         color: @grey;
-      }
-
-      #pulseaudio.muted {
-        color: @grey;
-      }
-
-      #tray {
-        background-color: transparent;
-        padding: 0 10px;
-        margin: 0 2px;
       }
 
       #tray > .passive {
@@ -249,16 +229,18 @@
 
       #tray > .needs-attention {
         -gtk-icon-effect: highlight;
-        color: @grey;
+        color: #FF0000;
         border-bottom-color: @grey;
       }
 
       #custom-battery.state-80 {
         background-color: green;
       }
+
       #custom-battery.state-100 {
         background-color: @background-light;
       }
+
       #custom-battery.capacity-100 {
         background-color: white;
         color: black;

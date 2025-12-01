@@ -62,10 +62,12 @@
     hardware = {
         enableAllFirmware = true;
 
-        # nvidia
-        graphics.enable = true;
-        graphics.enable32Bit = true;
+        graphics = {
+            enable = true;
+            enable32Bit = true;
+        };
 
+        # nvidia
         nvidia = {
             modesetting.enable = true;
             open = true;

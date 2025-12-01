@@ -3,8 +3,6 @@
   programs.wofi = {
     enable = true;
     style = ''
-      /* Wofi style based on waybar theme */
-
       @define-color background #2E2E2E;
       @define-color background-light #424242;
       @define-color foreground #FFFFFF;
@@ -63,6 +61,8 @@
       no_actions = true;
       prompt = "search";
       insensitive = true;
+      width=450;
+      height=700;
     };
   };
 }

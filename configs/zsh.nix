@@ -54,41 +54,37 @@
       vim = "nvim";
       vi = "nvim";
       curl = "xh";
+
+      # Git
+      push = "git push origin master";
     };
 
     # Additional shell configuration
     initExtra = ''
-      # Set default editor
       export EDITOR="nvim"
       export VISUAL="nvim"
-      
-      # Enable vi mode if desired (comment out if you prefer emacs mode)
+
       bindkey -v
-      
-      # Improved directory navigation
+
       setopt AUTO_CD              # Change directory without cd
       setopt AUTO_PUSHD           # Make cd push old directory onto stack
       setopt PUSHD_IGNORE_DUPS    # Don't push duplicates
       setopt PUSHD_MINUS          # Swap +/- directions for pushd
-      
-      # History settings
+
       setopt HIST_VERIFY          # Show command with history expansion before running
       setopt HIST_REDUCE_BLANKS   # Remove superfluous blanks
-      
-      # Completion enhancements
+
       setopt COMPLETE_IN_WORD     # Complete from both ends of word
       setopt ALWAYS_TO_END        # Move cursor to end after completion
       setopt AUTO_MENU            # Show menu on tab press
-      
-      # Case-insensitive completion
+
       zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-      
-      # Better completion menu
+
       zstyle ':completion:*' menu select
       zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"
-      
+
       # Custom functions based on your patterns
-      
+
       # Simplified commit function
       commit() {
         if [ -z "$*" ]; then
@@ -97,7 +93,7 @@
         fi
         git commit -m "$*"
       }
-      
+
       # If you have zoxide installed
       if command -v zoxide &> /dev/null;
         eval "$(zoxide init zsh)"

@@ -37,9 +37,9 @@
     blueman
     exfatprogs
     brightnessctl
-    qemu
     swaynotificationcenter
     xwayland-satellite
+    seahorse
 
     # development
     rustup
@@ -59,7 +59,6 @@
 
     # GUIs
     ghostty
-    brave
     anytype
     mpv
     thunderbird
@@ -70,9 +69,9 @@
     mission-center
     discord
     qbittorrent
-    image-roll
     gnome-calculator
-    gnome-disk-utility
+    image-roll
+    brave
   ];
 
   # GTK theme configuration

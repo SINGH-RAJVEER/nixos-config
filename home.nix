@@ -42,7 +42,8 @@
     seahorse
 
     # development
-    rustup
+    rustc
+    cargo
     gcc
     cmake
     bun
@@ -71,7 +72,6 @@
     qbittorrent
     gnome-calculator
     image-roll
-    brave
   ];
 
   # GTK theme configuration
@@ -102,6 +102,18 @@
     package = pkgs.adwaita-icon-theme;
     name = "Adwaita";
     size = 20;
+  };
+
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "image/jpeg" = "image-roll.desktop";
+      "image/png" = "image-roll.desktop";
+      "image/gif" = "image-roll.desktop";
+      "image/webp" = "image-roll.desktop";
+      "image/bmp" = "image-roll.desktop";
+      "image/svg+xml" = "image-roll.desktop";
+    };
   };
 
   home.stateVersion = "25.05";

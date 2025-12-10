@@ -28,19 +28,19 @@
       # NixOS management (most frequently used)
       build = "sudo nixos-rebuild switch --flake ~/.config/nixos#nixos";
       update = "sudo nixos-rebuild switch --flake ~/.config/nixos#nixos --upgrade";
-      
+
       # Directory navigation
       ".." = "cd ..";
       "..." = "cd ../..";
       "...." = "cd ../../..";
-      
+
       # System info shortcuts
       ass = "asusctl";
       sup = "supergfxctl";
       int = "supergfxctl -m Integrated";
       hyb = "supergfxctl -m Hybrid";
       dgpu = "supergfxctl -m AsusMuxDgpu";
-      
+
       # Safety aliases
       rm = "rm -i";
       mv = "mv -i";

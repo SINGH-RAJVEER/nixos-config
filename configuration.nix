@@ -56,7 +56,15 @@
     boot.kernelPackages = pkgs.linuxPackages_latest;
 
     # virtualisation
-    virtualisation.libvirtd.enable = true;
+    virtualisation = {
+        libvirtd.enable = true;
+
+        # docker
+        docker = {
+            enable = true;
+            enableOnBoot = false;
+        };
+    };
 
     # hardware
     hardware = {
@@ -93,7 +101,6 @@
         # Bluetooth
         bluetooth = {
             enable = true;
-            powerOnBoot = true;
             settings = {
                 General = {
                     Experimental = true;
@@ -151,31 +158,6 @@
             alsa.enable = true;
             alsa.support32Bit = true;
             pulse.enable = true;
-
-            # wireplumber.extraConfig = {
-            #     "bluetooth.conf" = {
-            #         "monitor.bluez.properties" = {
-            #             "bluez5.enable-sbc-xq" = true;
-            #             "bluez5.enable-msbc" = true;
-            #             "bluez5.roles" = [ "hsp_hs" "hfp_hf" "a2dp_sink" ];
-            #         };
-            #
-            #         "monitor.bluez.rules" = [
-            #             {
-            #                 matches = [
-            #                     { "node.name" = "~bluez_input.*"; }
-            #                     { "node.name" = "~bluez_output.*"; }
-            #                 ];
-            #
-            #                 actions = {
-            #                     "update-props" = {
-            #                         "node.pause-on-idle" = false;
-            #                     };
-            #                 };
-            #             }
-            #         ];
-            #     };
-            # };
         };
 
         # asus
@@ -287,19 +269,26 @@
         polkit.enable = true;
     };
 
-    # environment variables
-    environment.sessionVariables = {
-        WLR_NO_HARDWARE_CURSORS = "1";
-        NIXOS_OZONE_WL = "1";
-    };
+    # environment
+    environment = { 
+        sessionVariables = {
+            WLR_NO_HARDWARE_CURSORS = "1";
+            NIXOS_OZONE_WL = "1";
+        };
 
-    # system packages
-    environment.systemPackages = with pkgs; [
-        hyprlock
-        hypridle
-        asusctl
-        inputs.zen-browser.packages."${system}".default
-    ];
+        # system packages
+        systemPackages = with pkgs; [
+            hyprlock
+            hypridle
+            asusctl
+            inputs.zen-browser.packages."${system}".default
+        ];
+
+        etc.certfile = {
+            source = "/etc/ssl/certs/ca-bundle.crt";
+            target = "ssl/cert.pem";
+        };
+    };
 
     fonts.packages = with pkgs; [
         nerd-fonts._3270

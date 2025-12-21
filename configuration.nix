@@ -28,7 +28,7 @@
         };
 
         # silent-boot
-        consoleLogLevel = 3;
+        consoleLogLevel = 4;
         initrd.verbose = false;
         initrd.availableKernelModules = [ "amdgpu" ];
         loader.timeout = 0;
@@ -162,27 +162,46 @@
 
         # asus
         asusd.enable = true;
-    };
 
-    # keyd
-    services.keyd = {
-        enable = true;
-        keyboards = {
-            "default" = {
-                ids = [ "*" ];
-                settings = {
-                    main = {
-                        capslock = "esc";
-                        esc = "capslock";
-                        leftcontrol = "leftalt";
-                        leftalt = "leftcontrol";
-                        rightcontrol = "rightalt";
-                        rightalt = "rightcontrol";
+        # logind
+        logind = {
+            lidSwitch = "hibernate";
+            lidSwitchExternalPower = "suspend";
+            lidSwitchDocked = "ignore";
+        };
+
+        # Battery
+        upower = {
+            enable = true;
+            percentageLow = 15;
+            percentageCritical = 5;
+            percentageAction = 1;
+            criticalPowerAction = "PowerOff";
+            allowRiskyCriticalPowerAction = true;
+        };
+
+        # keyd
+        keyd = {
+            enable = true;
+            keyboards = {
+                "default" = {
+                    ids = [ "*" ];
+                    settings = {
+                        main = {
+                            capslock = "esc";
+                            esc = "capslock";
+                            leftcontrol = "leftalt";
+                            leftalt = "leftcontrol";
+                            rightcontrol = "rightalt";
+                            rightalt = "rightcontrol";
+                        };
                     };
                 };
             };
         };
     };
+
+
 
     programs = {
         # niri
@@ -194,7 +213,6 @@
         appimage = {
             enable = true;
             binfmt = true;
-            package = pkgs.appimage-run.override { extraPkgs = pkgs: [ ];};
         };
 
         nix-ld.enable = true;
@@ -278,16 +296,13 @@
 
         # system packages
         systemPackages = with pkgs; [
+            docker-buildx
+            docker-compose
             hyprlock
             hypridle
             asusctl
             inputs.zen-browser.packages."${system}".default
         ];
-
-        etc.certfile = {
-            source = "/etc/ssl/certs/ca-bundle.crt";
-            target = "ssl/cert.pem";
-        };
     };
 
     fonts.packages = with pkgs; [
@@ -301,15 +316,7 @@
         options = "--delete-older-than 7d";
     };
 
-    # Battery
-    services.upower = {
-        enable = true;
-        percentageLow = 15;
-        percentageCritical = 5;
-        percentageAction = 0;
-        criticalPowerAction = "PowerOff";
-        allowRiskyCriticalPowerAction = false;
-    };
+
 
     system.stateVersion = "25.05";
 }

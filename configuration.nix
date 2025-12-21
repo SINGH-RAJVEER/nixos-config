@@ -19,7 +19,7 @@
         # plymouth
         plymouth = {
             enable = true;
-            theme = "rings";
+            theme = "dna";
             themePackages = with pkgs; [
                 (adi1090x-plymouth-themes.override {
                     selected_themes = [ "rings" "dna" ];
@@ -28,7 +28,7 @@
         };
 
         # silent-boot
-        consoleLogLevel = 4;
+        consoleLogLevel = 0;
         initrd.verbose = false;
         initrd.availableKernelModules = [ "amdgpu" ];
         loader.timeout = 0;
@@ -39,9 +39,10 @@
         kernelParams = [
             "quiet"
             "splash"
+            "loglevel=0"
             "boot.shell_on_fail"
             "udev.log_priority=3"
-            "rd.systemd.show_status=auto"
+            "rd.systemd.show_status=false"
             "amdgpu.sg_display=0"
             "clearcpuid=rdseed"
         ];
@@ -50,10 +51,15 @@
         kernelModules = [
             "kvm-amd"
         ];
+
+        # resume device
+        resumeDevice = "/dev/disk/by-uuid/7a4ff599-7826-4373-918d-8d00fda3aa33";
+
+        # latest kernel
+        kernelPackages = pkgs.linuxPackages_latest;
     };
 
-    # latest kernel
-    boot.kernelPackages = pkgs.linuxPackages_latest;
+    powerManagement.enable = true;
 
     # virtualisation
     virtualisation = {
@@ -168,6 +174,7 @@
             lidSwitch = "hibernate";
             lidSwitchExternalPower = "suspend";
             lidSwitchDocked = "ignore";
+            powerKey = "poweroff";
         };
 
         # Battery

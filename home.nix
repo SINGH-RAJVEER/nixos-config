@@ -54,7 +54,6 @@
         uv
         insomnia
         mongodb-compass
-        mongosh
         vscode
         code-cursor
 
@@ -118,3 +117,4 @@
 
     home.stateVersion = "25.05";
 }
+

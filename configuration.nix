@@ -33,7 +33,11 @@
         initrd.availableKernelModules = [ "amdgpu" ];
         loader.timeout = 0;
         loader.systemd-boot.enable = true;
-        loader.efi.canTouchEfiVariables = true;
+
+        loader.efi = {
+            canTouchEfiVariables = true;
+            efiSysMountPoint = "/boot";
+        };
 
         # kernel-params
         kernelParams = [
@@ -51,9 +55,6 @@
         kernelModules = [
             "kvm-amd"
         ];
-
-        # resume device
-        resumeDevice = "/dev/disk/by-uuid/7a4ff599-7826-4373-918d-8d00fda3aa33";
 
         # latest kernel
         kernelPackages = pkgs.linuxPackages_latest;
@@ -169,14 +170,6 @@
         # asus
         asusd.enable = true;
 
-        # logind
-        logind = {
-            lidSwitch = "hibernate";
-            lidSwitchExternalPower = "suspend";
-            lidSwitchDocked = "ignore";
-            powerKey = "poweroff";
-        };
-
         # Battery
         upower = {
             enable = true;
@@ -206,6 +199,16 @@
                 };
             };
         };
+
+        # tor
+        tor.enable = true;
+
+        # mongodb
+        mongodb.enable = true;
+        mongodb.package = pkgs.mongodb-ce;
+
+        # postgresql
+        postgresql.enable = true;
     };
 
 
@@ -267,7 +270,13 @@
     users.users.rajveer = {
         isNormalUser = true;
         description = "Rajveer Singh";
-        extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
+        extraGroups = [ 
+            "networkmanager" 
+            "wheel" 
+            "libvirtd" 
+            "docker"
+            "archtorify"
+        ];
         packages = with pkgs; [];
     };
 
@@ -292,6 +301,9 @@
 
         # polkit
         polkit.enable = true;
+
+        # rtkit
+        rtkit.enable = true;
     };
 
     # environment
@@ -308,7 +320,8 @@
             hyprlock
             hypridle
             asusctl
-            inputs.zen-browser.packages."${system}".default
+            inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
+            tor
         ];
     };
 
@@ -322,8 +335,6 @@
         dates = "weekly";
         options = "--delete-older-than 7d";
     };
-
-
 
     system.stateVersion = "25.05";
 }

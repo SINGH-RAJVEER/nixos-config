@@ -56,6 +56,7 @@
         mongodb-compass
         vscode
         code-cursor
+        awscli
 
         # GUIs
         ghostty
@@ -71,6 +72,8 @@
         qbittorrent
         gnome-calculator
         image-roll
+        slack
+        lutris-unwrapped
     ];
 
     # GTK theme configuration
@@ -112,6 +115,11 @@
             "image/webp" = "image-roll.desktop";
             "image/bmp" = "image-roll.desktop";
             "image/svg+xml" = "image-roll.desktop";
+            "text/html" = "zen-browser.desktop";
+            "x-scheme-handler/http" = "zen-browser.desktop";
+            "x-scheme-handler/https" = "zen-browser.desktop";
+            "x-scheme-handler/about" = "zen-browser.desktop";
+            "x-scheme-handler/unknown" = "zen-browser.desktop";
         };
     };
 

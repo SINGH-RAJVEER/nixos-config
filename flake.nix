@@ -2,19 +2,19 @@
     description = "NixOS flake";
 
     inputs = {
-        nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-
-        # howdy
-        nixpkgs-howdy.url = "github:fufexan/nixpkgs/howdy";
-
-        # niri
-        niri.url = "github:sodiboo/niri-flake";
+        nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
 
         # home-manager
         home-manager = {
             url = "github:nix-community/home-manager";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+
+        # howdy
+        nixpkgs-howdy.url = "github:fufexan/nixpkgs/howdy";
+
+        # niri
+        niri.url = "github:sodiboo/niri-flake";
 
         # zen-browser
         zen-browser = {
@@ -27,7 +27,9 @@
         nixosConfigurations = {
             "nixos" = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
-                specialArgs = { inherit inputs; };
+                specialArgs = {
+                    inherit inputs;
+                };
                 modules = [
                     ./configuration.nix
                     home-manager.nixosModules.home-manager

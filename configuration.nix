@@ -204,11 +204,19 @@
         tor.enable = true;
 
         # mongodb
-        mongodb.enable = true;
-        mongodb.package = pkgs.mongodb-ce;
+        mongodb = {
+            enable = true;
+            package = pkgs.mongodb-ce;
+        };
 
         # postgresql
         postgresql.enable = true;
+    };
+
+    systemd.services = {
+      mongodb.wantedBy = lib.mkForce [];
+      postgresql.wantedBy = lib.mkForce [];
+      tor.wantedBy = lib.mkForce [];
     };
 
 

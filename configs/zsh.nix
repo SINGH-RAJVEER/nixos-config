@@ -57,9 +57,6 @@
 
             # Git
             push = "git push origin master";
-
-            # tor
-            tor = archtorify
         };
 
         # Additional shell configuration

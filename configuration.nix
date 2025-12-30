@@ -19,10 +19,15 @@
         # plymouth
         plymouth = {
             enable = true;
-            theme = "dna";
+            theme = "cubes";
             themePackages = with pkgs; [
                 (adi1090x-plymouth-themes.override {
-                    selected_themes = [ "rings" "dna" ];
+                    selected_themes = [ 
+                        "rings"
+                        "dna"
+                        "cubes"
+                        "lone"
+                    ];
                 })
             ];
         };
@@ -201,7 +206,10 @@
         };
 
         # tor
-        tor.enable = true;
+        tor = {
+          enable = true;
+          client.enable = true;
+        };
 
         # mongodb
         mongodb = {

@@ -57,6 +57,7 @@
         vscode
         code-cursor
         awscli
+        heroic
 
         # GUIs
         ghostty

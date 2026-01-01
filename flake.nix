@@ -16,6 +16,9 @@
         # niri
         niri.url = "github:sodiboo/niri-flake";
 
+        # noctalia
+        noctalia.url = "github:noctalia-dev/noctalia-shell";
+
         # zen-browser
         zen-browser = {
             url = "github:0xc000022070/zen-browser-flake";
@@ -23,7 +26,7 @@
         };
     };
 
-    outputs = { self, nixpkgs, home-manager, niri, ... }@inputs: {
+    outputs = { self, nixpkgs, home-manager, niri, noctalia, ... }@inputs: {
         nixosConfigurations = {
             "nixos" = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";

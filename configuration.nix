@@ -3,13 +3,13 @@
 {
     disabledModules = ["security/pam.nix"];
 
-    imports =
-        [
-            ./hardware-configuration.nix
-            "${inputs.nixpkgs-howdy}/nixos/modules/security/pam.nix"
-            "${inputs.nixpkgs-howdy}/nixos/modules/services/security/howdy"
-            "${inputs.nixpkgs-howdy}/nixos/modules/services/misc/linux-enable-ir-emitter.nix"
-        ];
+    imports = [
+        ./hardware-configuration.nix
+        "${inputs.nixpkgs-howdy}/nixos/modules/security/pam.nix"
+        "${inputs.nixpkgs-howdy}/nixos/modules/services/security/howdy"
+        "${inputs.nixpkgs-howdy}/nixos/modules/services/misc/linux-enable-ir-emitter.nix"
+        inputs.noctalia.nixosModules.default
+    ];
 
     # flakes
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -202,20 +202,10 @@
             };
         };
 
-        # tor
-        tor = {
-          enable = true;
-          client.enable = true;
-        };
-
-        # mongodb
-        mongodb = {
+        noctalia-shell = {
             enable = true;
-            package = pkgs.mongodb-ce;
+            package = inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default;
         };
-
-        # postgresql
-        postgresql.enable = true;
     };
 
     systemd.services = {
@@ -330,11 +320,9 @@
         systemPackages = with pkgs; [
             docker-buildx
             docker-compose
-            hyprlock
-            hypridle
             asusctl
             inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
-            tor
+
         ];
     };
 

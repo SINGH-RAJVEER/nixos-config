@@ -4,8 +4,6 @@
     imports = [
         ./configs/wofi.nix
         ./configs/starship.nix
-        ./configs/waybar.nix
-        ./configs/hypr/hyprlock.nix
         ./configs/nvim.nix
     ];
 
@@ -15,29 +13,14 @@
     };
 
     home.packages = with pkgs; [
-        # TUIs
-        eza
-        zoxide
-        fzf
-        bat
-        ripgrep
-        xh
-        delta
-        gemini-cli
-        opencode
-        ncdu
-        yazi
-
         # system
         git
         zsh
         networkmanagerapplet
-        swww
         pavucontrol
         blueman
         exfatprogs
         brightnessctl
-        swaynotificationcenter
         xwayland-satellite
         seahorse
         unzip
@@ -57,7 +40,6 @@
         vscode
         code-cursor
         awscli
-        heroic
 
         # GUIs
         ghostty
@@ -74,7 +56,20 @@
         gnome-calculator
         image-roll
         slack
-        lutris-unwrapped
+        heroic
+
+        # TUIs
+        eza
+        zoxide
+        fzf
+        bat
+        ripgrep
+        xh
+        delta
+        gemini-cli
+        opencode
+        ncdu
+        yazi
     ];
 
     # GTK theme configuration

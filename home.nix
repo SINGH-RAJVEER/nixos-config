@@ -2,9 +2,10 @@
 
 {
     imports = [
-        ./configs/wofi.nix
         ./configs/starship.nix
         ./configs/nvim.nix
+        ./configs/hypr/hypridle.nix
+        ./configs/hypr/hyprlock.nix
     ];
 
     home = {
@@ -24,6 +25,8 @@
         xwayland-satellite
         seahorse
         unzip
+        hypridle
+        hyprlock
 
         # development
         rustc

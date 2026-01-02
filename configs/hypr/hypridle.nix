@@ -7,11 +7,12 @@
         before_sleep_cmd = "loginctl lock-session";
         after_sleep_cmd = "hyprctl dispatch dpms on";
       };
+
       listener = [
         {
           timeout = 120; # 2 minutes
           on-timeout = "brightnessctl set 10%";
-          on-resume = "brightnessctl set 100%";
+          on-resume = "brightnessctl -r";
         }
         {
           timeout = 240; # 4 minutes

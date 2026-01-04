@@ -12,7 +12,7 @@
         {
           timeout = 120; # 2 minutes
           on-timeout = "brightnessctl set 10%";
-          on-resume = "brightnessctl -r";
+          on-resume = "brightnessctl set 100%";
         }
         {
           timeout = 240; # 4 minutes
@@ -31,3 +31,4 @@
     };
   };
 }
+

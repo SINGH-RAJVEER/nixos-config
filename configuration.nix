@@ -202,10 +202,14 @@
             };
         };
 
+        # noctalia
         noctalia-shell = {
             enable = true;
             package = inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default;
         };
+
+        # flatpaks
+        flatpak.enable = true;
     };
 
     systemd.services = {
@@ -322,10 +326,17 @@
             docker-compose
             asusctl
             inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
-
+            pkgs.flatpak
         ];
     };
 
+    xdg.portal = {
+        enable = true;
+        extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    };
+
+
+    # fonts
     fonts.packages = with pkgs; [
         nerd-fonts._3270
     ];

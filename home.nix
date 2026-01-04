@@ -50,7 +50,7 @@
         mpv
         thunderbird
         steam
-        libreoffice
+        onlyoffice-desktopeditors
         nautilus
         papers
         mission-center
@@ -59,7 +59,6 @@
         gnome-calculator
         image-roll
         slack
-        heroic
 
         # TUIs
         eza

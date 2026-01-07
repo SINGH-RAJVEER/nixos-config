@@ -265,6 +265,9 @@
             enable = true;
             wifi.backend = "iwd";
         };
+
+        # iwd
+        wireless.iwd.enable = true;
     };
 
     # Set your time zone.
@@ -282,7 +285,6 @@
             "wheel" 
             "libvirtd" 
             "docker"
-            "archtorify"
         ];
         packages = with pkgs; [];
     };

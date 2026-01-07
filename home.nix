@@ -17,9 +17,7 @@
         # system
         git
         zsh
-        networkmanagerapplet
         pavucontrol
-        blueman
         exfatprogs
         brightnessctl
         xwayland-satellite
@@ -48,7 +46,6 @@
         ghostty
         anytype
         mpv
-        thunderbird
         steam
         onlyoffice-desktopeditors
         nautilus
@@ -106,19 +103,19 @@
 
     xdg.mimeApps = {
         enable = true;
-        defaultApplications = {
-            "image/jpeg" = "image-roll.desktop";
-            "image/png" = "image-roll.desktop";
-            "image/gif" = "image-roll.desktop";
-            "image/webp" = "image-roll.desktop";
-            "image/bmp" = "image-roll.desktop";
-            "image/svg+xml" = "image-roll.desktop";
-            "text/html" = "zen-browser.desktop";
-            "x-scheme-handler/http" = "zen-browser.desktop";
-            "x-scheme-handler/https" = "zen-browser.desktop";
-            "x-scheme-handler/about" = "zen-browser.desktop";
-            "x-scheme-handler/unknown" = "zen-browser.desktop";
-        };
+        # defaultApplications = {
+        #     "image/jpeg" = "image-roll.desktop";
+        #     "image/png" = "image-roll.desktop";
+        #     "image/gif" = "image-roll.desktop";
+        #     "image/webp" = "image-roll.desktop";
+        #     "image/bmp" = "image-roll.desktop";
+        #     "image/svg+xml" = "image-roll.desktop";
+        #     "text/html" = "zen-browser.desktop";
+        #     "x-scheme-handler/http" = "zen-browser.desktop";
+        #     "x-scheme-handler/https" = "zen-browser.desktop";
+        #     "x-scheme-handler/about" = "zen-browser.desktop";
+        #     "x-scheme-handler/unknown" = "zen-browser.desktop";
+        # };
     };
 
     home.stateVersion = "25.05";

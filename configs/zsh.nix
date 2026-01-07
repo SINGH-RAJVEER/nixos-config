@@ -27,7 +27,7 @@
         shellAliases = {
             # NixOS management (most frequently used)
             build = "sudo nixos-rebuild switch --flake ~/.config/nixos#nixos";
-            update = "sudo nixos-rebuild switch --flake ~/.config/nixos#nixos --upgrade";
+            update = "nix flake update ~/.config/nixos#nixos";
 
             # Directory navigation
             ".." = "cd ..";

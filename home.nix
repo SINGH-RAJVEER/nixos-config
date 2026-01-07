@@ -56,6 +56,8 @@
         gnome-calculator
         image-roll
         slack
+        virtualbox
+        gnome-disk-utility
 
         # TUIs
         eza

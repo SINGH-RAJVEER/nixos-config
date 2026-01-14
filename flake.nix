@@ -2,11 +2,17 @@
     description = "NixOS flake";
 
     inputs = {
-        nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+        nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
         # home-manager
         home-manager = {
             url = "github:nix-community/home-manager";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+
+        # lanzaboote
+        lanzaboote = {
+            url = "github:nix-community/lanzaboote/v0.4.1";
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
@@ -26,7 +32,7 @@
         };
     };
 
-    outputs = { self, nixpkgs, home-manager, niri, noctalia, ... }@inputs: {
+    outputs = { self, nixpkgs, home-manager, niri, noctalia, lanzaboote, ... }@inputs: {
         nixosConfigurations = {
             "nixos" = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
@@ -35,8 +41,13 @@
                 };
                 modules = [
                     ./configuration.nix
+
                     home-manager.nixosModules.home-manager
+
+                    lanzaboote.nixosModules.lanzaboote
+
                     niri.nixosModules.niri
+
                     {
                         home-manager.useGlobalPkgs = true;
                         home-manager.useUserPackages = true;

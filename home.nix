@@ -25,6 +25,8 @@
         unzip
         hypridle
         hyprlock
+        networkmanagerapplet
+        blueman
 
         # development
         rustc
@@ -40,18 +42,18 @@
         mongodb-compass
         vscode
         code-cursor
-        awscli
+        javaPackages.compiler.openjdk21
+        maven
+        graphite-cli
 
         # GUIs
         ghostty
         anytype
         mpv
-        steam
         onlyoffice-desktopeditors
         nautilus
         papers
         mission-center
-        discord
         qbittorrent
         gnome-calculator
         image-roll
@@ -105,6 +107,9 @@
 
     xdg.mimeApps = {
         enable = true;
+        defaultApplications = {
+            "application/pdf" = "org.gnome.Papers.desktop";
+        };
         # defaultApplications = {
         #     "image/jpeg" = "image-roll.desktop";
         #     "image/png" = "image-roll.desktop";

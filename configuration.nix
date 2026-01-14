@@ -34,7 +34,13 @@
         initrd.verbose = false;
         initrd.availableKernelModules = [ "amdgpu" ];
         loader.timeout = 0;
-        loader.systemd-boot.enable = true;
+        loader.systemd-boot.enable = lib.mkForce false;
+
+        # lanzaboote
+        lanzaboote = {
+            enable = true;
+            pkiBundle = "/etc/secureboot";
+        };
 
         loader.efi = {
             canTouchEfiVariables = true;
@@ -153,7 +159,6 @@
 
         xserver = {
             enable = true;
-            excludePackages = with pkgs; [ ];
 
             videoDrivers = [ "amdgpu" "nvidia" ];
 
@@ -213,14 +218,6 @@
         flatpak.enable = true;
     };
 
-    systemd.services = {
-      mongodb.wantedBy = lib.mkForce [];
-      postgresql.wantedBy = lib.mkForce [];
-      tor.wantedBy = lib.mkForce [];
-    };
-
-
-
     programs = {
         # niri
         niri = {
@@ -234,9 +231,6 @@
         };
 
         nix-ld.enable = true;
-
-        # steam
-        steam.enable = true;
 
         # zsh
         zsh = {
@@ -257,18 +251,12 @@
         # firewall
         firewall = {
             enable = true;
-            allowedUDPPorts = [ 53 67 ];
-            trustedInterfaces = [ "ap0" ];
         };
 
         # network-manager
         networkmanager = {
             enable = true;
-            wifi.backend = "iwd";
         };
-
-        # iwd
-        wireless.iwd.enable = true;
     };
 
     # Set your time zone.
@@ -321,6 +309,7 @@
         sessionVariables = {
             WLR_NO_HARDWARE_CURSORS = "1";
             NIXOS_OZONE_WL = "1";
+            NIXPKGS_ALLOW_UNFREE = "1";
         };
 
         # system packages
@@ -330,6 +319,7 @@
             asusctl
             inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
             pkgs.flatpak
+            pkgs.sbctl
         ];
     };
 

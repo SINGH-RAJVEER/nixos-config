@@ -34,13 +34,7 @@
         initrd.verbose = false;
         initrd.availableKernelModules = [ "amdgpu" ];
         loader.timeout = 0;
-        loader.systemd-boot.enable = lib.mkForce false;
-
-        # lanzaboote
-        lanzaboote = {
-            enable = true;
-            pkiBundle = "/etc/secureboot";
-        };
+        loader.systemd-boot.enable = true;
 
         loader.efi = {
             canTouchEfiVariables = true;

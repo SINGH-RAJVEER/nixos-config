@@ -44,7 +44,7 @@
                 modules = [
                     ./configuration.nix
 
-                    nyx.nixosModules.default
+                    # nyx.nixosModules.default
 
                     home-manager.nixosModules.home-manager
 

@@ -14,11 +14,11 @@
     # flakes
     nix.settings = {
         experimental-features = [ "nix-command" "flakes" ];
-        substituters = [ "https://chaotic-nyx.cachix.org" ];
-        #        trusted-public-keys = [ "chaotic-nyx.cachix.org-1:HfnXSw4pj95iI/n17rIDy40agHj12WfF+Gqk6SonIT8=" ];
+        # substituters = [ "https://chaotic-nyx.cachix.org" ];
+        # trusted-public-keys = [ "chaotic-nyx.cachix.org-1:HfnXSw4pj95iI/n17rIDy40agHj12WfF+Gqk6SonIT8=" ];
     };
 
-    chaotic.nyx.overlay.enable = true;
+    # chaotic.nyx.overlay.enable = true;
 
     # Bootloader.
     boot = {
@@ -65,7 +65,7 @@
         ];
 
         # latest kernel
-        kernelPackages = pkgs.linuxPackages_cachyos;
+        kernelPackages = pkgs.linuxPackages_latest;
     };
 
     powerManagement.enable = true;

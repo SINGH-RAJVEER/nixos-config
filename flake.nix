@@ -2,31 +2,39 @@
     description = "NixOS flake";
 
     inputs = {
-        nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+        nixpkgs.url = "https://github.com/NixOS/nixpkgs/archive/nixos-25.11.tar.gz";
 
         # home-manager
         home-manager = {
-            url = "github:nix-community/home-manager";
+            url = "https://github.com/nix-community/home-manager/archive/release-25.11.tar.gz";
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
         # howdy
-        nixpkgs-howdy.url = "github:fufexan/nixpkgs/howdy";
+        nixpkgs-howdy.url = "https://github.com/fufexan/nixpkgs/archive/howdy.tar.gz";
 
         # niri
-        niri.url = "github:sodiboo/niri-flake";
+        niri.url = "https://github.com/sodiboo/niri-flake/archive/main.tar.gz";
 
         # noctalia
-        noctalia.url = "github:noctalia-dev/noctalia-shell";
+        noctalia.url = "https://github.com/noctalia-dev/noctalia-shell/archive/main.tar.gz";
 
         # zen-browser
         zen-browser = {
-            url = "github:0xc000022070/zen-browser-flake";
+            url = "https://github.com/0xc000022070/zen-browser-flake/archive/main.tar.gz";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+
+        # nyx
+        nyx = {
+            url = "https://github.com/chaotic-cx/nyx/archive/main.tar.gz";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+
+
     };
 
-    outputs = { self, nixpkgs, home-manager, niri, noctalia, ... }@inputs: {
+    outputs = { self, nixpkgs, home-manager, niri, noctalia, nyx, ... }@inputs: {
         nixosConfigurations = {
             "nixos" = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
@@ -35,6 +43,8 @@
                 };
                 modules = [
                     ./configuration.nix
+
+                    nyx.nixosModules.default
 
                     home-manager.nixosModules.home-manager
 

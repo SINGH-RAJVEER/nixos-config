@@ -4,7 +4,6 @@
     imports = [
         ./configs/starship.nix
         ./configs/nvim.nix
-        ./configs/hypr/hypridle.nix
         ./configs/hypr/hyprlock.nix
     ];
 
@@ -21,7 +20,6 @@
         exfatprogs
         brightnessctl
         xwayland-satellite
-        seahorse
         unzip
         hypridle
         hyprlock

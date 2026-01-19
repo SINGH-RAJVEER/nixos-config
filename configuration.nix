@@ -12,7 +12,13 @@
     ];
 
     # flakes
-    nix.settings.experimental-features = [ "nix-command" "flakes" ];
+    nix.settings = {
+        experimental-features = [ "nix-command" "flakes" ];
+        substituters = [ "https://chaotic-nyx.cachix.org" ];
+        #        trusted-public-keys = [ "chaotic-nyx.cachix.org-1:HfnXSw4pj95iI/n17rIDy40agHj12WfF+Gqk6SonIT8=" ];
+    };
+
+    chaotic.nyx.overlay.enable = true;
 
     # Bootloader.
     boot = {
@@ -59,7 +65,7 @@
         ];
 
         # latest kernel
-        kernelPackages = pkgs.linuxPackages_latest;
+        kernelPackages = pkgs.linuxPackages_cachyos;
     };
 
     powerManagement.enable = true;
@@ -151,6 +157,7 @@
             autoLogin.enable = false;
         };
 
+        # xserver
         xserver = {
             enable = true;
 
@@ -159,6 +166,10 @@
             xkb = {
                 layout = "us";
             };
+
+            excludePackages = with pkgs; [ 
+                xterm
+            ];
         };
 
         # PipeWire
@@ -175,8 +186,6 @@
         # Battery
         upower = {
             enable = true;
-            percentageLow = 15;
-            percentageCritical = 5;
             percentageAction = 1;
             criticalPowerAction = "PowerOff";
             allowRiskyCriticalPowerAction = true;
@@ -313,7 +322,6 @@
             asusctl
             inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
             pkgs.flatpak
-            pkgs.sbctl
         ];
     };
 

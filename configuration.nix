@@ -79,7 +79,7 @@
         graphics = {
             enable = true;
             enable32Bit = true;
-            extraPackages = [ rocmPackages.clr.icd ];
+            extraPackages = [ pkgs.rocmPackages.clr.icd ];
         };
 
         nvidia = {
@@ -212,13 +212,13 @@
             syntaxHighlighting.enable = true;
             ohMyZsh = {
                 enable = true;
-                plugins = {
+                plugins = [
                     "git"
                     "history-substring-search"
                     "sudo"
                     "web-search"
                     "colored-man-pages"
-                };
+                ];
             };
         };
     };
@@ -234,7 +234,7 @@
     users.users.rajveer = {
         isNormalUser = true;
         description = "Rajveer Singh";
-        defaultUserShell = pkgs.zsh;
+        shell = pkgs.zsh;
         extraGroups = [ 
             "wheel" 
             "libvirtd" 
@@ -277,7 +277,7 @@
         enable = true;
         extraPortals = [ 
             pkgs.xdg-desktop-portal-gtk 
-            kdePackages.xdg-desktop-portal-kde
+            pkgs.kdePackages.xdg-desktop-portal-kde
             pkgs.xdg-desktop-portal-wlr
         ];
     };

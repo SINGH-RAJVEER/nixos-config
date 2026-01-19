@@ -58,6 +58,7 @@
         slack
         virtualbox
         gnome-disk-utility
+        discord
 
         # TUIs
         eza

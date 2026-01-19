@@ -1,28 +1,21 @@
 { config, pkgs, lib, inputs, ... }:
 
 {
-    disabledModules = ["security/pam.nix"];
-
     imports = [
         ./hardware-configuration.nix
-        "${inputs.nixpkgs-howdy}/nixos/modules/security/pam.nix"
+
         "${inputs.nixpkgs-howdy}/nixos/modules/services/security/howdy"
         "${inputs.nixpkgs-howdy}/nixos/modules/services/misc/linux-enable-ir-emitter.nix"
+
         inputs.noctalia.nixosModules.default
     ];
 
-    # flakes
     nix.settings = {
         experimental-features = [ "nix-command" "flakes" ];
-        # substituters = [ "https://chaotic-nyx.cachix.org" ];
-        # trusted-public-keys = [ "chaotic-nyx.cachix.org-1:HfnXSw4pj95iI/n17rIDy40agHj12WfF+Gqk6SonIT8=" ];
     };
 
-    # chaotic.nyx.overlay.enable = true;
 
-    # Bootloader.
     boot = {
-        # plymouth
         plymouth = {
             enable = true;
             theme = "cubes";
@@ -35,62 +28,60 @@
             ];
         };
 
-        # silent-boot
         consoleLogLevel = 0;
-        initrd.verbose = false;
-        initrd.availableKernelModules = [ "amdgpu" ];
-        loader.timeout = 0;
-        loader.systemd-boot.enable = true;
 
-        loader.efi = {
-            canTouchEfiVariables = true;
-            efiSysMountPoint = "/boot";
+        initrd = {
+            verbose = false;
+            availableKernelModules = [ "amdgpu" ];
         };
 
-        # kernel-params
+        loader = {
+            timeout = 0;
+            systemd-boot.enable = true;
+            efi = {
+                canTouchEfiVariables = true;
+                efiSysMountPoint = "/boot";
+            };
+        };
+
         kernelParams = [
             "quiet"
             "splash"
             "loglevel=0"
             "boot.shell_on_fail"
-            "udev.log_priority=3"
+            "udev.log_priority=0"
             "rd.systemd.show_status=false"
             "amdgpu.sg_display=0"
             "clearcpuid=rdseed"
         ];
 
-        # kernel-modules
         kernelModules = [
             "kvm-amd"
         ];
 
-        # latest kernel
         kernelPackages = pkgs.linuxPackages_latest;
     };
 
     powerManagement.enable = true;
 
-    # virtualisation
     virtualisation = {
         libvirtd.enable = true;
 
-        # docker
         docker = {
             enable = true;
             enableOnBoot = false;
         };
     };
 
-    # hardware
     hardware = {
         enableAllFirmware = true;
 
         graphics = {
             enable = true;
             enable32Bit = true;
+            extraPackages = [ rocmPackages.clr.icd ];
         };
 
-        # nvidia
         nvidia = {
             modesetting.enable = true;
             open = true;
@@ -113,7 +104,6 @@
             };
         };
 
-        # Bluetooth
         bluetooth = {
             enable = true;
             powerOnBoot = false;
@@ -126,9 +116,7 @@
         };
     };
 
-    # services
     services = {
-        # howdy
         howdy = {
             enable = true;
             package = inputs.nixpkgs-howdy.legacyPackages.${pkgs.stdenv.hostPlatform.system}.howdy;
@@ -136,7 +124,7 @@
                 video.device_path = "/dev/video2";
                 core.no_confirmation = true;
                 video.capture_successful = false;
-                video.dark_threshold = 90;
+                video.dark_threshold = 95;
             };
         };
 
@@ -147,9 +135,7 @@
 
         gvfs.enable = true;
         udisks2.enable = true;
-        printing.enable = true;
 
-        # GDM
         displayManager = {
             gdm.enable = true;
             defaultSession = "niri";
@@ -157,22 +143,15 @@
             autoLogin.enable = false;
         };
 
-        # xserver
         xserver = {
             enable = true;
-
-            videoDrivers = [ "amdgpu" "nvidia" ];
-
-            xkb = {
-                layout = "us";
-            };
-
-            excludePackages = with pkgs; [ 
-                xterm
+            videoDrivers = [ 
+                "amdgpu" 
+                "nvidia" 
             ];
+            xkb.layout = "us";
         };
 
-        # PipeWire
         pipewire = {
             enable = true;
             alsa.enable = true;
@@ -180,10 +159,8 @@
             pulse.enable = true;
         };
 
-        # asus
         asusd.enable = true;
 
-        # Battery
         upower = {
             enable = true;
             percentageAction = 1;
@@ -191,7 +168,6 @@
             allowRiskyCriticalPowerAction = true;
         };
 
-        # keyd
         keyd = {
             enable = true;
             keyboards = {
@@ -211,23 +187,17 @@
             };
         };
 
-        # noctalia
         noctalia-shell = {
             enable = true;
             package = inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default;
         };
 
-        # flatpaks
         flatpak.enable = true;
     };
 
     programs = {
-        # niri
-        niri = {
-            enable = true;
-        };
+        niri.enable = true;
 
-        # appimage
         appimage = {
             enable = true;
             binfmt = true;
@@ -235,7 +205,6 @@
 
         nix-ld.enable = true;
 
-        # zsh
         zsh = {
             enable = true;
             enableCompletion = true;
@@ -243,105 +212,93 @@
             syntaxHighlighting.enable = true;
             ohMyZsh = {
                 enable = true;
+                plugins = {
+                    "git"
+                    "history-substring-search"
+                    "sudo"
+                    "web-search"
+                    "colored-man-pages"
+                };
             };
         };
     };
 
-    # networking
     networking = {
         hostName = "nixos";
-
-        # firewall
-        firewall = {
-            enable = true;
-        };
-
-        # network-manager
-        networkmanager = {
-            enable = true;
-        };
+        firewall.enable = true;
+        networkmanager.enable = true;
     };
 
-    # Set your time zone.
     time.timeZone = "Asia/Kolkata";
 
-    # shell
-    users.defaultUserShell = pkgs.zsh;
-
-    # Define a user account
     users.users.rajveer = {
         isNormalUser = true;
         description = "Rajveer Singh";
+        defaultUserShell = pkgs.zsh;
         extraGroups = [ 
-            "networkmanager" 
             "wheel" 
             "libvirtd" 
+            "networkmanager" 
             "docker"
         ];
-        packages = with pkgs; [];
     };
 
-    # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
 
-    # home-manager
     home-manager = {
         useGlobalPkgs = true;
         useUserPackages = true;
-        backupFileExtension = "backup";
+        backupFileExtension = "bak";
         users.rajveer = import ./home.nix;
     };
 
-    # Security
     security = {
-        # sudo-rs
         sudo-rs = {
             enable = true;
             wheelNeedsPassword = true;
         };
-
-        # polkit
         polkit.enable = true;
-
-        # rtkit
         rtkit.enable = true;
     };
 
-    # environment
     environment = { 
         sessionVariables = {
             WLR_NO_HARDWARE_CURSORS = "1";
             NIXOS_OZONE_WL = "1";
-            NIXPKGS_ALLOW_UNFREE = "1";
         };
 
-        # system packages
         systemPackages = with pkgs; [
-            docker-buildx
-            docker-compose
             asusctl
             inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
-            pkgs.flatpak
         ];
     };
 
     xdg.portal = {
         enable = true;
-        extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+        extraPortals = [ 
+            pkgs.xdg-desktop-portal-gtk 
+            kdePackages.xdg-desktop-portal-kde
+            pkgs.xdg-desktop-portal-wlr
+        ];
     };
 
 
-    # fonts
     fonts.packages = with pkgs; [
         nerd-fonts._3270
     ];
 
-    # remove images older than a week
-    nix.gc = {
-        automatic = true;
-        dates = "weekly";
-        options = "--delete-older-than 7d";
+    nix = {
+        extraOptions = ''
+            access-tokens = github.com=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
+        '';
+
+        # remove images older than a week
+        gc = {
+            automatic = true;
+            dates = "weekly";
+            options = "--delete-older-than 7d";
+        };
     };
 
-    system.stateVersion = "25.05";
+    system.stateVersion = "25.11";
 }

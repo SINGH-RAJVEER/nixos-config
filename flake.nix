@@ -2,11 +2,11 @@
     description = "NixOS flake";
 
     inputs = {
-        nixpkgs.url = "https://github.com/NixOS/nixpkgs/archive/nixos-25.11.tar.gz";
+        nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
         # home-manager
         home-manager = {
-            url = "https://github.com/nix-community/home-manager/archive/release-25.11.tar.gz";
+            url = "github:nix-community/home-manager/master";
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
@@ -24,27 +24,19 @@
             url = "https://github.com/0xc000022070/zen-browser-flake/archive/main.tar.gz";
             inputs.nixpkgs.follows = "nixpkgs";
         };
-
-        # nyx
-        nyx = {
-            url = "https://github.com/chaotic-cx/nyx/archive/main.tar.gz";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
-
-
     };
 
-    outputs = { self, nixpkgs, home-manager, niri, noctalia, nyx, ... }@inputs: {
+    outputs = { self, nixpkgs, home-manager, niri, noctalia, ... }@inputs: {
         nixosConfigurations = {
             "nixos" = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
+
                 specialArgs = {
                     inherit inputs;
                 };
+
                 modules = [
                     ./configuration.nix
-
-                    # nyx.nixosModules.default
 
                     home-manager.nixosModules.home-manager
 

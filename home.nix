@@ -69,7 +69,7 @@
         xh
         delta
         gemini-cli
-        opencode
+        #        opencode
         ncdu
         yazi
     ];

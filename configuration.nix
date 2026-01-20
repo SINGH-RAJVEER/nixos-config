@@ -259,6 +259,19 @@
         };
         polkit.enable = true;
         rtkit.enable = true;
+
+        pam.services = let
+            howdyPam = {
+                control = "sufficient";
+                modulePath = "${config.services.howdy.package}/lib/security/pam_howdy.so";
+                order = 10;
+            };
+        in {
+            sudo.rules.auth.howdy = howdyPam;
+            login.rules.auth.howdy = howdyPam;
+            "polkit-1".rules.auth.howdy = howdyPam;
+            hyprlock.rules.auth.howdy = howdyPam;
+        };
     };
 
     environment = { 

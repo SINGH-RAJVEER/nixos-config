@@ -54,12 +54,15 @@
       "locked": {
         "lastModified": 1768767453,
         "narHash": "sha256-Omq1UHEJ1oxkTo2j8l6qQtmyPR7Uj+k7HC5Khd3jVVA=",
-        "type": "tarball",
-        "url": "https://github.com/sodiboo/niri-flake/archive/main.tar.gz"
+        "owner": "sodiboo",
+        "repo": "niri-flake",
+        "rev": "8eab7c21ef4edc97cc56ddb8e76a842e0818d6d7",
+        "type": "github"
       },
       "original": {
-        "type": "tarball",
-        "url": "https://github.com/sodiboo/niri-flake/archive/main.tar.gz"
+        "owner": "sodiboo",
+        "repo": "niri-flake",
+        "type": "github"
       }
     },
     "niri-stable": {
@@ -176,8 +179,8 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1768836456,
-        "narHash": "sha256-1DVnXltaxIvsPNDZdH9IX8gt6XBcjFMVZ+1/SLrkcxw=",
+        "lastModified": 1768860009,
+        "narHash": "sha256-OkAcz5/n7oK+WZklpfL9gUCMZ+ogDbDnAdVCtdiQERY=",
         "type": "tarball",
         "url": "https://github.com/noctalia-dev/noctalia-shell/archive/main.tar.gz"
       },
@@ -237,8 +240,8 @@
         ]
       },
       "locked": {
-        "lastModified": 1768811698,
-        "narHash": "sha256-FCaMA/o80SfpfaUMkhpmzLXmkTP7zREgI1wNkcAB6Mw=",
+        "lastModified": 1768857659,
+        "narHash": "sha256-93pj/A2s26CUZwvCpN0CL6a1NhLpYVzidzc/Vk2GKCI=",
         "type": "tarball",
         "url": "https://github.com/0xc000022070/zen-browser-flake/archive/main.tar.gz"
       },

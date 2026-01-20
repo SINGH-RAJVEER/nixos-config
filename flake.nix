@@ -14,7 +14,7 @@
         nixpkgs-howdy.url = "https://github.com/fufexan/nixpkgs/archive/howdy.tar.gz";
 
         # niri
-        niri.url = "https://github.com/sodiboo/niri-flake/archive/main.tar.gz";
+        niri.url = "github:sodiboo/niri-flake";
 
         # noctalia
         noctalia.url = "https://github.com/noctalia-dev/noctalia-shell/archive/main.tar.gz";
@@ -40,7 +40,17 @@
 
                     home-manager.nixosModules.home-manager
 
-                    niri.nixosModules.niri
+                    #niri.nixosModules.niri
+                    {
+                        nixpkgs.overlays = [
+                            niri.overlays.niri
+                            (_: prev: {
+                                niri = prev.niri.overrideAttrs (_: {
+                                    doCheck = false;
+                                });
+                            })
+                        ];
+                    }
 
                     {
                         home-manager.useGlobalPkgs = true;

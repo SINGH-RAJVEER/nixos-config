@@ -4,7 +4,7 @@
     imports = [
         ./configs/starship.nix
         ./configs/nvim.nix
-        ./configs/hypr/hyprlock.nix
+        ./configs/hypr/hypridle.nix
     ];
 
     home = {

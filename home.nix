@@ -69,7 +69,7 @@
         xh
         delta
         gemini-cli
-        #        opencode
+        opencode
         ncdu
         yazi
     ];
@@ -109,21 +109,8 @@
         defaultApplications = {
             "application/pdf" = "org.gnome.Papers.desktop";
         };
-        # defaultApplications = {
-        #     "image/jpeg" = "image-roll.desktop";
-        #     "image/png" = "image-roll.desktop";
-        #     "image/gif" = "image-roll.desktop";
-        #     "image/webp" = "image-roll.desktop";
-        #     "image/bmp" = "image-roll.desktop";
-        #     "image/svg+xml" = "image-roll.desktop";
-        #     "text/html" = "zen-browser.desktop";
-        #     "x-scheme-handler/http" = "zen-browser.desktop";
-        #     "x-scheme-handler/https" = "zen-browser.desktop";
-        #     "x-scheme-handler/about" = "zen-browser.desktop";
-        #     "x-scheme-handler/unknown" = "zen-browser.desktop";
-        # };
     };
 
-    home.stateVersion = "25.05";
+    home.stateVersion = "25.11";
 }
 

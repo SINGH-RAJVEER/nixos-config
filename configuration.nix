@@ -168,6 +168,11 @@
             allowRiskyCriticalPowerAction = true;
         };
 
+        logind.settings.Login = {
+            HandleLidSwitch = "suspend";
+            HandleLidSwitchExternalPower = "ignore";
+        };
+
         keyd = {
             enable = true;
             keyboards = {
@@ -283,6 +288,7 @@
         systemPackages = with pkgs; [
             asusctl
             inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
+            (pkgs.callPackage ./configs/helium.nix { })
         ];
     };
 

@@ -4,24 +4,25 @@
     inputs = {
         nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
-        # home-manager
         home-manager = {
             url = "github:nix-community/home-manager/master";
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
-        # howdy
-        nixpkgs-howdy.url = "https://github.com/fufexan/nixpkgs/archive/howdy.tar.gz";
+        nixpkgs-howdy.url = "github:fufexan/nixpkgs/howdy";
 
-        # niri
-        niri.url = "github:sodiboo/niri-flake";
+        niri = {
+            url = "github:sodiboo/niri-flake";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
 
-        # noctalia
-        noctalia.url = "https://github.com/noctalia-dev/noctalia-shell/archive/main.tar.gz";
+        noctalia = {
+            url = "github:noctalia-dev/noctalia-shell";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
 
-        # zen-browser
         zen-browser = {
-            url = "https://github.com/0xc000022070/zen-browser-flake/archive/main.tar.gz";
+            url = "github:0xc000022070/zen-browser-flake";
             inputs.nixpkgs.follows = "nixpkgs";
         };
     };

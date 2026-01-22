@@ -21,8 +21,6 @@
         brightnessctl
         xwayland-satellite
         unzip
-        hypridle
-        hyprlock
         networkmanagerapplet
         blueman
 
@@ -69,7 +67,7 @@
         xh
         delta
         gemini-cli
-        opencode
+#        opencode
         ncdu
         yazi
     ];

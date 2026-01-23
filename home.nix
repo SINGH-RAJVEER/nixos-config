@@ -41,8 +41,8 @@
         javaPackages.compiler.openjdk21
         maven
         graphite-cli
-        android-tools
-        androidenv.androidPkgs.androidsdk
+        radicle-tui
+        radicle-desktop
 
         # GUIs
         ghostty

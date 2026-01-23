@@ -42,6 +42,7 @@
         maven
         graphite-cli
         android-tools
+        androidenv.androidPkgs.androidsdk
 
         # GUIs
         ghostty
@@ -57,7 +58,6 @@
         slack
         virtualbox
         gnome-disk-utility
-        discord
 
         # TUIs
         eza

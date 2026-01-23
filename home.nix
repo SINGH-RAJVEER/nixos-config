@@ -41,6 +41,7 @@
         javaPackages.compiler.openjdk21
         maven
         graphite-cli
+        android-tools
 
         # GUIs
         ghostty

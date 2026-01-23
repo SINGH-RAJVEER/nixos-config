@@ -245,6 +245,7 @@
             "libvirtd" 
             "networkmanager" 
             "docker"
+            "kvm"
         ];
     };
 

@@ -21,8 +21,6 @@
         brightnessctl
         xwayland-satellite
         unzip
-        networkmanagerapplet
-        blueman
 
         # development
         rustc
@@ -94,19 +92,25 @@
         style.name = "adwaita-dark";
     };
 
-    # cursor
     home.pointerCursor = {
         gtk.enable = true;
         x11.enable = true;
         package = pkgs.adwaita-icon-theme;
         name = "Adwaita";
-        size = 20;
+        size = 18;
     };
 
     xdg.mimeApps = {
         enable = true;
         defaultApplications = {
+            #pdf
             "application/pdf" = "org.gnome.Papers.desktop";
+
+            #browser
+            "x-scheme-handler/http" = "zen.desktop";
+            "x-scheme-handler/https" = "zen.desktop";
+            "text/html" = "zen.desktop";
+            "application/xhtml+xml" = "zen.desktop";
         };
     };
 

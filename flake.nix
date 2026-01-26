@@ -9,8 +9,6 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
-        nixpkgs-howdy.url = "github:fufexan/nixpkgs/howdy";
-
         niri = {
             url = "github:sodiboo/niri-flake";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -41,6 +39,11 @@
 
                     home-manager.nixosModules.home-manager
 
+                    {
+                        home-manager.useGlobalPkgs = true;
+                        home-manager.useUserPackages = true;
+                    }
+
                     #niri.nixosModules.niri
                     {
                         nixpkgs.overlays = [
@@ -51,11 +54,6 @@
                                 });
                             })
                         ];
-                    }
-
-                    {
-                        home-manager.useGlobalPkgs = true;
-                        home-manager.useUserPackages = true;
                     }
                 ];
             };

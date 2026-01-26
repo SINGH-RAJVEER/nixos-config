@@ -3,10 +3,6 @@
 {
     imports = [
         ./hardware-configuration.nix
-
-        "${inputs.nixpkgs-howdy}/nixos/modules/services/security/howdy"
-        "${inputs.nixpkgs-howdy}/nixos/modules/services/misc/linux-enable-ir-emitter.nix"
-
         inputs.noctalia.nixosModules.default
     ];
 
@@ -119,7 +115,6 @@
     services = {
         howdy = {
             enable = true;
-            package = inputs.nixpkgs-howdy.legacyPackages.${pkgs.stdenv.hostPlatform.system}.howdy;
             settings = {
                 video.device_path = "/dev/video2";
                 core.no_confirmation = true;
@@ -128,10 +123,7 @@
             };
         };
 
-        linux-enable-ir-emitter = {
-            enable = true;
-            package = inputs.nixpkgs-howdy.legacyPackages.${pkgs.stdenv.hostPlatform.system}.linux-enable-ir-emitter;
-        };
+        linux-enable-ir-emitter.enable = true;
 
         gvfs.enable = true;
         udisks2.enable = true;
@@ -198,6 +190,8 @@
         };
 
         flatpak.enable = true;
+
+        redis.servers."local".enable = true;
     };
 
     programs = {
@@ -271,15 +265,16 @@
 
         pam.services = let
             howdyPam = {
-                control = "sufficient";
+                control = lib.mkForce "sufficient";
                 modulePath = "${config.services.howdy.package}/lib/security/pam_howdy.so";
-                order = 10;
+                order = 110;
             };
         in {
             sudo.rules.auth.howdy = howdyPam;
             login.rules.auth.howdy = howdyPam;
             "polkit-1".rules.auth.howdy = howdyPam;
-            hyprlock.rules.auth.howdy = howdyPam;
+            noctalia-shell.rules.auth.howdy = howdyPam;
+            quickshell.rules.auth.howdy = howdyPam;
         };
     };
 

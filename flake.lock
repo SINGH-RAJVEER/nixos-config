@@ -116,22 +116,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-howdy": {
-      "locked": {
-        "lastModified": 1768922466,
-        "narHash": "sha256-Gtht3GbFGkcVlPZePFvkKYbLbqcmfGkmc8lsakvefOc=",
-        "owner": "fufexan",
-        "repo": "nixpkgs",
-        "rev": "beea11b99e0ee7e9891f2273743e1a07f84156a5",
-        "type": "github"
-      },
-      "original": {
-        "owner": "fufexan",
-        "ref": "howdy",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs-stable": {
       "locked": {
         "lastModified": 1769089682,
@@ -155,11 +139,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1769232224,
-        "narHash": "sha256-SyJj9P/yRwec9UbQGwxyh0rJFVlmcoCS1nJsg6SaVps=",
+        "lastModified": 1769255079,
+        "narHash": "sha256-el3Am/680yVkx/L2eRS0hthjcRG9/JwpscZnlZzPZFA=",
         "owner": "noctalia-dev",
         "repo": "noctalia-shell",
-        "rev": "d31d0c22b69a2acaae7f6d4eb07d2bf3c5fd9803",
+        "rev": "f448fa59b8327187acfbc83859d91a3e29ed4dff",
         "type": "github"
       },
       "original": {
@@ -173,7 +157,6 @@
         "home-manager": "home-manager",
         "niri": "niri",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-howdy": "nixpkgs-howdy",
         "noctalia": "noctalia",
         "zen-browser": "zen-browser"
       }

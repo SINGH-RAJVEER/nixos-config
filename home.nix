@@ -34,13 +34,12 @@
         uv
         insomnia
         mongodb-compass
-        vscode
-        code-cursor
         javaPackages.compiler.openjdk21
         maven
         graphite-cli
         radicle-tui
         radicle-desktop
+        nodejs_25
 
         # GUIs
         ghostty
@@ -51,11 +50,10 @@
         papers
         mission-center
         qbittorrent
-        gnome-calculator
         image-roll
-        slack
-        virtualbox
-        gnome-disk-utility
+        vscode
+        code-cursor
+        zed-editor
 
         # TUIs
         eza
@@ -66,7 +64,6 @@
         xh
         delta
         gemini-cli
-#        opencode
         ncdu
         yazi
     ];

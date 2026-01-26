@@ -49,6 +49,7 @@
             "rd.systemd.show_status=false"
             "amdgpu.sg_display=0"
             "clearcpuid=rdseed"
+            "btusb.enable_autosuspend=0"
         ];
 
         kernelModules = [
@@ -102,11 +103,13 @@
 
         bluetooth = {
             enable = true;
-            powerOnBoot = false;
+            powerOnBoot = true;
             settings = {
                 General = {
                     Experimental = true;
                     FastConnectable = true;
+                    ControllerMode = "bredr";
+                    Enable = "Source,Sink,Media,Socket";
                 };
             };
         };
@@ -189,9 +192,9 @@
             package = inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default;
         };
 
-        flatpak.enable = true;
+        blueman.enable = true;
 
-        redis.servers."local".enable = true;
+        flatpak.enable = true;
     };
 
     programs = {

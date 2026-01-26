@@ -54,6 +54,7 @@
         vscode
         code-cursor
         zed-editor
+        sioyek
 
         # TUIs
         eza

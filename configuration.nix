@@ -183,15 +183,10 @@
                             rightalt = "rightcontrol";
 
                             # Home-row mods: tap=letter, hold=modifier (200ms)
-                            a = "overloadt2(meta, a, 300)";
-                            s = "overloadt2(alt, s, 300)";
-                            d = "overloadt2(shift, d, 300)";
-                            f = "overloadt2(control, f, 300)";
-
-                            # j = "overloadt2(control, j, 200)";
-                            # k = "overloadt2(shift, k, 200)";
-                            # l = "overloadt2(alt, l, 200)";
-                            # ";" = "overloadt2(meta, ;, 250)";
+                            a = "overloadt2(meta, a, 350)";
+                            s = "overloadt2(alt, s, 350)";
+                            d = "overloadt2(shift, d, 350)";
+                            f = "overloadt2(control, f, 350)";
                         };
                     };
                 };

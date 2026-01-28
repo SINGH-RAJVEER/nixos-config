@@ -36,8 +36,6 @@
         mongodb-compass
         javaPackages.compiler.openjdk21
         maven
-        graphite-cli
-        radicle-tui
         radicle-desktop
         nodejs_25
 
@@ -53,9 +51,8 @@
         image-roll
         vscode
         code-cursor
-        zed-editor
+        zed-editor-fhs
         sioyek
-        pgadmin4
 
         # TUIs
         eza

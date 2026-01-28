@@ -55,6 +55,7 @@
         code-cursor
         zed-editor
         sioyek
+        pgadmin4
 
         # TUIs
         eza

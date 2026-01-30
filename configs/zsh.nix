@@ -54,6 +54,7 @@
             vim = "nvim";
             vi = "nvim";
             curl = "xh";
+            j = "zellij";
 
             # Git
             push = "git push origin master";
@@ -102,6 +103,9 @@
             # bun
             export BUN_INSTALL="$HOME/.bun"
             export PATH="$BUN_INSTALL/bin:$PATH"
+
+            # cargo
+            export PATH="$HOME/.cargo/bin:$PATH"
 
             # starship
             eval "$(starship init zsh)"

@@ -21,23 +21,25 @@
         brightnessctl
         xwayland-satellite
         unzip
+        zellij
 
         # development
         rustc
         cargo
-        gcc
-        cmake
+        clang
+        gnumake
         bun
         python314
         go
         jdk
+        maven
         uv
         insomnia
         mongodb-compass
-        javaPackages.compiler.openjdk21
         maven
+        radicle-tui
         radicle-desktop
-        nodejs_25
+        docker-compose
 
         # GUIs
         ghostty
@@ -53,6 +55,7 @@
         code-cursor
         zed-editor-fhs
         sioyek
+        github-desktop
 
         # TUIs
         eza

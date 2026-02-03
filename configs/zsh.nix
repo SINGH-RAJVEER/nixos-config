@@ -27,7 +27,7 @@
         shellAliases = {
             # NixOS management (most frequently used)
             build = "sudo nixos-rebuild switch --flake ~/.config/nixos#nixos";
-            update = "nix flake update ~/.config/nixos#nixos";
+            update = "nix flake update ~/.config/nixos#nixos && sudo nixos-rebuild switch --flake ~/.config/nixos#nixos";
 
             # Directory navigation
             ".." = "cd ..";
@@ -62,9 +62,6 @@
 
         # Additional shell configuration
         initExtra = ''
-            export EDITOR="nvim"
-            export VISUAL="nvim"
-
             bindkey -v
 
             setopt AUTO_CD              # Change directory without cd
@@ -80,13 +77,11 @@
             setopt AUTO_MENU            # Show menu on tab press
 
             zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-
             zstyle ':completion:*' menu select
             zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"
 
-            # Custom functions based on your patterns
 
-            # Simplified commit function
+            # commit function
             commit() {
               if [ -z "$*" ]; then
                 echo "Usage: commit <message>"
@@ -95,25 +90,20 @@
               git commit -m "$*"
             }
 
-            # If you have zoxide installed
-            if command -v zoxide &> /dev/null;
-              eval "$(zoxide init zsh)"
-            fi
+            # cargo
+            export PATH="$HOME/.cargo/bin:$PATH"
 
             # bun
             export BUN_INSTALL="$HOME/.bun"
             export PATH="$BUN_INSTALL/bin:$PATH"
 
-            # cargo
-            export PATH="$HOME/.cargo/bin:$PATH"
-
             # starship
             eval "$(starship init zsh)"
 
-            # zoxide (already handled by the if statement above, but keeping for completeness if it was in .zshrc)
-            # eval "$(zoxide init zsh)"
+            # zoxide
+            eval "$(zoxide init zsh)"
 
-            # fzf configuration
+            # fzf
             export FZF_DEFAULT_OPTS="--ansi --preview 'bat --color=always --style=header,grid --line-range :100 {}'"
 
             ff() {
@@ -124,6 +114,7 @@
               fi
             }
 
+            # yazi
             y() {
               local tmp="$(mktemp -t \"yazi-cwd.XXXXXX\")" cwd
               yazi "$@" --cwd-file="$tmp"

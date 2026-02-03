@@ -5,6 +5,7 @@
         ./configs/starship.nix
         ./configs/nvim.nix
         ./configs/hypr/hypridle.nix
+        ./configs/ghostty.nix
     ];
 
     home = {
@@ -22,6 +23,7 @@
         xwayland-satellite
         unzip
         zellij
+        lsof
 
         # development
         rustc
@@ -29,26 +31,24 @@
         clang
         gnumake
         bun
-        python314
-        go
+        nodejs_24
+        biome
         jdk
         maven
+        python314
         uv
-        insomnia
-        mongodb-compass
         maven
-        radicle-tui
-        radicle-desktop
+        postgresql
         docker-compose
+        just
 
         # GUIs
-        ghostty
         anytype
         mpv
         onlyoffice-desktopeditors
         nautilus
         papers
-        mission-center
+        resources
         qbittorrent
         image-roll
         vscode
@@ -56,6 +56,8 @@
         zed-editor-fhs
         sioyek
         github-desktop
+        insomnia
+        mongodb-compass
 
         # TUIs
         eza
@@ -66,6 +68,7 @@
         xh
         delta
         gemini-cli
+        opencode
         ncdu
         yazi
     ];

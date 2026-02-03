@@ -182,11 +182,11 @@
                             rightcontrol = "rightalt";
                             rightalt = "rightcontrol";
 
-                            # Home-row mods: tap=letter, hold=modifier (200ms)
-                            a = "overloadt2(meta, a, 350)";
-                            s = "overloadt2(alt, s, 350)";
-                            d = "overloadt2(shift, d, 350)";
-                            f = "overloadt2(control, f, 350)";
+                            # Home-row mods
+                            # a = "overloadt2(meta, a, 450)";
+                            # s = "overloadt2(alt, s, 450)";
+                            # d = "overloadt2(shift, d, 450)";
+                            # f = "overloadt2(control, f, 450)";
                         };
                     };
                 };
@@ -292,6 +292,10 @@
             WLR_NO_HARDWARE_CURSORS = "1";
             NIXOS_OZONE_WL = "1";
         };
+        
+        shellInit = ''
+            export PATH="$HOME/.cargo/bin:$PATH"
+        '';
 
         systemPackages = with pkgs; [
             asusctl

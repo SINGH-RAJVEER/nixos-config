@@ -212,23 +212,6 @@
         };
 
         nix-ld.enable = true;
-
-        zsh = {
-            enable = true;
-            enableCompletion = true;
-            autosuggestions.enable = true;
-            syntaxHighlighting.enable = true;
-            ohMyZsh = {
-                enable = true;
-                plugins = [
-                    "git"
-                    "history-substring-search"
-                    "sudo"
-                    "web-search"
-                    "colored-man-pages"
-                ];
-            };
-        };
     };
 
     networking = {
@@ -242,8 +225,8 @@
     users.users.rajveer = {
         isNormalUser = true;
         description = "Rajveer Singh";
-        shell = pkgs.zsh;
-        extraGroups = [ 
+        shell = pkgs.nushell;
+        extraGroups = [  
             "wheel" 
             "libvirtd" 
             "networkmanager" 
@@ -267,7 +250,7 @@
     security = {
         sudo-rs = {
             enable = true;
-            wheelNeedsPassword = true;
+            wheelNeedsPassword = false;
         };
         polkit.enable = true;
         rtkit.enable = true;

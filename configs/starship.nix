@@ -3,12 +3,14 @@
     programs.starship = {
         enable = true;
         enableZshIntegration = true;
+        enableNushellIntegration = true;
         settings = {
             add_newline = true;
             command_timeout = 1000;
             format = ''
               [╭─](bold green)$directory$git_branch$git_status
-              [╰─](bold green)$character'';
+              [╰─](bold green)$character
+            '';
             directory = {
                 style = "bold blue";
                 truncation_length = 5;
@@ -35,7 +37,6 @@
             character = {
                 success_symbol = "[➜](bold green)";
                 error_symbol = "[✗](bold red)";
-                vimcmd_symbol = "[V](bold green)";
             };
         };
     };

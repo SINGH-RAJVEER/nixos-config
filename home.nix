@@ -6,6 +6,7 @@
         ./configs/nvim.nix
         ./configs/hypr/hypridle.nix
         ./configs/ghostty.nix
+        ./configs/nushell.nix
     ];
 
     home = {
@@ -16,7 +17,6 @@
     home.packages = with pkgs; [
         # system
         git
-        zsh
         pavucontrol
         exfatprogs
         brightnessctl
@@ -61,7 +61,6 @@
 
         # TUIs
         eza
-        zoxide
         fzf
         bat
         ripgrep
@@ -114,6 +113,22 @@
             "text/html" = "zen.desktop";
             "application/xhtml+xml" = "zen.desktop";
         };
+    };
+
+    programs.zoxide = {
+        enable = true;
+        enableNushellIntegration = true;
+    };
+
+    programs.carapace = {
+        enable = true;
+        enableNushellIntegration = true;
+    };
+
+    programs.direnv = {
+        enable = true;
+        nix-direnv.enable = true;
+        enableNushellIntegration = true;
     };
 
     home.stateVersion = "25.11";

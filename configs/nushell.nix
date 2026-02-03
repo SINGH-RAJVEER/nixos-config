@@ -18,18 +18,17 @@
     '';
 
     extraConfig = ''
-      # Configuration refreshed
       $env.config = {
         show_banner: false,
         edit_mode: "vi",
-        
+
         history: {
           max_size: 10_000_000,
           sync_on_enter: true,
           file_format: "sqlite",
           isolation: true,
         },
-        
+
         completions: {
           case_sensitive: false,
           quick: true,
@@ -53,13 +52,13 @@
         hooks: {
           env_change: {
             PWD: [
-              { || ls }
+              { |before, after| ls | print }
             ]
           }
         }
       }
 
-      # Yazi wrapper for Nushell
+      # Yazi wrapper
       def --env y [...args] {
         let tmp = (mktemp -t "yazi-cwd.XXXXXX")
         yazi ...$args --cwd-file $tmp
@@ -80,14 +79,14 @@
         git commit -m $message
       }
 
-      # fzf wrapper to ensure bash is used for previews
+      # fzf wrapper for previews
       def --wrapped fzf [...args] {
         with-env { SHELL: "${pkgs.bash}/bin/bash" } {
           ^fzf ...$args
         }
       }
 
-      # fzf wrapper (ff)
+      # fzf wrapper
       def ff [] {
         let files = (fzf --multi)
         if ($files | is-empty) {

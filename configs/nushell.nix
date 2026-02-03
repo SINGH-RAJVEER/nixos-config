@@ -6,6 +6,7 @@
 
     extraEnv = ''
       $env.PROMPT_INDICATOR_VI_NORMAL = " "
+      $env.PROMPT_INDICATOR_VI_INSERT = ""
       $env.EDITOR = "nvim"
       $env.VISUAL = "nvim"
       $env.BUN_INSTALL = ($env.HOME | path join ".bun")
@@ -70,12 +71,20 @@
       }
 
       # git commit wrapper
-      def commit [msg: string] {
-        if ($msg | is-empty) {
+      def commit [...msg] {
+        let message = ($msg | str join " ")
+        if ($message | is-empty) {
           echo "Usage: commit <message>"
           return 1
         }
-        git commit -m $msg
+        git commit -m $message
+      }
+
+      # fzf wrapper to ensure bash is used for previews
+      def --wrapped fzf [...args] {
+        with-env { SHELL: "${pkgs.bash}/bin/bash" } {
+          ^fzf ...$args
+        }
       }
 
       # fzf wrapper (ff)

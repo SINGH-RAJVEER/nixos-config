@@ -55,10 +55,10 @@
         vscode
         code-cursor
         zed-editor-fhs
-        sioyek
         github-desktop
         insomnia
         mongodb-compass
+        kdePackages.plasma-systemmonitor
 
         # TUIs
         eza

@@ -94,6 +94,10 @@
         }
         nvim ...($files | split row "\n")
       }
+
+      if "ZELLIJ" not-in ($env | columns) and $env.TERM_PROGRAM? == "ghostty" {
+        zellij
+      }
     '';
 
     shellAliases = {

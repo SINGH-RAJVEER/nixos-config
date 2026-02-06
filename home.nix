@@ -43,6 +43,7 @@
         just
 
         # GUIs
+        virt-manager
         anytype
         mpv
         onlyoffice-desktopeditors

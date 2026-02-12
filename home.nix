@@ -4,7 +4,7 @@
     imports = [
         ./configs/starship.nix
         ./configs/nvim.nix
-        ./configs/hypr/hypridle.nix
+        ./configs/hypridle.nix
         ./configs/ghostty.nix
         ./configs/nushell.nix
     ];

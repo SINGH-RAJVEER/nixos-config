@@ -29,13 +29,11 @@
         rustc
         cargo
         clang
-        gnumake
         bun
-        nodejs_24
         biome
         jdk
         maven
-        python314
+        python3
         uv
         maven
         postgresql
@@ -49,13 +47,11 @@
         onlyoffice-desktopeditors
         nautilus
         papers
-        resources
         qbittorrent
         image-roll
         vscode
         code-cursor
-        zed-editor-fhs
-        github-desktop
+        zed-editor
         insomnia
         mongodb-compass
         kdePackages.plasma-systemmonitor
@@ -107,12 +103,6 @@
         defaultApplications = {
             #pdf
             "application/pdf" = "org.gnome.Papers.desktop";
-
-            #browser
-            "x-scheme-handler/http" = "zen.desktop";
-            "x-scheme-handler/https" = "zen.desktop";
-            "text/html" = "zen.desktop";
-            "application/xhtml+xml" = "zen.desktop";
         };
     };
 

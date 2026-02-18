@@ -56,7 +56,7 @@
             "kvm-amd"
         ];
 
-        kernelPackages = pkgs.linuxPackages_latest;
+        kernelPackages = pkgs.linuxPackages;
     };
 
     powerManagement.enable = true;

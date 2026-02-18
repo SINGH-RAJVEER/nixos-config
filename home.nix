@@ -19,6 +19,7 @@
         git
         pavucontrol
         exfatprogs
+        networkmanagerapplet
         brightnessctl
         xwayland-satellite
         unzip
@@ -49,9 +50,9 @@
         papers
         qbittorrent
         image-roll
-        vscode
-        code-cursor
-        zed-editor
+        vscode-fhs
+        antigravity-fhs
+        code-cursor-fhs
         insomnia
         mongodb-compass
         kdePackages.plasma-systemmonitor

@@ -137,6 +137,9 @@
       # Nvim
       vi = "nvim";
       vim = "nvim";
+
+      # VS Code
+      c = "code . &";
     };
   };
 }

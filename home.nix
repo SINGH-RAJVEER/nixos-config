@@ -15,62 +15,82 @@
     };
 
     home.packages = with pkgs; [
-        # system
+    # system
         git
         pavucontrol
         exfatprogs
-        networkmanagerapplet
         brightnessctl
         xwayland-satellite
         unzip
         zellij
         lsof
-
-        # development
-        rustc
-        cargo
-        clang
-        bun
-        biome
-        jdk
-        maven
-        python3
-        uv
-        maven
-        postgresql
-        docker-compose
-        just
-
-        # GUIs
-        virt-manager
-        anytype
-        mpv
-        onlyoffice-desktopeditors
-        nautilus
-        papers
-        qbittorrent
-        image-roll
-        vscode-fhs
-        antigravity-fhs
-        code-cursor-fhs
-        insomnia
-        mongodb-compass
-        kdePackages.plasma-systemmonitor
-
-        # TUIs
         eza
         fzf
         bat
         ripgrep
         xh
         delta
+
+    # development
+
+        ## Rust
+        rustc
+        cargo
+
+        ## C
+        clang
+
+        ## TS
+        bun
+        biome
+
+        ## Java
+        jdk
+
+        ## Python
+        python3
+        uv
+
+        ## Docker
+        docker-compose
+
+        ## Utilities
+        just
+        gh
+
+    # GUIs
+        virt-manager
+        mpv
+        onlyoffice-desktopeditors
+        qbittorrent
+        image-roll
+        sioyek
+        insomnia
+        github-desktop
+        discord
+        prismlauncher
+
+        ## Editors
+        vscode-fhs
+        antigravity-fhs
+        code-cursor-fhs
+        zed-editor
+
+    # TUIs
+
+        ## Agentic CLIs
         gemini-cli
+        codex
+        github-copilot-cli
         opencode
+        heretic
+
+        ## Utilities
         ncdu
         yazi
     ];
 
-    # GTK theme configuration
+    # GTK theme config
     dconf.settings = {
         "org/gnome/desktop/interface" = {
             color-scheme = "prefer-dark";
@@ -84,7 +104,7 @@
         gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
     };
 
-    # Qt theme configuration
+    # Qt theme config
     qt = {
         enable = true;
         platformTheme.name = "adwaita";
@@ -102,8 +122,7 @@
     xdg.mimeApps = {
         enable = true;
         defaultApplications = {
-            #pdf
-            "application/pdf" = "org.gnome.Papers.desktop";
+            "application/pdf" = "sioyek.desktop";
         };
     };
 

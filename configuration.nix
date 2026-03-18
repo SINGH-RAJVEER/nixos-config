@@ -8,6 +8,7 @@
 
     nix.settings = {
         experimental-features = [ "nix-command" "flakes" ];
+        auto-optimise-store = true;
     };
 
 
@@ -182,12 +183,6 @@
                             leftalt = "leftcontrol";
                             rightcontrol = "rightalt";
                             rightalt = "rightcontrol";
-
-                            # Home-row mods
-                            # a = "overloadt2(meta, a, 450)";
-                            # s = "overloadt2(alt, s, 450)";
-                            # d = "overloadt2(shift, d, 450)";
-                            # f = "overloadt2(control, f, 450)";
                         };
                     };
                 };
@@ -199,7 +194,7 @@
             package = inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default;
         };
 
-        blueman.enable = true;
+        # blueman.enable = true;
 
         flatpak.enable = true;
     };
@@ -217,7 +212,10 @@
 
     networking = {
         hostName = "nixos";
-        firewall.enable = true;
+        firewall = {
+            enable = true;
+            trustedInterfaces = [ "virbr0" ];
+        };
         networkmanager.enable = true;
     };
 
@@ -227,7 +225,7 @@
         isNormalUser = true;
         description = "Rajveer Singh";
         shell = pkgs.nushell;
-        extraGroups = [  
+        extraGroups = [
             "wheel" 
             "libvirtd" 
             "networkmanager" 
@@ -238,7 +236,6 @@
 
     nixpkgs.config = {
         allowUnfree = true;
-        android_sdk.accept_license = true;
     };
 
     home-manager = {
@@ -253,6 +250,7 @@
             enable = true;
             wheelNeedsPassword = false;
         };
+
         polkit.enable = true;
         rtkit.enable = true;
 
@@ -276,7 +274,7 @@
             WLR_NO_HARDWARE_CURSORS = "1";
             NIXOS_OZONE_WL = "1";
         };
-        
+
         shellInit = ''
             export PATH="$HOME/.cargo/bin:$PATH"
         '';
@@ -306,7 +304,6 @@
             access-tokens = github.com=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
         '';
 
-        # remove images older than a week
         gc = {
             automatic = true;
             dates = "weekly";

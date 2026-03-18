@@ -39,25 +39,9 @@
 
                     home-manager.nixosModules.home-manager
 
-                    {
-                        home-manager.useGlobalPkgs = true;
-                        home-manager.useUserPackages = true;
-                    }
-
-                    #niri.nixosModules.niri
-                    {
-                        nixpkgs.overlays = [
-                            niri.overlays.niri
-                            (_: prev: {
-                                niri = prev.niri.overrideAttrs (_: {
-                                    doCheck = false;
-                                });
-                            })
-                        ];
-                    }
+                    niri.nixosModules.niri
                 ];
             };
         };
     };
 }
-

@@ -52,6 +52,7 @@
         uv
 
         ## Docker
+        docker
         docker-compose
 
         ## Utilities

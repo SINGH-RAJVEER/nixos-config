@@ -51,10 +51,6 @@
         python3
         uv
 
-        ## Docker
-        docker
-        docker-compose
-
         ## Utilities
         just
         gh

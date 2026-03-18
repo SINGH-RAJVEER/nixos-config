@@ -65,7 +65,10 @@
     virtualisation = {
         libvirtd.enable = true;
         spiceUSBRedirection.enable = true;
+        docker.enable = true;
     };
+
+    systemd.services.docker.wantedBy = lib.mkForce [ ];
 
     hardware = {
         enableAllFirmware = true;

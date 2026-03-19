@@ -134,21 +134,11 @@
         gvfs.enable = true;
         udisks2.enable = true;
 
-        # displayManager = {
-        #     gdm.enable = true;
-        #     defaultSession = "niri";
-        #     autoLogin.user = "rajveer";
-        #     autoLogin.enable = false;
-        # };
-
         displayManager = {
-            ly = {
-                enable = true;
-                settings = {
-                    save = true;
-                    load = true;
-                };
-            };
+            gdm.enable = true;
+            defaultSession = "niri";
+            autoLogin.user = "rajveer";
+            autoLogin.enable = false;
         };
 
         xserver = {
@@ -310,10 +300,6 @@
     ];
 
     nix = {
-        extraOptions = ''
-            access-tokens = github.com=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
-        '';
-
         gc = {
             automatic = true;
             dates = "weekly";

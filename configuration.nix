@@ -68,7 +68,10 @@
         docker.enable = true;
     };
 
-    systemd.services.docker.wantedBy = lib.mkForce [ ];
+    systemd.services = {
+        docker.wantedBy = lib.mkForce [ ];
+        postgresql.wantedBy = lib.mkForce [ ];
+    };
 
     hardware = {
         enableAllFirmware = true;
@@ -103,7 +106,7 @@
 
         bluetooth = {
             enable = true;
-            powerOnBoot = true;
+            powerOnBoot = false;
             settings = {
                 General = {
                     Experimental = true;
@@ -131,16 +134,26 @@
         gvfs.enable = true;
         udisks2.enable = true;
 
+        # displayManager = {
+        #     gdm.enable = true;
+        #     defaultSession = "niri";
+        #     autoLogin.user = "rajveer";
+        #     autoLogin.enable = false;
+        # };
+
         displayManager = {
-            gdm.enable = true;
-            defaultSession = "niri";
-            autoLogin.user = "rajveer";
-            autoLogin.enable = false;
+            ly = {
+                enable = true;
+                settings = {
+                    save = true;
+                    load = true;
+                };
+            };
         };
 
         xserver = {
             enable = true;
-            videoDrivers = [ 
+            videoDrivers = [
                 "amdgpu" 
                 "nvidia" 
             ];
@@ -158,7 +171,7 @@
 
         upower = {
             enable = true;
-            percentageAction = 1;
+            percentageAction = 2;
             criticalPowerAction = "PowerOff";
             allowRiskyCriticalPowerAction = true;
         };
@@ -192,13 +205,15 @@
             package = inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default;
         };
 
-        # blueman.enable = true;
+        postgresql.enable = true;
 
         flatpak.enable = true;
     };
 
     programs = {
         niri.enable = true;
+
+        nano.enable = false;
 
         appimage = {
             enable = true;
@@ -252,13 +267,11 @@
         polkit.enable = true;
         rtkit.enable = true;
 
-        pam.services = let
-            howdyPam = {
-                control = lib.mkForce "sufficient";
-                modulePath = "${config.services.howdy.package}/lib/security/pam_howdy.so";
-                order = 110;
-            };
-        in {
+        pam.services = let howdyPam = {
+            control = lib.mkForce "sufficient";
+            modulePath = "${config.services.howdy.package}/lib/security/pam_howdy.so";
+            order = 110;
+        }; in {
             sudo.rules.auth.howdy = howdyPam;
             login.rules.auth.howdy = howdyPam;
             "polkit-1".rules.auth.howdy = howdyPam;
@@ -292,15 +305,14 @@
         ];
     };
 
-
     fonts.packages = with pkgs; [
         nerd-fonts._3270
     ];
 
     nix = {
-        extraOptions = ''
-            access-tokens = github.com=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
-        '';
+        # extraOptions = ''
+        #     access-tokens = github.com=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
+        # '';
 
         gc = {
             automatic = true;

@@ -311,7 +311,6 @@
 
     nix = {
         # extraOptions = ''
-        #     access-tokens = github.com=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
         # '';
 
         gc = {

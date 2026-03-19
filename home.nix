@@ -23,7 +23,6 @@
         xwayland-satellite
         unzip
         zellij
-        lsof
         eza
         fzf
         bat
@@ -56,31 +55,22 @@
         gh
 
     # GUIs
-        virt-manager
+        vscode-fhs
         mpv
         onlyoffice-desktopeditors
         qbittorrent
         image-roll
         sioyek
-        insomnia
         github-desktop
         discord
         prismlauncher
-
-        ## Editors
-        vscode-fhs
-        antigravity-fhs
-        code-cursor-fhs
-        zed-editor
 
     # TUIs
 
         ## Agentic CLIs
         gemini-cli
         codex
-        github-copilot-cli
         opencode
-        heretic
 
         ## Utilities
         ncdu

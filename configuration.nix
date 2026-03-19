@@ -53,18 +53,12 @@
             "btusb.enable_autosuspend=0"
         ];
 
-        kernelModules = [
-            "kvm-amd"
-        ];
-
         kernelPackages = pkgs.linuxPackages;
     };
 
     powerManagement.enable = true;
 
     virtualisation = {
-        libvirtd.enable = true;
-        spiceUSBRedirection.enable = true;
         docker.enable = true;
     };
 
@@ -217,7 +211,6 @@
         hostName = "nixos";
         firewall = {
             enable = true;
-            trustedInterfaces = [ "virbr0" ];
         };
         networkmanager.enable = true;
     };
@@ -230,10 +223,8 @@
         shell = pkgs.nushell;
         extraGroups = [
             "wheel" 
-            "libvirtd" 
             "networkmanager" 
             "docker"
-            "kvm"
         ];
     };
 

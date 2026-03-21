@@ -64,7 +64,6 @@
 
     systemd.services = {
         docker.wantedBy = lib.mkForce [ ];
-        postgresql.wantedBy = lib.mkForce [ ];
     };
 
     hardware = {
@@ -188,10 +187,6 @@
             enable = true;
             package = inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default;
         };
-
-        postgresql.enable = true;
-
-        flatpak.enable = true;
     };
 
     programs = {

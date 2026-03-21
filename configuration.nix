@@ -279,6 +279,10 @@
 
     xdg.portal = {
         enable = true;
+        config.common = {
+            default = [ "gtk" ];
+            "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+        };
         extraPortals = [ 
             pkgs.xdg-desktop-portal-gtk 
             pkgs.kdePackages.xdg-desktop-portal-kde

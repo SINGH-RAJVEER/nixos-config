@@ -22,6 +22,7 @@
         brightnessctl
         xwayland-satellite
         unzip
+        seahorse
         zellij
         eza
         fzf
@@ -68,6 +69,7 @@
     # TUIs
 
         ## Agentic CLIs
+        claude-code
         gemini-cli
         codex
         opencode
@@ -131,4 +133,3 @@
 
     home.stateVersion = "25.11";
 }
-

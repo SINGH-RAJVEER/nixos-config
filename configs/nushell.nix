@@ -102,7 +102,7 @@
 
     shellAliases = {
       # NixOS
-      build = "sudo nixos-rebuild switch --flake /home/rajveer/.config/nixos#nixos";
+      build = "sudo nixos-rebuild switch --flake /home/rajveer/.config/nixos#nixos -vv --show-trace";
 
       # Navigation
       ".." = "cd ..";

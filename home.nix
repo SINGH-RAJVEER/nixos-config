@@ -61,8 +61,11 @@
         onlyoffice-desktopeditors
         qbittorrent
         image-roll
+        nautilus
         sioyek
         github-desktop
+        thunderbird
+        anytype
         discord
         prismlauncher
 

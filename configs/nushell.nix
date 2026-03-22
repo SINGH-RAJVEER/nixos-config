@@ -123,6 +123,7 @@
       grep = "rg";
       curl = "xh";
       j = "zellij";
+      b = "btop";
 
       # Safety
       rm = "rm -i";

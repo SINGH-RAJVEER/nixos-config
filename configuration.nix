@@ -62,10 +62,6 @@
         docker.enable = true;
     };
 
-    systemd.services = {
-        docker.wantedBy = lib.mkForce [ ];
-    };
-
     hardware = {
         enableAllFirmware = true;
 
@@ -136,6 +132,8 @@
 
         xserver = {
             enable = true;
+            excludePackages = [ pkgs.xterm ];
+            desktopManager.xterm.enable = false;
             videoDrivers = [
                 "amdgpu" 
                 "nvidia" 

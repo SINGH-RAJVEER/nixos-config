@@ -56,7 +56,6 @@
         gh
 
     # GUIs
-        vscode-fhs
         mpv
         onlyoffice-desktopeditors
         qbittorrent
@@ -66,8 +65,6 @@
         github-desktop
         thunderbird
         anytype
-        discord
-        prismlauncher
 
     # TUIs
 
@@ -80,6 +77,12 @@
         ## Utilities
         ncdu
         yazi
+        btop
+
+    # Games
+        steam
+        discord
+        prismlauncher
     ];
 
     # GTK theme config

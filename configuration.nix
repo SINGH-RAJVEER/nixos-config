@@ -59,7 +59,10 @@
     powerManagement.enable = true;
 
     virtualisation = {
-        docker.enable = true;
+        docker = {
+            enable = true;
+            autoPrune.enable = true;
+        };
     };
 
     hardware = {
@@ -92,6 +95,8 @@
                 finegrained = true;
             };
         };
+
+        nvidia-container-toolkit.enable = true;
 
         bluetooth = {
             enable = true;

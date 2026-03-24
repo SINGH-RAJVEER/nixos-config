@@ -4,7 +4,6 @@
     imports = [
         ./configs/starship.nix
         ./configs/nvim.nix
-        ./configs/hypridle.nix
         ./configs/ghostty.nix
         ./configs/nushell.nix
     ];
@@ -42,7 +41,6 @@
 
         ## TS
         bun
-        biome
 
         ## Java
         jdk
@@ -53,7 +51,6 @@
 
         ## Utilities
         just
-        gh
 
     # GUIs
         mpv
@@ -77,7 +74,7 @@
         ## Utilities
         ncdu
         yazi
-        btop
+        mission-center
 
     # Games
         steam

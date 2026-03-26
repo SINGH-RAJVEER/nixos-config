@@ -139,7 +139,7 @@
       vim = "nvim";
 
       # Zellij
-      z = "zellij";
+      j = "zellij";
     };
   };
 }

@@ -121,7 +121,6 @@
       la = "ls -a";
       cat = "bat --theme=\"OneHalfDark\"";
       grep = "rg";
-      curl = "xh";
 
       # Safety
       rm = "rm -i";

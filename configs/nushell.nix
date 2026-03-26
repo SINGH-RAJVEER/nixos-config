@@ -95,9 +95,9 @@
         nvim ...($files | split row "\n")
       }
 
-      if "ZELLIJ" not-in ($env | columns) and $env.TERM_PROGRAM? == "ghostty" {
-        zellij
-      }
+      # if "ZELLIJ" not-in ($env | columns) and $env.TERM_PROGRAM? == "ghostty" {
+      #   zellij
+      # }
     '';
 
     shellAliases = {
@@ -137,6 +137,9 @@
       # Nvim
       vi = "nvim";
       vim = "nvim";
+
+      # Zellij
+      z = "zellij";
     };
   };
 }

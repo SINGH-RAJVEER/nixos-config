@@ -12,7 +12,7 @@
       $env.BUN_INSTALL = ($env.HOME | path join ".bun")
       $env.FZF_DEFAULT_OPTS = "--ansi --preview 'bat --color=always --style=header,grid --line-range :100 {}'"
 
-      # Add paths
+      # paths
       $env.PATH = ($env.PATH | split row (char esep) | append ($env.HOME | path join ".cargo/bin"))
       $env.PATH = ($env.PATH | split row (char esep) | append ($env.BUN_INSTALL | path join "bin"))
     '';
@@ -102,7 +102,7 @@
 
     shellAliases = {
       # NixOS
-      build = "sudo nixos-rebuild switch --flake /home/rajveer/.config/nixos#nixos -vv --show-trace";
+      build = "sudo nixos-rebuild switch --flake /home/rajveer/.config/nixos#nixos -v";
 
       # Navigation
       ".." = "cd ..";
@@ -122,8 +122,6 @@
       cat = "bat --theme=\"OneHalfDark\"";
       grep = "rg";
       curl = "xh";
-      j = "zellij";
-      b = "btop";
 
       # Safety
       rm = "rm -i";
@@ -133,14 +131,12 @@
       # Git
       add = "git add .";
       g = "git";
-      push = "git push origin master";
+      push = "git push origin";
+      gd = "git diff";
 
       # Nvim
       vi = "nvim";
       vim = "nvim";
-
-      # VS Code
-      c = "code . &";
     };
   };
 }

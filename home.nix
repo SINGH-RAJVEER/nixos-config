@@ -59,9 +59,10 @@
         image-roll
         nautilus
         sioyek
-        github-desktop
         thunderbird
+        mission-center
         anytype
+        obsidian
 
     # TUIs
 
@@ -74,7 +75,7 @@
         ## Utilities
         ncdu
         yazi
-        mission-center
+        gh
 
     # Games
         steam

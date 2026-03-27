@@ -76,11 +76,6 @@
         ncdu
         yazi
         gh
-
-    # Games
-        steam
-        discord
-        prismlauncher
     ];
 
     # GTK theme config

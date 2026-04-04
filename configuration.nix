@@ -62,6 +62,7 @@
         docker = {
             enable = true;
             autoPrune.enable = true;
+            enableOnBoot = false;
         };
     };
 
@@ -190,6 +191,8 @@
             enable = true;
             package = inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default;
         };
+
+        gnome.gnome-keyring.enable = true;
     };
 
     programs = {
@@ -252,9 +255,18 @@
             order = 110;
         }; in {
             sudo.rules.auth.howdy = howdyPam;
-            login.rules.auth.howdy = howdyPam;
+
+            login = {
+                rules.auth.howdy = howdyPam;
+                enableGnomeKeyring = true;
+            };
+
+            noctalia-shell = {
+                rules.auth.howdy = howdyPam;
+                enableGnomeKeyring = true;
+            };
+
             "polkit-1".rules.auth.howdy = howdyPam;
-            noctalia-shell.rules.auth.howdy = howdyPam;
             quickshell.rules.auth.howdy = howdyPam;
         };
     };

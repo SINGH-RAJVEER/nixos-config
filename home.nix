@@ -15,6 +15,7 @@
 
     home.packages = with pkgs; [
     # system
+
         git
         pavucontrol
         exfatprogs
@@ -29,6 +30,7 @@
         ripgrep
         xh
         delta
+        stress-ng
 
     # development
 
@@ -53,6 +55,7 @@
         just
 
     # GUIs
+
         mpv
         onlyoffice-desktopeditors
         qbittorrent
@@ -61,16 +64,16 @@
         sioyek
         thunderbird
         mission-center
-        anytype
         obsidian
+        telegram-desktop
+        zed-editor
+        lmstudio
 
     # TUIs
 
         ## Agentic CLIs
         claude-code
-        gemini-cli
         codex
-        opencode
 
         ## Utilities
         ncdu
@@ -89,7 +92,10 @@
         enable = true;
         theme.name = "Adwaita-dark";
         gtk3.extraConfig.gtk-application-prefer-dark-theme = 1;
-        gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
+        gtk4 = {
+            theme.name = "Adwaita-dark";
+            extraConfig.gtk-application-prefer-dark-theme = 1;
+        };
     };
 
     # Qt theme config

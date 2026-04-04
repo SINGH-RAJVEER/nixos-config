@@ -6,7 +6,7 @@
         extraPackages = with pkgs; [
             stylua
             pyright
-            nodePackages.typescript-language-server
+            typescript-language-server
             lua-language-server
             rust-analyzer
         ];

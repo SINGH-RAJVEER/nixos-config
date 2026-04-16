@@ -30,7 +30,6 @@
         ripgrep
         xh
         delta
-        stress-ng
 
     # development
 
@@ -61,11 +60,9 @@
         qbittorrent
         image-roll
         nautilus
-        sioyek
         thunderbird
         mission-center
         obsidian
-        telegram-desktop
         zed-editor
         lmstudio
 
@@ -115,9 +112,6 @@
 
     xdg.mimeApps = {
         enable = true;
-        defaultApplications = {
-            "application/pdf" = "sioyek.desktop";
-        };
     };
 
     programs.zoxide = {

@@ -77,7 +77,7 @@
 
         nvidia = {
             modesetting.enable = true;
-            open = true;
+            open = false;
             nvidiaSettings = true;
             package = config.boot.kernelPackages.nvidiaPackages.stable;
 
@@ -87,8 +87,8 @@
                     enableOffloadCmd = true;
                 };
 
-                amdgpuBusId = "PCI:65:0:0";
-                nvidiaBusId = "PCI:64:0:0";
+                amdgpuBusId = "PCI:102:0:0";
+                nvidiaBusId = "PCI:101:0:0";
             };
 
             powerManagement = {
@@ -101,7 +101,7 @@
 
         bluetooth = {
             enable = true;
-            powerOnBoot = false;
+            powerOnBoot = true;
             settings = {
                 General = {
                     Experimental = true;
@@ -141,7 +141,6 @@
             excludePackages = [ pkgs.xterm ];
             desktopManager.xterm.enable = false;
             videoDrivers = [
-                "amdgpu" 
                 "nvidia" 
             ];
             xkb.layout = "us";

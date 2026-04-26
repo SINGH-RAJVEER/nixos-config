@@ -30,6 +30,7 @@
         initrd = {
             verbose = false;
             availableKernelModules = [ "amdgpu" ];
+            kernelModules = [ "nvidia" ];
         };
 
         loader = {
@@ -51,6 +52,7 @@
             "amdgpu.sg_display=0"
             "clearcpuid=rdseed"
             "btusb.enable_autosuspend=0"
+            "nvidia.NVreg_TemporaryFilePath=/var/tmp"
         ];
 
         kernelPackages = pkgs.linuxPackages;
@@ -77,7 +79,7 @@
 
         nvidia = {
             modesetting.enable = true;
-            open = false;
+            open = true;
             nvidiaSettings = true;
             package = config.boot.kernelPackages.nvidiaPackages.stable;
 

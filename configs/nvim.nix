@@ -11,5 +11,10 @@
             lua-language-server
             rust-analyzer
         ];
+        extraPython3Packages = ps: with ps; [
+            pynvim
+            jupyter-client
+            nbformat
+        ];
     };
 }

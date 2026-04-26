@@ -71,6 +71,7 @@
         ## Agentic CLIs
         claude-code
         codex
+        pi-coding-agent
 
         ## Utilities
         ncdu
@@ -112,6 +113,25 @@
 
     xdg.mimeApps = {
         enable = true;
+    };
+
+    xdg.desktopEntries."helium" = {
+        name = "Helium";
+        genericName = "Web Browser";
+        comment = "Access the Internet";
+        exec = "/home/rajveer/AppImages/Helium.AppImage %U";
+        icon = "helium";
+        terminal = false;
+        categories = [ "Network" "WebBrowser" ];
+        mimeType = [
+            "application/pdf"
+            "application/xhtml+xml"
+            "text/html"
+            "text/xml"
+            "x-scheme-handler/http"
+            "x-scheme-handler/https"
+        ];
+        startupNotify = true;
     };
 
     programs.zoxide = {

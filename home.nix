@@ -21,6 +21,7 @@
         exfatprogs
         brightnessctl
         xwayland-satellite
+        imv
         unzip
         seahorse
         zellij

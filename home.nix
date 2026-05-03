@@ -72,7 +72,6 @@
         ## Agentic CLIs
         claude-code
         codex
-        pi-coding-agent
 
         ## Utilities
         ncdu

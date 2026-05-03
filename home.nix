@@ -164,7 +164,7 @@
 
     programs.git = {
         enable = true;
-        extraConfig = {
+        settings = {
             credential."https://github.com".helper = "!gh auth git-credential";
         };
     };

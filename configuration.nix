@@ -3,7 +3,6 @@
 {
     imports = [
         ./hardware-configuration.nix
-        inputs.noctalia.nixosModules.default
     ];
 
     nix.settings = {
@@ -188,11 +187,6 @@
             };
         };
 
-        noctalia-shell = {
-            enable = true;
-            package = inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default;
-        };
-
         gnome.gnome-keyring.enable = true;
     };
 
@@ -284,6 +278,7 @@
 
         systemPackages = with pkgs; [
             asusctl
+            inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
             inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
         ];
     };

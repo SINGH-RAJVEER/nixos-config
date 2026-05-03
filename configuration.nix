@@ -98,8 +98,6 @@
             };
         };
 
-        nvidia-container-toolkit.enable = true;
-
         bluetooth = {
             enable = true;
             powerOnBoot = true;

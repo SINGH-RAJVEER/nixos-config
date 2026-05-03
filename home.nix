@@ -115,6 +115,17 @@
         enable = true;
     };
 
+    xdg.desktopEntries."t3-code" = {
+        name = "T3 Code";
+        genericName = "Text Editor";
+        comment = "Code Editor";
+        exec = "/home/rajveer/AppImages/T3-Code.AppImage %F";
+        icon = "t3-code";
+        terminal = false;
+        categories = [ "Development" "TextEditor" "IDE" ];
+        startupNotify = true;
+    };
+
     xdg.desktopEntries."helium" = {
         name = "Helium";
         genericName = "Web Browser";
@@ -148,6 +159,13 @@
         enable = true;
         nix-direnv.enable = true;
         enableNushellIntegration = true;
+    };
+
+    programs.git = {
+        enable = true;
+        extraConfig = {
+            credential."https://github.com".helper = "!gh auth git-credential";
+        };
     };
 
     home.stateVersion = "25.11";

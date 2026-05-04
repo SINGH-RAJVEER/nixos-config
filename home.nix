@@ -17,6 +17,7 @@
     # system
 
         git
+        jujutsu
         pavucontrol
         exfatprogs
         brightnessctl
@@ -59,7 +60,6 @@
         mpv
         onlyoffice-desktopeditors
         qbittorrent
-        image-roll
         nautilus
         thunderbird
         mission-center
@@ -113,36 +113,6 @@
 
     xdg.mimeApps = {
         enable = true;
-    };
-
-    xdg.desktopEntries."t3-code" = {
-        name = "T3 Code";
-        genericName = "Text Editor";
-        comment = "Code Editor";
-        exec = "/home/rajveer/AppImages/T3-Code.AppImage %F";
-        icon = "t3-code";
-        terminal = false;
-        categories = [ "Development" "TextEditor" "IDE" ];
-        startupNotify = true;
-    };
-
-    xdg.desktopEntries."helium" = {
-        name = "Helium";
-        genericName = "Web Browser";
-        comment = "Access the Internet";
-        exec = "/home/rajveer/AppImages/Helium.AppImage %U";
-        icon = "helium";
-        terminal = false;
-        categories = [ "Network" "WebBrowser" ];
-        mimeType = [
-            "application/pdf"
-            "application/xhtml+xml"
-            "text/html"
-            "text/xml"
-            "x-scheme-handler/http"
-            "x-scheme-handler/https"
-        ];
-        startupNotify = true;
     };
 
     programs.zoxide = {

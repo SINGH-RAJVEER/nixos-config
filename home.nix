@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... } :
+{ config, pkgs, ... } :
 
 {
     imports = [
@@ -6,6 +6,7 @@
         ./configs/nvim.nix
         ./configs/ghostty.nix
         ./configs/nushell.nix
+        ./nixbox-home-packages.nix
     ];
 
     home = {
@@ -25,6 +26,7 @@
         imv
         unzip
         seahorse
+        qemu
         zellij
         eza
         fzf
@@ -32,6 +34,7 @@
         ripgrep
         xh
         delta
+        librepods
 
     # development
 

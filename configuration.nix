@@ -3,6 +3,7 @@
 {
     imports = [
         ./hardware-configuration.nix
+        ./nixbox-system-packages.nix
     ];
 
     nix.settings = {

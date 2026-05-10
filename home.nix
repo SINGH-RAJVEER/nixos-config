@@ -6,7 +6,6 @@
         ./configs/nvim.nix
         ./configs/ghostty.nix
         ./configs/nushell.nix
-        ./nixbox-home-packages.nix
     ];
 
     home = {

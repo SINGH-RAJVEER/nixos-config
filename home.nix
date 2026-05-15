@@ -126,8 +126,6 @@
 
     xdg.desktopEntries.factorio = {
         name = "Factorio";
-        genericName = "Factory Building Game";
-        comment = "Play Factorio: Space Age";
         exec = "/home/rajveer/Games/launch-factorio.sh";
         icon = "/home/rajveer/Games/Factorio/data/core/graphics/factorio-icon.png";
         terminal = false;

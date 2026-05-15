@@ -186,6 +186,8 @@
         };
 
         gnome.gnome-keyring.enable = true;
+
+        niri-session-manager.enable = true;
     };
 
     programs = {

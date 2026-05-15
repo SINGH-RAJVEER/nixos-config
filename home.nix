@@ -40,6 +40,7 @@
         ## Rust
         rustc
         cargo
+        rustPlatform.rustLibSrc
 
         ## C
         clang
@@ -68,6 +69,7 @@
         obsidian
         zed-editor
         lmstudio
+        steam
 
     # TUIs
 
@@ -79,6 +81,9 @@
         ncdu
         yazi
         gh
+
+        ## editors
+        helix
     ];
 
     # GTK theme config
@@ -111,6 +116,10 @@
         package = pkgs.adwaita-icon-theme;
         name = "Adwaita";
         size = 18;
+    };
+
+    home.sessionVariables = {
+        RUST_SRC_PATH = "${pkgs.rustPlatform.rustLibSrc}";
     };
 
     xdg.mimeApps = {

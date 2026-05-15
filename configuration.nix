@@ -29,7 +29,6 @@
         initrd = {
             verbose = false;
             availableKernelModules = [ "amdgpu" ];
-            kernelModules = [ "nvidia" ];
         };
 
         loader = {
@@ -140,6 +139,7 @@
             excludePackages = [ pkgs.xterm ];
             desktopManager.xterm.enable = false;
             videoDrivers = [
+                "amdgpu"
                 "nvidia" 
             ];
             xkb.layout = "us";

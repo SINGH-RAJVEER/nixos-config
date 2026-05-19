@@ -126,7 +126,7 @@
 
     xdg.desktopEntries.factorio = {
         name = "Factorio";
-        exec = "/home/rajveer/Games/launch-factorio.sh";
+        exec = "/home/rajveer/Games/Factorio/launch-factorio.sh";
         icon = "/home/rajveer/Games/Factorio/data/core/graphics/factorio-icon.png";
         terminal = false;
         type = "Application";

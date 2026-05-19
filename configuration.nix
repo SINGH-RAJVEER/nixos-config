@@ -153,6 +153,7 @@
         };
 
         asusd.enable = true;
+        supergfxd.enable = true;
 
         upower = {
             enable = true;

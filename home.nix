@@ -2,6 +2,7 @@
 
 {
     imports = [
+        ./nixbox-home-packages.nix
         ./configs/starship.nix
         ./configs/nvim.nix
         ./configs/ghostty.nix
@@ -17,7 +18,6 @@
     # system
 
         git
-        jujutsu
         pavucontrol
         exfatprogs
         brightnessctl
@@ -34,7 +34,6 @@
         xh
         delta
         librepods
-        gh
 
     # development
 
@@ -58,18 +57,16 @@
 
         ## Utilities
         just
-        gh
 
     # GUIs
 
-        mpv
         onlyoffice-desktopeditors
         qbittorrent
         nautilus
         thunderbird
         mission-center
         obsidian
-        zed-editor
+        zed-editor-fhs
         lmstudio
         steam
 
@@ -118,6 +115,7 @@
 
     home.sessionVariables = {
         RUST_SRC_PATH = "${pkgs.rustPlatform.rustLibSrc}";
+        DIRENV_LOG_FORMAT = "";
     };
 
     xdg.mimeApps = {

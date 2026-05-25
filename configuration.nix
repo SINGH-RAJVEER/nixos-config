@@ -2,6 +2,7 @@
 
 {
     imports = [
+        ./nixbox-system-packages.nix
         ./hardware-configuration.nix
     ];
 
@@ -104,7 +105,7 @@
                 General = {
                     Experimental = true;
                     FastConnectable = true;
-                    ControllerMode = "bredr";
+                    ControllerMode = "dual";
                     Enable = "Source,Sink,Media,Socket";
                 };
             };
@@ -153,7 +154,6 @@
         };
 
         asusd.enable = true;
-        supergfxd.enable = true;
 
         upower = {
             enable = true;

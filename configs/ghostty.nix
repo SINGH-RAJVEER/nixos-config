@@ -7,6 +7,7 @@
       theme = "GitLab Dark Grey";
       confirm-close-surface = false;
       font-size = 14;
+      command = "zellij";
     };
   };
 }

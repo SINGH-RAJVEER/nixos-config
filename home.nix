@@ -22,8 +22,6 @@
         exfatprogs
         brightnessctl
         xwayland-satellite
-        imv
-        unzip
         seahorse
         qemu
         zellij
@@ -64,8 +62,6 @@
         qbittorrent
         nautilus
         thunderbird
-        mission-center
-        obsidian
         zed-editor-fhs
         lmstudio
         steam
@@ -77,7 +73,6 @@
         codex
 
         ## Utilities
-        ncdu
         yazi
     ];
 

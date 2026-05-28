@@ -18,9 +18,7 @@
             theme = "cubes";
             themePackages = with pkgs; [
                 (adi1090x-plymouth-themes.override {
-                    selected_themes = [
-                        "cubes"
-                    ];
+                    selected_themes = [ "cubes" ];
                 })
             ];
         };
@@ -29,7 +27,7 @@
 
         initrd = {
             verbose = false;
-            availableKernelModules = [ "amdgpu" ];
+            kernelModules = [ "amdgpu" ];
         };
 
         loader = {
@@ -43,10 +41,9 @@
 
         kernelParams = [
             "quiet"
-            "splash"
             "loglevel=0"
             "boot.shell_on_fail"
-            "udev.log_priority=0"
+            "udev.log_level=0"
             "rd.systemd.show_status=false"
             "amdgpu.sg_display=0"
             "clearcpuid=rdseed"
@@ -129,7 +126,8 @@
         udisks2.enable = true;
 
         displayManager = {
-            gdm.enable = true;
+            # gdm.enable = true;
+            plasma-login-manager.enable = true;
             defaultSession = "niri";
             autoLogin.user = "rajveer";
             autoLogin.enable = false;
@@ -141,7 +139,7 @@
             desktopManager.xterm.enable = false;
             videoDrivers = [
                 "amdgpu"
-                "nvidia" 
+                "nvidia"
             ];
             xkb.layout = "us";
         };
@@ -154,6 +152,7 @@
         };
 
         asusd.enable = true;
+        supergfxd.enable = true;
 
         upower = {
             enable = true;
@@ -185,8 +184,6 @@
                 };
             };
         };
-
-        gnome.gnome-keyring.enable = true;
 
         niri-session-manager.enable = true;
     };
@@ -252,15 +249,9 @@
         }; in {
             sudo.rules.auth.howdy = howdyPam;
 
-            login = {
-                rules.auth.howdy = howdyPam;
-                enableGnomeKeyring = true;
-            };
+            login.rules.auth.howdy = howdyPam;
 
-            noctalia-shell = {
-                rules.auth.howdy = howdyPam;
-                enableGnomeKeyring = true;
-            };
+            noctalia-shell.rules.auth.howdy = howdyPam;
 
             "polkit-1".rules.auth.howdy = howdyPam;
             quickshell.rules.auth.howdy = howdyPam;

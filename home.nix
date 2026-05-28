@@ -25,7 +25,6 @@
         seahorse
         qemu
         zellij
-        eza
         fzf
         bat
         ripgrep

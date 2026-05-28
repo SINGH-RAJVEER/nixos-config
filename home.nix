@@ -61,17 +61,17 @@
         qbittorrent
         nautilus
         thunderbird
-        zed-editor-fhs
+        zed-editor
         lmstudio
+        anytype
         steam
+        prismlauncher
+        bitwarden-desktop
 
     # TUIs
 
-        ## Agentis
         claude-code
         codex
-
-        ## Utilities
         yazi
     ];
 

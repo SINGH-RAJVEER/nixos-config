@@ -126,8 +126,12 @@
         udisks2.enable = true;
 
         displayManager = {
-            # gdm.enable = true;
-            plasma-login-manager.enable = true;
+            ly = {
+                enable = true;
+                settings = {
+                    animation = "matrix";
+                };
+            };
             defaultSession = "niri";
             autoLogin.user = "rajveer";
             autoLogin.enable = false;
@@ -250,6 +254,8 @@
             sudo.rules.auth.howdy = howdyPam;
 
             login.rules.auth.howdy = howdyPam;
+
+            ly.rules.auth.howdy = howdyPam;
 
             noctalia-shell.rules.auth.howdy = howdyPam;
 

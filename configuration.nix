@@ -103,10 +103,10 @@
                     Experimental = true;
                     FastConnectable = true;
                     ControllerMode = "dual";
-                    Enable = "Source,Sink,Media,Socket";
                 };
             };
         };
+
     };
 
     services = {

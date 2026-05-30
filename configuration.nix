@@ -51,7 +51,7 @@
             "nvidia.NVreg_TemporaryFilePath=/var/tmp"
         ];
 
-        kernelPackages = pkgs.linuxPackages_latest;
+        kernelPackages = pkgs.linuxPackages;
     };
 
     powerManagement.enable = true;
@@ -126,12 +126,7 @@
         udisks2.enable = true;
 
         displayManager = {
-            ly = {
-                enable = true;
-                settings = {
-                    animation = "matrix";
-                };
-            };
+            plasma-login-manager.enable = true;
             defaultSession = "niri";
             autoLogin.user = "rajveer";
             autoLogin.enable = false;
@@ -255,8 +250,6 @@
 
             login.rules.auth.howdy = howdyPam;
 
-            ly.rules.auth.howdy = howdyPam;
-
             noctalia-shell.rules.auth.howdy = howdyPam;
 
             "polkit-1".rules.auth.howdy = howdyPam;
@@ -306,6 +299,8 @@
             options = "--delete-older-than 7d";
         };
     };
+
+    systemd.user.units."plasma-wallpaper.service".enable = false;
 
     system.stateVersion = "25.11";
 }

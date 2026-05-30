@@ -51,7 +51,7 @@
             "nvidia.NVreg_TemporaryFilePath=/var/tmp"
         ];
 
-        kernelPackages = pkgs.linuxPackages;
+        kernelPackages = pkgs.linuxPackages_latest;
     };
 
     powerManagement.enable = true;

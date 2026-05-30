@@ -61,6 +61,7 @@
         qbittorrent
         nautilus
         thunderbird
+        geary
         zed-editor
         lmstudio
         anytype

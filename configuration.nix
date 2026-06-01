@@ -198,6 +198,8 @@
         };
 
         nix-ld.enable = true;
+
+        kdeconnect.enable = true;
     };
 
     networking = {

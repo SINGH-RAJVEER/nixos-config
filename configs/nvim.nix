@@ -4,7 +4,29 @@
         withNodeJs = true;
         withPython3 = true;
         withRuby = false;
-        initLua = ''
+        extraPackages = with pkgs; [
+            # LSP servers
+            lua-language-server
+            pyright
+            typescript-language-server
+            rust-analyzer
+            tailwindcss-language-server
+            biome
+
+            # Formatters
+            stylua
+            black
+            google-java-format
+
+            # Linters
+            ruff
+        ];
+        extraPython3Packages = ps: with ps; [
+            pynvim
+            jupyter-client
+            nbformat
+        ];
+        extraLuaConfig = ''
             vim.g.mapleader = ' '
             vim.g.maplocalleader = ' '
             vim.g.have_nerd_font = true
@@ -14,17 +36,5 @@
             require('config.autocmds')
             require('config.lazy')
         '';
-        extraPackages = with pkgs; [
-            stylua
-            pyright
-            typescript-language-server
-            lua-language-server
-            rust-analyzer
-        ];
-        extraPython3Packages = ps: with ps; [
-            pynvim
-            jupyter-client
-            nbformat
-        ];
     };
 }

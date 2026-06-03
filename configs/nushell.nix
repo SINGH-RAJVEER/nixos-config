@@ -120,7 +120,7 @@
       ll = "ls -l";
       la = "ls -a";
       cat = "bat --theme=\"OneHalfDark\"";
-      grep = "rg";
+      # grep = "rg";
 
       # Safety
       rm = "rm -i";

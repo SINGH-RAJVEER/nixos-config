@@ -16,14 +16,13 @@
 
     home.packages = with pkgs; [
     # system
-
         git
         pavucontrol
         exfatprogs
         brightnessctl
         xwayland-satellite
-        seahorse
-        qemu
+        # seahorse
+        # qemu
         zellij
         fzf
         bat
@@ -33,30 +32,20 @@
         librepods
 
     # development
-
-        ## Rust
         rustc
         cargo
+        rustfmt
+        rust-analyzer
+        clippy
         rustPlatform.rustLibSrc
-
-        ## C
         clang
-
-        ## TS
         bun
-
-        ## Java
         jdk
-
-        ## Python
         python3
         uv
-
-        ## Utilities
         just
 
     # GUIs
-
         onlyoffice-desktopeditors
         qbittorrent
         nautilus
@@ -69,8 +58,6 @@
         bitwarden-desktop
 
     # TUIs
-
-        claude-code
         codex
         yazi
     ];
@@ -99,6 +86,7 @@
         style.name = "adwaita-dark";
     };
 
+    # cursor
     home.pointerCursor = {
         gtk.enable = true;
         x11.enable = true;
@@ -107,14 +95,14 @@
         size = 18;
     };
 
+    # session variables
     home.sessionVariables = {
         RUST_SRC_PATH = "${pkgs.rustPlatform.rustLibSrc}";
-        DIRENV_LOG_FORMAT = "";
+        # DIRENV_LOG_FORMAT = "";
     };
 
-    xdg.mimeApps = {
-        enable = true;
-    };
+    # xdg
+    xdg.mimeApps.enable = true;
 
     xdg.desktopEntries.factorio = {
         name = "Factorio";
@@ -148,5 +136,5 @@
         };
     };
 
-    home.stateVersion = "25.11";
+    home.stateVersion = "26.05";
 }

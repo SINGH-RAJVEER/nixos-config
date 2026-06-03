@@ -249,25 +249,20 @@
             order = 110;
         }; in {
             sudo.rules.auth.howdy = howdyPam;
-
             login.rules.auth.howdy = howdyPam;
-
             noctalia-shell.rules.auth.howdy = howdyPam;
-
-            "polkit-1".rules.auth.howdy = howdyPam;
             quickshell.rules.auth.howdy = howdyPam;
+            "polkit-1".rules.auth.howdy = howdyPam;
         };
     };
 
     environment = { 
         sessionVariables = {
+            XDG_CURRENT_DESKTOP = "niri";
+            XDG_SESSION_TYPE = "wayland";
             WLR_NO_HARDWARE_CURSORS = "1";
             NIXOS_OZONE_WL = "1";
         };
-
-        shellInit = ''
-            export PATH="$HOME/.cargo/bin:$PATH"
-        '';
 
         systemPackages = with pkgs; [
             asusctl
@@ -278,31 +273,29 @@
 
     xdg.portal = {
         enable = true;
+        extraPortals = [
+            pkgs.xdg-desktop-portal-gtk
+            pkgs.xdg-desktop-portal-gnome
+        ];
         config.niri = {
             default = [ "gtk" ];
             "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
             "org.freedesktop.impl.portal.ScreenCast" = [ "gnome" ];
             "org.freedesktop.impl.portal.Screenshot" = [ "gnome" ];
         };
-        extraPortals = [
-            pkgs.xdg-desktop-portal-gtk
-            pkgs.xdg-desktop-portal-gnome
-        ];
     };
 
     fonts.packages = with pkgs; [
         nerd-fonts._3270
     ];
 
-    nix = {
-        gc = {
-            automatic = true;
-            dates = "weekly";
-            options = "--delete-older-than 7d";
-        };
+    nix.gc = {
+        automatic = true;
+        dates = "weekly";
+        options = "--delete-older-than 7d";
     };
 
     systemd.user.units."plasma-wallpaper.service".enable = false;
 
-    system.stateVersion = "25.11";
+    system.stateVersion = "26.05";
 }

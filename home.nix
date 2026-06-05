@@ -55,7 +55,7 @@
         anytype
         steam
         prismlauncher
-        bitwarden-desktop
+        # bitwarden-desktop
 
     # TUIs
         codex

@@ -6,7 +6,8 @@
     settings = {
       theme = "GitLab Dark Grey";
       confirm-close-surface = false;
-      font-size = 14;
+      font-family = "3270 Nerd Font Mono";
+      font-size = 20;
       command = "zellij";
     };
   };

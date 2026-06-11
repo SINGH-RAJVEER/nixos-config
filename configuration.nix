@@ -11,7 +11,6 @@
         auto-optimise-store = true;
     };
 
-
     boot = {
         plymouth = {
             enable = true;

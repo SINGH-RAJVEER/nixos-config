@@ -11,6 +11,7 @@
     pkgs.ncdu
     pkgs.obsidian
     pkgs.unzip
+    pkgs.xh
     # nixbox:packages:end
   ];
 }

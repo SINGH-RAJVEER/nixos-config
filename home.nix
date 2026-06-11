@@ -21,13 +21,10 @@
         exfatprogs
         brightnessctl
         xwayland-satellite
-        # seahorse
-        # qemu
         zellij
         fzf
         bat
         ripgrep
-        xh
         delta
         librepods
 

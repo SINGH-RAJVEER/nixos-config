@@ -1,4 +1,4 @@
-{ config, pkgs, ... } :
+{ config, inputs, pkgs, ... } :
 
 {
     imports = [
@@ -7,6 +7,7 @@
         ./configs/nvim.nix
         ./configs/ghostty.nix
         ./configs/nushell.nix
+        inputs.noctalia.homeModules.default
     ];
 
     home = {
@@ -124,6 +125,11 @@
         enable = true;
         nix-direnv.enable = true;
         enableNushellIntegration = true;
+    };
+
+    programs.noctalia = {
+        enable = true;
+        systemd.enable = true;
     };
 
     programs.git = {

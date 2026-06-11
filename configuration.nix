@@ -227,6 +227,9 @@
         useGlobalPkgs = true;
         useUserPackages = true;
         backupFileExtension = "bak";
+        extraSpecialArgs = {
+            inherit inputs;
+        };
         users.rajveer = import ./home.nix;
     };
 
@@ -262,7 +265,6 @@
 
         systemPackages = with pkgs; [
             asusctl
-            inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
             inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
         ];
     };

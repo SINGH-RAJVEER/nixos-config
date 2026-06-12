@@ -124,7 +124,7 @@
         udisks2.enable = true;
 
         displayManager = {
-            plasma-login-manager.enable = true;
+            gdm.enable = true;
             defaultSession = "niri";
             autoLogin.user = "rajveer";
             autoLogin.enable = false;

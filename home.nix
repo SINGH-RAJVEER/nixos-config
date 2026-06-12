@@ -8,6 +8,7 @@
         ./configs/ghostty.nix
         ./configs/nushell.nix
         inputs.noctalia.homeModules.default
+        inputs.helium-browser.homeModules.default
     ];
 
     home = {
@@ -130,6 +131,13 @@
     programs.noctalia = {
         enable = true;
         systemd.enable = true;
+    };
+
+    programs.helium = {
+        enable = true;
+        flags = [
+            "--ozone-platform-hint=auto"
+        ];
     };
 
     programs.git = {

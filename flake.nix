@@ -29,6 +29,11 @@
             url = "github:0xc000022070/zen-browser-flake";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+
+        helium-browser = {
+            url = "github:oxcl/nix-flake-helium-browser";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
 
     outputs = { self, nixpkgs, home-manager, niri, noctalia, ... }@inputs: {

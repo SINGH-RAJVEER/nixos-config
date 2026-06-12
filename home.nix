@@ -54,10 +54,13 @@
         anytype
         steam
         prismlauncher
+        inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
         # bitwarden-desktop
 
     # TUIs
         codex
+        pi-coding-agent
+        opencode
         yazi
     ];
 
@@ -97,7 +100,6 @@
     # session variables
     home.sessionVariables = {
         RUST_SRC_PATH = "${pkgs.rustPlatform.rustLibSrc}";
-        # DIRENV_LOG_FORMAT = "";
     };
 
     # xdg

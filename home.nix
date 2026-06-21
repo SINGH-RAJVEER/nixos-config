@@ -54,7 +54,9 @@
         anytype
         steam
         prismlauncher
+        discord
         inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
+        tor-browser
         # bitwarden-desktop
 
     # TUIs

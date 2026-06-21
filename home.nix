@@ -1,4 +1,4 @@
-{ config, inputs, pkgs, ... } :
+{ config, inputs, lib, pkgs, ... } :
 
 {
     imports = [
@@ -6,7 +6,7 @@
         ./configs/starship.nix
         ./configs/nvim.nix
         ./configs/ghostty.nix
-        ./configs/nushell.nix
+        ./configs/zsh.nix
         inputs.noctalia.homeModules.default
         inputs.helium-browser.homeModules.default
     ];
@@ -105,7 +105,19 @@
     };
 
     # xdg
-    xdg.mimeApps.enable = true;
+    xdg.mimeApps = {
+        enable = true;
+        defaultApplications = let
+            browser = "zen-beta.desktop";
+        in lib.mkForce {
+            "application/xhtml+xml" = browser;
+            "application/xml" = browser;
+            "text/html" = browser;
+            "text/xml" = browser;
+            "x-scheme-handler/http" = browser;
+            "x-scheme-handler/https" = browser;
+        };
+    };
 
     xdg.desktopEntries.factorio = {
         name = "Factorio";
@@ -118,18 +130,18 @@
 
     programs.zoxide = {
         enable = true;
-        enableNushellIntegration = true;
+        enableZshIntegration = true;
     };
 
     programs.carapace = {
         enable = true;
-        enableNushellIntegration = true;
+        enableZshIntegration = true;
     };
 
     programs.direnv = {
         enable = true;
         nix-direnv.enable = true;
-        enableNushellIntegration = true;
+        enableZshIntegration = true;
     };
 
     programs.noctalia = {

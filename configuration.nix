@@ -190,6 +190,8 @@
 
         nano.enable = false;
 
+        zsh.enable = true;
+
         appimage = {
             enable = true;
             binfmt = true;
@@ -211,7 +213,7 @@
     users.users.rajveer = {
         isNormalUser = true;
         description = "Rajveer Singh";
-        shell = pkgs.nushell;
+        shell = pkgs.zsh;
         extraGroups = [
             "wheel" 
             "networkmanager" 

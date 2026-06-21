@@ -51,7 +51,7 @@
         thunderbird
         zed-editor
         lmstudio
-        anytype
+        # anytype
         steam
         prismlauncher
         discord

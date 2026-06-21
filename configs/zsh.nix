@@ -56,10 +56,6 @@
             zstyle ':completion:*' menu select
             zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"
 
-            chpwd() {
-                ls
-            }
-
             y() {
                 local tmp cwd
                 tmp="$(mktemp -t "yazi-cwd.XXXXXX")" || return

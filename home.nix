@@ -31,6 +31,7 @@
         librepods
 
     # development
+        devenv
         rustc
         cargo
         rustfmt

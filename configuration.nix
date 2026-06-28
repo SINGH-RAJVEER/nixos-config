@@ -74,8 +74,7 @@
 
         nvidia = {
             modesetting.enable = true;
-            open = true;
-            nvidiaSettings = true;
+            open = false;
             package = config.boot.kernelPackages.nvidiaPackages.stable;
 
             prime = {
@@ -90,7 +89,7 @@
 
             powerManagement = {
                 enable = true;
-                finegrained = false;
+                # finegrained = true;
             };
         };
 
@@ -183,6 +182,8 @@
         };
 
         niri-session-manager.enable = true;
+
+        gnome.gnome-keyring.enable = true;
     };
 
     programs = {
@@ -254,6 +255,7 @@
             noctalia-shell.rules.auth.howdy = howdyPam;
             quickshell.rules.auth.howdy = howdyPam;
             "polkit-1".rules.auth.howdy = howdyPam;
+            login.enableGnomeKeyring = true;
         };
     };
 
@@ -264,18 +266,16 @@
             WLR_NO_HARDWARE_CURSORS = "1";
             NIXOS_OZONE_WL = "1";
         };
-
-        systemPackages = with pkgs; [
-            asusctl
-        ];
     };
 
     xdg.portal = {
         enable = true;
+
         extraPortals = [
             pkgs.xdg-desktop-portal-gtk
             pkgs.xdg-desktop-portal-gnome
         ];
+
         config.niri = {
             default = [ "gtk" ];
             "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
@@ -293,8 +293,6 @@
         dates = "weekly";
         options = "--delete-older-than 7d";
     };
-
-    systemd.user.units."plasma-wallpaper.service".enable = false;
 
     system.stateVersion = "26.05";
 }

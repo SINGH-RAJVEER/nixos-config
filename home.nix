@@ -6,7 +6,7 @@
         ./configs/starship.nix
         ./configs/nvim.nix
         ./configs/ghostty.nix
-        ./configs/zsh.nix
+        ./configs/nushell.nix
         inputs.noctalia.homeModules.default
         inputs.helium-browser.homeModules.default
     ];
@@ -26,6 +26,7 @@
         zellij
         fzf
         bat
+        eza
         ripgrep
         delta
         librepods
@@ -47,7 +48,6 @@
 
     # GUIs
         onlyoffice-desktopeditors
-        qbittorrent
         nautilus
         thunderbird
         zed-editor
@@ -56,9 +56,11 @@
         steam
         prismlauncher
         discord
+        wineWow64Packages.stable
+        winetricks
         inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
         tor-browser
-        # bitwarden-desktop
+        t3code
 
     # TUIs
         codex
@@ -131,18 +133,18 @@
 
     programs.zoxide = {
         enable = true;
-        enableZshIntegration = true;
+        enableNushellIntegration = true;
     };
 
     programs.carapace = {
         enable = true;
-        enableZshIntegration = true;
+        enableNushellIntegration = true;
     };
 
     programs.direnv = {
         enable = true;
         nix-direnv.enable = true;
-        enableZshIntegration = true;
+        enableNushellIntegration = true;
     };
 
     programs.noctalia = {

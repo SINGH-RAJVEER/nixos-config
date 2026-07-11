@@ -1,13 +1,11 @@
 { config, pkgs, ... }:
-
 {
     programs.ghostty = {
         enable = true;
         settings = {
-            theme = "GitLab Dark Grey";
+            theme = "Dimidium";
             confirm-close-surface = false;
-            font-family = "3270 Nerd Font Mono";
-            font-size = 20;
+            font-size = 14;
             command = "zellij";
         };
     };

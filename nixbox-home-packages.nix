@@ -10,6 +10,7 @@
     pkgs.mpv
     pkgs.ncdu
     pkgs.obsidian
+    pkgs.qbittorrent
     pkgs.unzip
     pkgs.xh
     # nixbox:packages:end

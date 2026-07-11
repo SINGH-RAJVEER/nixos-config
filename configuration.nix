@@ -87,10 +87,7 @@
                 nvidiaBusId = "PCI:101:0:0";
             };
 
-            powerManagement = {
-                enable = true;
-                # finegrained = true;
-            };
+            powerManagement.enable = true;
         };
 
         bluetooth = {
@@ -191,7 +188,6 @@
 
         nano.enable = false;
 
-        zsh.enable = true;
 
         appimage = {
             enable = true;
@@ -214,7 +210,7 @@
     users.users.rajveer = {
         isNormalUser = true;
         description = "Rajveer Singh";
-        shell = pkgs.zsh;
+        shell = pkgs.nushell;
         extraGroups = [
             "wheel" 
             "networkmanager" 
@@ -259,7 +255,7 @@
         };
     };
 
-    environment = { 
+    environment = {
         sessionVariables = {
             XDG_CURRENT_DESKTOP = "niri";
             XDG_SESSION_TYPE = "wayland";

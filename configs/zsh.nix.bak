@@ -79,6 +79,20 @@
                 SHELL="${pkgs.bash}/bin/bash" command fzf "$@"
             }
 
+            _detailed_ls() {
+                if (( $+commands[eza] )); then
+                    eza --long --header --group-directories-first --git --classify --icons "$@"
+                else
+                    command ls -lhF --group-directories-first --color=auto "$@"
+                fi
+            }
+
+            auto_ls() {
+                _detailed_ls
+            }
+
+            chpwd_functions+=(auto_ls)
+
             ff() {
                 local files
                 files="$(fzf --multi)"
@@ -110,8 +124,9 @@
             dgpu = "supergfxctl -m AsusMuxDgpu";
 
             # Utils
-            ll = "ls -l";
-            la = "ls -a";
+            ls = "_detailed_ls";
+            ll = "_detailed_ls";
+            la = "_detailed_ls --all";
             cat = "bat --theme=\"OneHalfDark\"";
             # grep = "rg";
 

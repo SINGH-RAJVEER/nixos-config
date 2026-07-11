@@ -9,4 +9,4 @@ Rules for AI agents in this repository.
 
 ## Don’ts
 
-- Never use emojis in documentation or messages.
+- Never use emojis.

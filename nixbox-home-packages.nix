@@ -4,8 +4,10 @@
   home.packages = [
     # nixbox:packages:start
     pkgs.gh
+    pkgs.go
     pkgs.imv
     pkgs.jujutsu
+    pkgs.lazygit
     pkgs.mission-center
     pkgs.mpv
     pkgs.ncdu

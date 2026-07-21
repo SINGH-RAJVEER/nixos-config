@@ -52,14 +52,8 @@
         thunderbird
         zed-editor
         lmstudio
-        # anytype
-        steam
-        prismlauncher
         discord
-        wineWow64Packages.stable
-        winetricks
         inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
-        tor-browser
         t3code
 
     # TUIs

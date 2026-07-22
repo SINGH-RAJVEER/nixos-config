@@ -19,7 +19,6 @@
     home.packages = with pkgs; [
     # system
         git
-        pavucontrol
         exfatprogs
         brightnessctl
         xwayland-satellite

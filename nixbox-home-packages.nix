@@ -12,6 +12,7 @@
     pkgs.mpv
     pkgs.ncdu
     pkgs.obsidian
+    pkgs.pavucontrol
     pkgs.qbittorrent
     pkgs.swi-prolog-gui
     pkgs.unzip

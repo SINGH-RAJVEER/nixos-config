@@ -9,7 +9,6 @@
             lua-language-server
             pyright
             typescript-language-server
-            rust-analyzer
             tailwindcss-language-server
             biome
 

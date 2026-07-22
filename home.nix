@@ -54,7 +54,7 @@
         lmstudio
         discord
         inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
-        t3code
+        opencode-desktop
 
     # TUIs
         codex

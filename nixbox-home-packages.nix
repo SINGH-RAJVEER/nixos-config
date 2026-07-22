@@ -13,6 +13,7 @@
     pkgs.ncdu
     pkgs.obsidian
     pkgs.qbittorrent
+    pkgs.swi-prolog-gui
     pkgs.unzip
     pkgs.xh
     # nixbox:packages:end

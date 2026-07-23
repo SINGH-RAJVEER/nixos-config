@@ -130,6 +130,7 @@
             # Git
             add = "git add .";
             g = "git";
+            lg = "lazygit";
             push = "git push origin";
             gd = "git diff";
 

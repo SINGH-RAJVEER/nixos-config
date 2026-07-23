@@ -22,7 +22,6 @@
         exfatprogs
         brightnessctl
         xwayland-satellite
-        zellij
         fzf
         bat
         eza
@@ -59,6 +58,7 @@
         codex
         pi-coding-agent
         opencode
+        inputs.herdr.packages."${pkgs.stdenv.hostPlatform.system}".default
         yazi
     ];
 

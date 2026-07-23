@@ -6,7 +6,6 @@
             theme = "Dimidium";
             confirm-close-surface = false;
             font-size = 14;
-            command = "zellij";
         };
     };
 }

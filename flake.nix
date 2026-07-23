@@ -34,6 +34,11 @@
             url = "github:oxcl/nix-flake-helium-browser";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+
+        herdr = {
+            url = "github:ogulcancelik/herdr/v0.6.5";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
 
     outputs = { self, nixpkgs, home-manager, niri, noctalia, ... }@inputs: {

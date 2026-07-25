@@ -94,10 +94,6 @@
                 }
                 nvim ...($files | split row "\n")
             }
-
-            # if "ZELLIJ" not-in ($env | columns) and $env.TERM_PROGRAM? == "ghostty" {
-            #     zellij
-            # }
         '';
 
         shellAliases = {
@@ -120,7 +116,7 @@
             ll = "ls -l";
             la = "ls -a";
             cat = "bat --theme=\"OneHalfDark\"";
-            # grep = "rg";
+            grep = "rg";
 
             # Safety
             rm = "rm -i";
@@ -137,9 +133,6 @@
             # Nvim
             vi = "nvim";
             vim = "nvim";
-
-            # Zellij
-            j = "zellij";
         };
     };
 }

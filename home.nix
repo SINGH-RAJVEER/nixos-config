@@ -18,48 +18,16 @@
 
     home.packages = with pkgs; [
     # system
-        git
         exfatprogs
-        brightnessctl
-        xwayland-satellite
-        fzf
-        bat
-        eza
-        ripgrep
-        delta
-        librepods
 
     # development
-        devenv
-        rustc
-        cargo
-        rustfmt
-        rust-analyzer
-        clippy
-        rustPlatform.rustLibSrc
-        clang
-        bun
-        jdk
-        python3
-        uv
-        just
 
     # GUIs
-        onlyoffice-desktopeditors
-        nautilus
-        thunderbird
-        zed-editor
-        lmstudio
-        discord
         inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
         opencode-desktop
 
     # TUIs
-        codex
-        pi-coding-agent
-        opencode
         inputs.herdr.packages."${pkgs.stdenv.hostPlatform.system}".default
-        yazi
     ];
 
     # GTK theme config

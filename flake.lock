@@ -195,6 +195,22 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1784120854,
+        "narHash": "sha256-KesHgItiZPgGX740axSiQLcIQ8D24MDqNpkKYWIek8k=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "753cc8a3a87467296ddd1fa93f0cc3e81120ee46",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "noctalia": {
       "inputs": {
         "nixpkgs": [
@@ -224,7 +240,26 @@
         "niri-session-manager": "niri-session-manager",
         "nixpkgs": "nixpkgs",
         "noctalia": "noctalia",
+        "sidra": "sidra",
         "zen-browser": "zen-browser"
+      }
+    },
+    "sidra": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1784302039,
+        "narHash": "sha256-uRjqY4XymGneNy2Yyr58QWwjzn7QjgAWBHh4kLU6684=",
+        "owner": "wimpysworld",
+        "repo": "sidra",
+        "rev": "ead49318a80150a1e8e565ec236b6770b5c702d5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "wimpysworld",
+        "repo": "sidra",
+        "type": "github"
       }
     },
     "systems": {

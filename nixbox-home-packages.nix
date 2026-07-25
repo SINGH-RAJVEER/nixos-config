@@ -13,6 +13,7 @@
     pkgs.delta
     pkgs.devenv
     pkgs.discord
+    pkgs.exfatprogs
     pkgs.eza
     pkgs.fzf
     pkgs.gh

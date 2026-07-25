@@ -35,6 +35,8 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
+        sidra.url = "github:wimpysworld/sidra";
+
         herdr = {
             url = "github:ogulcancelik/herdr/v0.6.5";
             inputs.nixpkgs.follows = "nixpkgs";

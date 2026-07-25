@@ -17,17 +17,9 @@
     };
 
     home.packages = with pkgs; [
-    # system
-        exfatprogs
-
-    # development
-
     # GUIs
         inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
-        opencode-desktop
-
-    # TUIs
-        inputs.herdr.packages."${pkgs.stdenv.hostPlatform.system}".default
+        inputs.sidra.packages."${pkgs.stdenv.hostPlatform.system}".default
     ];
 
     # GTK theme config

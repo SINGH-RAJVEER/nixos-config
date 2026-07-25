@@ -44,13 +44,13 @@
     pkgs.rustfmt
     pkgs.swi-prolog-gui
     pkgs.thunderbird
-    pkgs.tmux
     pkgs.unzip
     pkgs.uv
     pkgs.xh
     pkgs.xwayland-satellite
     pkgs.yazi
     pkgs.zed-editor
+    pkgs.zellij
     # nixbox:packages:end
   ];
 }

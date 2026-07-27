@@ -134,7 +134,6 @@
             # jj
             js = "jj status";
             jd = "jj diff";
-            jn = "jj new";
 
             # Nvim
             vi = "nvim";

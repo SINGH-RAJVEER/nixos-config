@@ -14,6 +14,7 @@
     home = {
         username = "rajveer";
         homeDirectory = "/home/rajveer";
+        enableNixpkgsReleaseCheck = false;
     };
 
     home.packages = with pkgs; [

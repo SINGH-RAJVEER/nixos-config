@@ -117,6 +117,7 @@
             la = "ls -a";
             cat = "bat --theme=\"OneHalfDark\"";
             grep = "rg";
+            j = "zellij";
 
             # Safety
             rm = "rm -i";
@@ -129,6 +130,10 @@
             lg = "lazygit";
             push = "git push origin";
             gd = "git diff";
+
+            # jj
+            js = "jj status";
+            jd = "jj diff";
 
             # Nvim
             vi = "nvim";

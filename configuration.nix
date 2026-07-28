@@ -9,6 +9,7 @@
     nix.settings = {
         experimental-features = [ "nix-command" "flakes" ];
         auto-optimise-store = true;
+        trusted-users = [ "root" "@wheel" ];
     };
 
     boot = {
@@ -181,6 +182,11 @@
         niri-session-manager.enable = true;
 
         gnome.gnome-keyring.enable = true;
+
+        tailscale = {
+            enable = true;
+            openFirewall = true;
+        };
     };
 
     programs = {

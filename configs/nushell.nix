@@ -94,6 +94,13 @@
                 }
                 nvim ...($files | split row "\n")
             }
+
+            def update [] {
+                nix flake update --flake /home/rajveer/.config/nixos
+                if $env.LAST_EXIT_CODE == 0 {
+                    sudo nixos-rebuild switch --flake /home/rajveer/.config/nixos#nixos
+                }
+            }
         '';
 
         shellAliases = {
@@ -118,6 +125,7 @@
             cat = "bat --theme=\"OneHalfDark\"";
             grep = "rg";
             j = "zellij";
+            hd = "hunk diff";
 
             # Safety
             rm = "rm -i";

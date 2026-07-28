@@ -19,12 +19,11 @@
     pkgs.gh
     pkgs.git
     pkgs.go
-    pkgs.imv
+    pkgs.hunk
     pkgs.jdk
     pkgs.jujutsu
     pkgs.just
-    pkgs.lazygit
-    pkgs.librepods
+    pkgs.libreoffice
     pkgs.lmstudio
     pkgs.mission-center
     pkgs.mpv
@@ -33,7 +32,6 @@
     pkgs.obsidian
     pkgs.onlyoffice-desktopeditors
     pkgs.opencode
-    pkgs.opencode-desktop
     pkgs.pavucontrol
     pkgs.pi-coding-agent
     pkgs.python3
@@ -43,13 +41,14 @@
     pkgs.rustPlatform.rustLibSrc
     pkgs.rustc
     pkgs.rustfmt
-    pkgs.swi-prolog-gui
+    pkgs.secretspec
+    pkgs.swi-prolog
+    pkgs.t3code
     pkgs.thunderbird
     pkgs.unzip
     pkgs.uv
     pkgs.xh
     pkgs.xwayland-satellite
-    pkgs.yazi
     pkgs.zed-editor
     pkgs.zellij
     # nixbox:packages:end

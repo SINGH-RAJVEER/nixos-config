@@ -7,6 +7,7 @@
         ./configs/nvim.nix
         ./configs/ghostty.nix
         ./configs/nushell.nix
+        ./configs/zellij.nix
         inputs.noctalia.homeModules.default
         inputs.helium-browser.homeModules.default
     ];
@@ -32,11 +33,13 @@
 
     gtk = {
         enable = true;
-        theme.name = "Adwaita-dark";
-        gtk3.extraConfig.gtk-application-prefer-dark-theme = 1;
-        gtk4 = {
-            theme.name = "Adwaita-dark";
-            extraConfig.gtk-application-prefer-dark-theme = 1;
+        theme = {
+            name = "Adwaita-dark";
+            package = pkgs.gnome-themes-extra;
+        };
+        iconTheme = {
+            name = "Adwaita";
+            package = pkgs.adwaita-icon-theme;
         };
     };
 
@@ -44,81 +47,78 @@
     qt = {
         enable = true;
         platformTheme.name = "adwaita";
-        style.name = "adwaita-dark";
-    };
-
-    # cursor
-    home.pointerCursor = {
-        gtk.enable = true;
-        x11.enable = true;
-        package = pkgs.adwaita-icon-theme;
-        name = "Adwaita";
-        size = 18;
-    };
-
-    # session variables
-    home.sessionVariables = {
-        RUST_SRC_PATH = "${pkgs.rustPlatform.rustLibSrc}";
-    };
-
-    # xdg
-    xdg.mimeApps = {
-        enable = true;
-        defaultApplications = let
-            browser = "zen-beta.desktop";
-        in lib.mkForce {
-            "application/xhtml+xml" = browser;
-            "application/xml" = browser;
-            "text/html" = browser;
-            "text/xml" = browser;
-            "x-scheme-handler/http" = browser;
-            "x-scheme-handler/https" = browser;
+        style = {
+            name = "adwaita-dark";
+            package = pkgs.adwaita-qt;
         };
     };
 
-    xdg.desktopEntries.factorio = {
-        name = "Factorio";
-        exec = "/home/rajveer/Games/Factorio/launch-factorio.sh";
-        icon = "/home/rajveer/Games/Factorio/data/core/graphics/factorio-icon.png";
-        terminal = false;
-        type = "Application";
-        categories = [ "Game" ];
+    home = {
+        sessionVariables = {
+            RUST_SRC_PATH = "${pkgs.rustPlatform.rustLibSrc}";
+            GTK_THEME = "Adwaita:dark";
+        };
+        stateVersion = "26.05";
     };
 
-    programs.zoxide = {
-        enable = true;
-        enableNushellIntegration = true;
-    };
-
-    programs.carapace = {
-        enable = true;
-        enableNushellIntegration = true;
-    };
-
-    programs.direnv = {
-        enable = true;
-        nix-direnv.enable = true;
-        enableNushellIntegration = true;
-    };
-
-    programs.noctalia = {
-        enable = true;
-        systemd.enable = true;
-    };
-
-    programs.helium = {
-        enable = true;
-        flags = [
-            "--ozone-platform-hint=auto"
-        ];
-    };
-
-    programs.git = {
-        enable = true;
-        settings = {
-            credential."https://github.com".helper = "!gh auth git-credential";
+    xdg = {
+        mimeApps = {
+            enable = true;
+            defaultApplications = let
+                browser = "zen-beta.desktop";
+            in lib.mkForce {
+                "application/xhtml+xml" = browser;
+                "application/xml" = browser;
+                "text/html" = browser;
+                "text/xml" = browser;
+                "x-scheme-handler/http" = browser;
+                "x-scheme-handler/https" = browser;
+            };
+        };
+        desktopEntries.factorio = {
+            name = "Factorio";
+            exec = "/home/rajveer/Games/Factorio/launch-factorio.sh";
+            icon = "/home/rajveer/Games/Factorio/data/core/graphics/factorio-icon.png";
+            terminal = false;
+            type = "Application";
+            categories = [ "Game" ];
         };
     };
 
-    home.stateVersion = "26.05";
+    programs = {
+        zoxide = {
+            enable = true;
+            enableNushellIntegration = true;
+        };
+
+        carapace = {
+            enable = true;
+            enableNushellIntegration = true;
+        };
+
+        direnv = {
+            enable = true;
+            nix-direnv.enable = true;
+            enableNushellIntegration = true;
+        };
+
+        noctalia = {
+            enable = true;
+            systemd.enable = true;
+        };
+
+        helium = {
+            enable = true;
+            flags = [
+                "--ozone-platform-hint=auto"
+            ];
+        };
+
+        git = {
+            enable = true;
+            settings = {
+                credential."https://github.com".helper = "!gh auth git-credential";
+            };
+        };
+    };
 }

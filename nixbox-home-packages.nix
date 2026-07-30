@@ -41,7 +41,6 @@
     pkgs.rustPlatform.rustLibSrc
     pkgs.rustc
     pkgs.rustfmt
-    pkgs.secretspec
     pkgs.swi-prolog
     pkgs.t3code
     pkgs.thunderbird

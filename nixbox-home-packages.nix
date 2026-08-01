@@ -3,6 +3,7 @@
 {
   home.packages = [
     # nixbox:packages:start
+    pkgs.anytype
     pkgs.bat
     pkgs.brightnessctl
     pkgs.bun
@@ -20,11 +21,11 @@
     pkgs.gh
     pkgs.git
     pkgs.go
+    pkgs.google-cloud-sdk
     pkgs.hunk
     pkgs.jdk
     pkgs.jujutsu
     pkgs.just
-    pkgs.libreoffice
     pkgs.lmstudio
     pkgs.mission-center
     pkgs.mpv
@@ -33,6 +34,7 @@
     pkgs.obsidian
     pkgs.onlyoffice-desktopeditors
     pkgs.opencode
+    pkgs.opencode-desktop
     pkgs.pavucontrol
     pkgs.python3
     pkgs.qbittorrent
@@ -41,6 +43,7 @@
     pkgs.rustPlatform.rustLibSrc
     pkgs.rustc
     pkgs.rustfmt
+    pkgs.seahorse
     pkgs.swi-prolog
     pkgs.t3code
     pkgs.thunderbird

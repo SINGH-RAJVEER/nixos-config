@@ -8,6 +8,7 @@
     pkgs.bun
     pkgs.cargo
     pkgs.clang
+    pkgs.claude-code
     pkgs.clippy
     pkgs.codex
     pkgs.delta
@@ -33,7 +34,6 @@
     pkgs.onlyoffice-desktopeditors
     pkgs.opencode
     pkgs.pavucontrol
-    pkgs.pi-coding-agent
     pkgs.python3
     pkgs.qbittorrent
     pkgs.ripgrep
@@ -50,6 +50,7 @@
     pkgs.xwayland-satellite
     pkgs.zed-editor
     pkgs.zellij
+    pkgs.zoom-us
     # nixbox:packages:end
   ];
 }

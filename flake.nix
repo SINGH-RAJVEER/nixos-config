@@ -35,6 +35,11 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
+        omnyssh = {
+            url = "github:timhartmann7/omnyssh";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+
         claude-desktop.url = "github:aaddrick/claude-desktop-debian";
 
         sidra.url = "github:wimpysworld/sidra";
@@ -46,7 +51,6 @@
                 specialArgs = {
                     inherit inputs;
                 };
-
                 modules = [
                     ./configuration.nix
 

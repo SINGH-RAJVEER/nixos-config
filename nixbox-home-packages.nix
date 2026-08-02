@@ -35,6 +35,7 @@
     pkgs.onlyoffice-desktopeditors
     pkgs.opencode
     pkgs.opencode-desktop
+    pkgs.openssl
     pkgs.pavucontrol
     pkgs.python3
     pkgs.qbittorrent

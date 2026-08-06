@@ -4,6 +4,7 @@
   home.packages = [
     # nixbox:packages:start
     pkgs._1password-gui
+    pkgs.ashell
     pkgs.bat
     pkgs.brightnessctl
     pkgs.bun
@@ -48,6 +49,7 @@
     pkgs.rustc
     pkgs.rustfmt
     pkgs.seahorse
+    pkgs.sirula
     pkgs.superfile
     pkgs.swi-prolog
     pkgs.t3code

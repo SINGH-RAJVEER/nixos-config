@@ -84,8 +84,8 @@
                     enableOffloadCmd = true;
                 };
 
-                amdgpuBusId = "PCI:102:0:0";
-                nvidiaBusId = "PCI:101:0:0";
+                amdgpuBusId = "PCI:66:0:0";
+                nvidiaBusId = "PCI:65:0:0";
             };
 
             powerManagement.enable = true;
@@ -182,18 +182,12 @@
         niri-session-manager.enable = true;
 
         gnome.gnome-keyring.enable = true;
-
-        # tailscale = {
-        #     enable = true;
-        #     openFirewall = true;
-        # };
     };
 
     programs = {
         niri.enable = true;
 
         nano.enable = false;
-
 
         appimage = {
             enable = true;
@@ -205,9 +199,7 @@
 
     networking = {
         hostName = "nixos";
-        firewall = {
-            enable = true;
-        };
+        firewall.enable = true;
         networkmanager.enable = true;
     };
 
@@ -254,7 +246,6 @@
         }; in {
             sudo.rules.auth.howdy = howdyPam;
             login.rules.auth.howdy = howdyPam;
-            noctalia-shell.rules.auth.howdy = howdyPam;
             quickshell.rules.auth.howdy = howdyPam;
             "polkit-1".rules.auth.howdy = howdyPam;
             login.enableGnomeKeyring = true;
@@ -267,22 +258,6 @@
             XDG_SESSION_TYPE = "wayland";
             WLR_NO_HARDWARE_CURSORS = "1";
             NIXOS_OZONE_WL = "1";
-        };
-    };
-
-    xdg.portal = {
-        enable = true;
-
-        extraPortals = [
-            pkgs.xdg-desktop-portal-gtk
-            pkgs.xdg-desktop-portal-gnome
-        ];
-
-        config.niri = {
-            default = [ "gtk" ];
-            "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
-            "org.freedesktop.impl.portal.ScreenCast" = [ "gnome" ];
-            "org.freedesktop.impl.portal.Screenshot" = [ "gnome" ];
         };
     };
 

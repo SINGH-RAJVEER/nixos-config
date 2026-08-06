@@ -4,11 +4,11 @@
     imports = [
         ./nixbox-home-packages.nix
         ./configs/starship.nix
-        ./configs/nvim.nix
+        ./configs/nvim/nvim.nix
+        ./configs/niri/niri.nix
         ./configs/ghostty.nix
         ./configs/nushell.nix
         ./configs/zellij.nix
-        inputs.noctalia.homeModules.default
         inputs.helium-browser.homeModules.default
     ];
 
@@ -19,14 +19,12 @@
     };
 
     home.packages = with pkgs; [
-    # GUIs
         inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
         inputs.sidra.packages."${pkgs.stdenv.hostPlatform.system}".default
         inputs.claude-desktop.packages."${pkgs.stdenv.hostPlatform.system}".default
         inputs.omnyssh.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
 
-    # GTK theme config
     dconf.settings = {
         "org/gnome/desktop/interface" = {
             color-scheme = "prefer-dark";
@@ -45,7 +43,6 @@
         };
     };
 
-    # Qt theme config
     qt = {
         enable = true;
         platformTheme.name = "adwaita";
@@ -102,11 +99,6 @@
             enable = true;
             nix-direnv.enable = true;
             enableNushellIntegration = true;
-        };
-
-        noctalia = {
-            enable = true;
-            systemd.enable = true;
         };
 
         helium = {

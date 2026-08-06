@@ -6,6 +6,7 @@
         ./configs/starship.nix
         ./configs/nvim/nvim.nix
         ./configs/niri/niri.nix
+        ./configs/waybar/waybar.nix
         ./configs/ghostty.nix
         ./configs/nushell.nix
         ./configs/zellij.nix

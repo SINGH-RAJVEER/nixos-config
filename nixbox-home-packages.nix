@@ -4,7 +4,6 @@
   home.packages = [
     # nixbox:packages:start
     pkgs._1password-gui
-    pkgs.ashell
     pkgs.bat
     pkgs.brightnessctl
     pkgs.bun
@@ -22,7 +21,6 @@
     pkgs.fzf
     pkgs.gh
     pkgs.git
-    pkgs.github-copilot-cli
     pkgs.go
     pkgs.google-cloud-sdk
     pkgs.hunk

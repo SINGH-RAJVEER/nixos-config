@@ -4,7 +4,7 @@ Rules for AI agents in this repository.
 
 ## Indentation
 
-- Always use 4 spaces for indentation everywhere in this repository.
+- Always use tabs for indentation everywhere in this repository.
 - Do not use tabs for indentation.
 
 ## Version control system

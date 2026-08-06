@@ -3,7 +3,7 @@
 {
   home.packages = [
     # nixbox:packages:start
-    pkgs.anytype
+    pkgs._1password-gui
     pkgs.bat
     pkgs.brightnessctl
     pkgs.bun
@@ -17,13 +17,16 @@
     pkgs.discord
     pkgs.exfatprogs
     pkgs.eza
+    pkgs.fd
     pkgs.fzf
     pkgs.gh
     pkgs.git
+    pkgs.github-copilot-cli
     pkgs.go
     pkgs.google-cloud-sdk
     pkgs.hunk
     pkgs.jdk
+    pkgs.jq
     pkgs.jujutsu
     pkgs.just
     pkgs.lmstudio
@@ -45,6 +48,7 @@
     pkgs.rustc
     pkgs.rustfmt
     pkgs.seahorse
+    pkgs.superfile
     pkgs.swi-prolog
     pkgs.t3code
     pkgs.thunderbird
@@ -54,7 +58,6 @@
     pkgs.xwayland-satellite
     pkgs.zed-editor
     pkgs.zellij
-    pkgs.zoom-us
     # nixbox:packages:end
   ];
 }

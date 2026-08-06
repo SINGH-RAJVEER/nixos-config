@@ -47,7 +47,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+T { spawn "ghostty"; }
-    Mod+Space { spawn "sirula"; }
+    Mod+Space { spawn-sh "noctalia msg panel-toggle launcher"; }
     Super+Return { spawn "noctalia" "msg" "session" "lock"; }
     Mod+E { spawn "nautilus"; }
 
@@ -193,6 +193,7 @@ layout {
     }
 }
 
+spawn-at-startup "noctalia"
 spawn-at-startup "dbus-update-activation-environment" "--systemd" "DISPLAY" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP"
 
 hotkey-overlay {

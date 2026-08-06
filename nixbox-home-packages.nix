@@ -47,11 +47,9 @@
     pkgs.rustc
     pkgs.rustfmt
     pkgs.seahorse
-    pkgs.sirula
-    pkgs.superfile
-    pkgs.swi-prolog
     pkgs.t3code
     pkgs.thunderbird
+    pkgs.tor-browser
     pkgs.unzip
     pkgs.uv
     pkgs.xh

@@ -6,11 +6,9 @@
         ./configs/starship.nix
         ./configs/nvim/nvim.nix
         ./configs/niri/niri.nix
-        ./configs/waybar/waybar.nix
         ./configs/ghostty.nix
         ./configs/nushell.nix
         ./configs/zellij.nix
-        inputs.helium-browser.homeModules.default
     ];
 
     home = {
@@ -20,7 +18,10 @@
     };
 
     home.packages = with pkgs; [
+        python3Packages.huggingface-hub
+        inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
         inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
+        inputs.helium-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
         inputs.sidra.packages."${pkgs.stdenv.hostPlatform.system}".default
         inputs.claude-desktop.packages."${pkgs.stdenv.hostPlatform.system}".default
         inputs.omnyssh.packages.${pkgs.stdenv.hostPlatform.system}.default
@@ -100,13 +101,6 @@
             enable = true;
             nix-direnv.enable = true;
             enableNushellIntegration = true;
-        };
-
-        helium = {
-            enable = true;
-            flags = [
-                "--ozone-platform-hint=auto"
-            ];
         };
 
         git = {

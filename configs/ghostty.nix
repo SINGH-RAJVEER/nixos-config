@@ -5,7 +5,8 @@
         settings = {
             theme = "Dimidium";
             confirm-close-surface = false;
-            font-size = 14;
+            font-family = [ "3270 Nerd Font Mono" ];
+            font-size =18;
         };
     };
 }

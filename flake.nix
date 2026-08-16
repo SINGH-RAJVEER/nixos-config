@@ -35,8 +35,6 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
-        claude-desktop.url = "github:aaddrick/claude-desktop-debian";
-
         sidra.url = "github:wimpysworld/sidra";
     };
 

@@ -23,7 +23,6 @@
         inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
         inputs.helium-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
         inputs.sidra.packages."${pkgs.stdenv.hostPlatform.system}".default
-        inputs.claude-desktop.packages."${pkgs.stdenv.hostPlatform.system}".default
         inputs.omnyssh.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
 

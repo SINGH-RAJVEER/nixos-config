@@ -8,13 +8,14 @@
     pkgs.brightnessctl
     pkgs.bun
     pkgs.cargo
+    pkgs.cataclysm-dda
     pkgs.clang
-    pkgs.claude-code
     pkgs.clippy
     pkgs.codex
     pkgs.delta
     pkgs.devenv
     pkgs.discord
+    pkgs.easyeffects
     pkgs.exfatprogs
     pkgs.eza
     pkgs.fd
@@ -28,6 +29,7 @@
     pkgs.jq
     pkgs.jujutsu
     pkgs.just
+    pkgs.lact
     pkgs.lmstudio
     pkgs.mission-center
     pkgs.mpv

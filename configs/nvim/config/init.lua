@@ -1,1 +1,7 @@
-/nix/store/larpq1q2lhj9gqx4gqxyg5dh9fdgyfwg-home-manager-files/.config/nvim/init.lua
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
+require 'config.options'
+require 'config.keymaps'
+require 'config.lazy'
+require 'config.autocmds'

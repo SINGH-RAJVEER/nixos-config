@@ -42,6 +42,7 @@
     pkgs.openssl
     pkgs.pavucontrol
     pkgs.python3
+    pkgs.python3Packages.huggingface-hub
     pkgs.qbittorrent
     pkgs.ripgrep
     pkgs.rust-analyzer

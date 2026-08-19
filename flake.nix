@@ -30,11 +30,6 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
-        omnyssh = {
-            url = "github:timhartmann7/omnyssh";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
-
         sidra.url = "github:wimpysworld/sidra";
     };
 

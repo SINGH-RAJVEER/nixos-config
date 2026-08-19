@@ -33,11 +33,15 @@ return {
 				java = { 'google-java-format' },
 			},
 			formatters = {
+				biome = {
+					prepend_args = {
+						'--javascript-formatter-indent-style=tab',
+					},
+				},
 				biome_typescript = {
 					inherit = 'biome',
 					prepend_args = {
-						'--javascript-formatter-indent-style=space',
-						'--javascript-formatter-indent-width=4',
+						'--javascript-formatter-indent-style=tab',
 						'--trailing-commas=none',
 					},
 				},

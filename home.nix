@@ -18,12 +18,10 @@
     };
 
     home.packages = with pkgs; [
-        python3Packages.huggingface-hub
         inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
         inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
         inputs.helium-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
         inputs.sidra.packages."${pkgs.stdenv.hostPlatform.system}".default
-        inputs.omnyssh.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
 
     dconf.settings = {

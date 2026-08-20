@@ -5,6 +5,7 @@
     # nixbox:packages:start
     pkgs._1password-gui
     pkgs.bat
+    pkgs.biome
     pkgs.brightnessctl
     pkgs.bun
     pkgs.cargo
@@ -49,10 +50,12 @@
     pkgs.rustPlatform.rustLibSrc
     pkgs.rustc
     pkgs.rustfmt
+    pkgs.sbctl
     pkgs.seahorse
     pkgs.t3code
     pkgs.thunderbird
     pkgs.tor-browser
+    pkgs.typescript-go
     pkgs.unzip
     pkgs.uv
     pkgs.xh

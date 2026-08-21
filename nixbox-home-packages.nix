@@ -60,7 +60,7 @@
     pkgs.uv
     pkgs.xh
     pkgs.xwayland-satellite
-    pkgs.zed-editor
+    pkgs.zed-editor-fhs
     pkgs.zellij
     # nixbox:packages:end
   ];

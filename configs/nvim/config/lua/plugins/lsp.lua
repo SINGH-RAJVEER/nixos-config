@@ -71,7 +71,25 @@ return {
 			local servers = {
 				gopls = {},
 				rust_analyzer = {},
-				pyright = {},
+				basedpyright = {
+					settings = {
+						basedpyright = {
+							analysis = {
+								autoImportCompletions = true,
+								diagnosticMode = 'workspace',
+								typeCheckingMode = 'standard',
+							},
+						},
+					},
+				},
+				ruff = {
+					on_attach = function(client)
+						-- BasedPyright owns type information and Black owns formatting.
+						client.server_capabilities.hoverProvider = false
+						client.server_capabilities.documentFormattingProvider = false
+						client.server_capabilities.documentRangeFormattingProvider = false
+					end,
+				},
 				ts_ls = {
 					on_attach = function(client)
 						client.server_capabilities.documentFormattingProvider = false
@@ -95,7 +113,10 @@ return {
 				vim.lsp.config(server_name, server)
 			end
 
-			require('mason-lspconfig').setup { automatic_enable = false }
+			require('mason-lspconfig').setup {
+				automatic_enable = { exclude = { 'pyright' } },
+			}
+			vim.lsp.enable('pyright', false)
 
 			for server_name in pairs(servers) do
 				vim.lsp.enable(server_name)

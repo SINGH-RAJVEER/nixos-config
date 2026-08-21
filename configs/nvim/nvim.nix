@@ -9,7 +9,7 @@
         extraPackages = with pkgs; [
             # LSP servers
             lua-language-server
-            pyright
+            basedpyright
             typescript-language-server
             tailwindcss-language-server
             biome
@@ -21,6 +21,9 @@
 
             # Linters
             ruff
+
+            # Python project and virtual-environment management
+            uv
         ];
 
         extraPython3Packages = ps: with ps; [

@@ -58,28 +58,17 @@
                 }
             }
 
-            # Yazi wrapper
-            def --env y [...args] {
-                let tmp = (mktemp -t "yazi-cwd.XXXXXX")
-                yazi ...$args --cwd-file $tmp
-                let cwd = (open $tmp | str trim)
-                if $cwd != "" and $cwd != $env.PWD {
-                    cd $cwd
-                }
-                rm -f $tmp
-            }
-
-            # git commit wrapper
+            # jj commit wrapper
             def commit [...msg] {
                 let message = ($msg | str join " ")
                 if ($message | is-empty) {
                     echo "Usage: commit <message>"
                     return 1
                 }
-                git commit -m $message
+                jj commit -m $message
             }
 
-            # fzf wrapper for previews
+            # fzf previews wrapper
             def --wrapped fzf [...args] {
                 with-env { SHELL: "${pkgs.bash}/bin/bash" } {
                     ^fzf ...$args
@@ -135,13 +124,14 @@
             # Git
             add = "git add .";
             g = "git";
-            lg = "lazygit";
             push = "git push origin";
             gd = "git diff";
 
             # jj
             js = "jj status";
             jd = "jj diff";
+            jm = "jj bookmark move";
+            jp = "jj git push --bookmark";
 
             # Nvim
             vi = "nvim";

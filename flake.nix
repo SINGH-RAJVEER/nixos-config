@@ -9,6 +9,11 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
+        lanzaboote = {
+            url = "github:nix-community/lanzaboote/v1.1.0";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+
         niri-session-manager = {
             url = "github:MTeaHead/niri-session-manager";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -33,7 +38,7 @@
         sidra.url = "github:wimpysworld/sidra";
     };
 
-    outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+    outputs = { self, nixpkgs, home-manager, lanzaboote, ... }@inputs: {
         nixosConfigurations = {
             "nixos" = nixpkgs.lib.nixosSystem {
                 specialArgs = {
@@ -43,6 +48,22 @@
                     ./configuration.nix
 
                     home-manager.nixosModules.home-manager
+
+                    lanzaboote.nixosModules.lanzaboote
+
+                    ({ pkgs, lib, ... }: {
+
+                        environment.systemPackages = [
+                            pkgs.sbctl
+                        ];
+
+                        boot.loader.systemd-boot.enable = lib.mkForce false;
+
+                        boot.lanzaboote = {
+                            enable = true;
+                            pkiBundle = "/var/lib/sbctl";
+                        };
+                    })
 
                     inputs.niri-session-manager.nixosModules.niri-session-manager
                 ];

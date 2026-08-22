@@ -132,6 +132,10 @@
             jd = "jj diff";
             jm = "jj bookmark move";
             jp = "jj git push --bookmark";
+            jsq = "jj squash";
+
+            # Podman
+            docker = "podman";
 
             # Nvim
             vi = "nvim";

@@ -7,9 +7,7 @@
     pkgs.bat
     pkgs.biome
     pkgs.brightnessctl
-    pkgs.bun
     pkgs.cargo
-    pkgs.cataclysm-dda
     pkgs.clang
     pkgs.clippy
     pkgs.codex
@@ -30,7 +28,7 @@
     pkgs.jq
     pkgs.jujutsu
     pkgs.just
-    pkgs.lact
+    pkgs.kubectl
     pkgs.lmstudio
     pkgs.mission-center
     pkgs.mpv
@@ -42,6 +40,8 @@
     pkgs.opencode-desktop
     pkgs.openssl
     pkgs.pavucontrol
+    pkgs.podman
+    pkgs.podman-desktop
     pkgs.python3
     pkgs.python3Packages.huggingface-hub
     pkgs.qbittorrent
@@ -53,9 +53,9 @@
     pkgs.sbctl
     pkgs.seahorse
     pkgs.t3code
+    pkgs.terraform
     pkgs.thunderbird
     pkgs.tor-browser
-    pkgs.typescript-go
     pkgs.unzip
     pkgs.uv
     pkgs.xh

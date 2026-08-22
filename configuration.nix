@@ -56,14 +56,6 @@
 
     powerManagement.enable = true;
 
-    virtualisation = {
-        docker = {
-            enable = true;
-            autoPrune.enable = true;
-            enableOnBoot = false;
-        };
-    };
-
     hardware = {
         enableAllFirmware = true;
 
@@ -145,7 +137,6 @@
             pulse.enable = true;
         };
 
-        # asusd.enable = true;
         supergfxd.enable = true;
 
         upower = {

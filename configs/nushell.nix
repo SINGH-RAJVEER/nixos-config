@@ -102,7 +102,7 @@
             "...." = "cd ../../..";
 
             # Asus
-            ass = "asusctl";
+            # ass = "asusctl";
             sup = "supergfxctl";
             int = "supergfxctl -m Integrated";
             hyb = "supergfxctl -m Hybrid";

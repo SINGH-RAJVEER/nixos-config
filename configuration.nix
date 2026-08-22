@@ -145,7 +145,7 @@
             pulse.enable = true;
         };
 
-        asusd.enable = true;
+        # asusd.enable = true;
         supergfxd.enable = true;
 
         upower = {

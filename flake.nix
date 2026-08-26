@@ -40,6 +40,8 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
+        chatgpt-desktop.url = "github:numtide/llm-agents.nix";
+
         sidra.url = "github:wimpysworld/sidra";
     };
 

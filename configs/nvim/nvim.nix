@@ -12,6 +12,8 @@
             basedpyright
             typescript-language-server
             tailwindcss-language-server
+            terraform
+            terraform-ls
             biome
 
             # Formatters

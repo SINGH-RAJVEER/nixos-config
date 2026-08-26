@@ -137,6 +137,9 @@
             # Podman
             docker = "podman";
 
+            # opencode
+            oc = "opencode";
+
             # Nvim
             vi = "nvim";
             vim = "nvim";

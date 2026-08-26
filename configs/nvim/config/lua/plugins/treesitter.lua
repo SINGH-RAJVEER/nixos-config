@@ -27,6 +27,7 @@ local parsers = {
   'regex',
   'rust',
   'toml',
+  'terraform',
   'tsx',
   'typescript',
   'vim',

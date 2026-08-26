@@ -71,6 +71,7 @@ return {
 			local servers = {
 				gopls = {},
 				rust_analyzer = {},
+				terraformls = {},
 				basedpyright = {
 					settings = {
 						basedpyright = {

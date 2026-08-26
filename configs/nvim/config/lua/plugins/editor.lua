@@ -59,9 +59,4 @@ return {
 
 	{ 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
-	{
-		'Aasim-A/scrollEOF.nvim',
-		event = { 'CursorMoved', 'WinScrolled' },
-		opts = {},
-	},
 }

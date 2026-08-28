@@ -7,9 +7,7 @@
     pkgs.bat
     pkgs.biome
     pkgs.brightnessctl
-    pkgs.cargo
     pkgs.clang
-    pkgs.clippy
     pkgs.codex
     pkgs.delta
     pkgs.devenv
@@ -46,10 +44,7 @@
     pkgs.python3Packages.huggingface-hub
     pkgs.qbittorrent
     pkgs.ripgrep
-    pkgs.rust-analyzer
-    pkgs.rustPlatform.rustLibSrc
-    pkgs.rustc
-    pkgs.rustfmt
+    pkgs.rustup
     pkgs.sbctl
     pkgs.seahorse
     pkgs.t3code
@@ -62,6 +57,7 @@
     pkgs.xwayland-satellite
     pkgs.zed-editor-fhs
     pkgs.zellij
+    pkgs.zoom-us
     # nixbox:packages:end
   ];
 }

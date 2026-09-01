@@ -170,8 +170,6 @@
             };
         };
 
-        niri-session-manager.enable = true;
-
         gnome.gnome-keyring.enable = true;
     };
 

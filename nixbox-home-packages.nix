@@ -51,6 +51,7 @@
     pkgs.terraform
     pkgs.thunderbird
     pkgs.tor-browser
+    pkgs.typescript-go
     pkgs.unzip
     pkgs.uv
     pkgs.xh

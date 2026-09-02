@@ -23,7 +23,8 @@
         inputs.helium-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
         inputs.sidra.packages."${pkgs.stdenv.hostPlatform.system}".default
         inputs.nix-bun.packages.${pkgs.stdenv.hostPlatform.system}.default
-        inputs.chatgpt-desktop.packages.${pkgs.stdenv.hostPlatform.system}.chatgpt
+        inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.chatgpt
+        inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.claude-desktop
     ];
 
     dconf.settings = {

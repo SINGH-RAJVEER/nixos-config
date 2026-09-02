@@ -31,7 +31,6 @@ return {
 				graphql = { 'biome' },
 				rust = { 'rustfmt' },
 				java = { 'google-java-format' },
-				terraform = { 'terraform_fmt' },
 			},
 			formatters = {
 				biome = {

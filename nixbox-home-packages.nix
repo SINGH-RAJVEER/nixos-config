@@ -8,6 +8,7 @@
     pkgs.biome
     pkgs.brightnessctl
     pkgs.clang
+    pkgs.claude-code
     pkgs.codex
     pkgs.delta
     pkgs.devenv
@@ -39,6 +40,7 @@
     pkgs.openssl
     pkgs.pavucontrol
     pkgs.podman
+    pkgs.podman-compose
     pkgs.podman-desktop
     pkgs.python3
     pkgs.python3Packages.huggingface-hub
@@ -47,7 +49,6 @@
     pkgs.rustup
     pkgs.sbctl
     pkgs.seahorse
-    pkgs.t3code
     pkgs.terraform
     pkgs.thunderbird
     pkgs.tor-browser

@@ -1,13 +1,13 @@
 return {
   -- Colorscheme
   {
-    'ellisonleao/gruvbox.nvim',
+    'Shatur/neovim-ayu',
     priority = 1000,
     config = function()
-      require('gruvbox').setup {
-        contrast = 'hard',
+      require('ayu').setup {
+        mirage = false,
       }
-      vim.cmd.colorscheme 'gruvbox'
+      vim.cmd.colorscheme 'ayu-dark'
     end,
   },
 

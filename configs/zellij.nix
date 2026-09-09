@@ -290,6 +290,7 @@
         }
 
         simplified_ui true
+        default_layout "compact"
         default_mode "normal"
         pane_frames false
         attach_to_session true

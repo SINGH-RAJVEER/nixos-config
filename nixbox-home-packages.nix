@@ -4,6 +4,7 @@
   home.packages = [
     # nixbox:packages:start
     pkgs._1password-gui
+    pkgs.antigravity-cli
     pkgs.bat
     pkgs.biome
     pkgs.brightnessctl
@@ -22,6 +23,7 @@
     pkgs.git
     pkgs.go
     pkgs.google-cloud-sdk
+    pkgs.grok-build
     pkgs.hunk
     pkgs.jdk
     pkgs.jq
@@ -33,13 +35,14 @@
     pkgs.mpv
     pkgs.nautilus
     pkgs.ncdu
+    pkgs.nil
+    pkgs.nixd
     pkgs.obsidian
     pkgs.onlyoffice-desktopeditors
     pkgs.opencode
     pkgs.opencode-desktop
     pkgs.openssl
     pkgs.pavucontrol
-    pkgs.podman
     pkgs.podman-compose
     pkgs.podman-desktop
     pkgs.python3
@@ -49,12 +52,14 @@
     pkgs.rustup
     pkgs.sbctl
     pkgs.seahorse
+    pkgs.t3code
     pkgs.terraform
     pkgs.thunderbird
     pkgs.tor-browser
-    pkgs.typescript-go
+    pkgs.typescript
     pkgs.unzip
     pkgs.uv
+    pkgs.wrangler
     pkgs.xh
     pkgs.xwayland-satellite
     pkgs.zed-editor-fhs

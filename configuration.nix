@@ -186,6 +186,8 @@
         nix-ld.enable = true;
     };
 
+    virtualisation.podman.enable = true;
+
     networking = {
         hostName = "nixos";
         firewall.enable = true;
@@ -198,10 +200,10 @@
         isNormalUser = true;
         description = "Rajveer Singh";
         shell = pkgs.nushell;
+        autoSubUidGidRange = true;
         extraGroups = [
             "wheel" 
             "networkmanager" 
-            "docker"
         ];
     };
 

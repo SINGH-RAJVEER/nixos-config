@@ -101,8 +101,7 @@
             "..." = "cd ../..";
             "...." = "cd ../../..";
 
-            # Asus
-            # ass = "asusctl";
+            # Supergfxctl
             sup = "supergfxctl";
             int = "supergfxctl -m Integrated";
             hyb = "supergfxctl -m Hybrid";
@@ -115,6 +114,7 @@
             grep = "rg";
             j = "zellij";
             hd = "hunk diff";
+            bt = "btop";
 
             # Safety
             rm = "rm -i";

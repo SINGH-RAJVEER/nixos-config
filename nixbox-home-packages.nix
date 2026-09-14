@@ -4,17 +4,15 @@
   home.packages = [
     # nixbox:packages:start
     pkgs._1password-gui
-    pkgs.antigravity-cli
     pkgs.bat
-    pkgs.biome
     pkgs.brightnessctl
+    pkgs.btop
     pkgs.clang
     pkgs.claude-code
     pkgs.codex
     pkgs.delta
     pkgs.devenv
     pkgs.discord
-    pkgs.easyeffects
     pkgs.exfatprogs
     pkgs.eza
     pkgs.fd
@@ -40,7 +38,6 @@
     pkgs.obsidian
     pkgs.onlyoffice-desktopeditors
     pkgs.opencode
-    pkgs.opencode-desktop
     pkgs.openssl
     pkgs.pavucontrol
     pkgs.podman-compose
@@ -56,7 +53,6 @@
     pkgs.terraform
     pkgs.thunderbird
     pkgs.tor-browser
-    pkgs.typescript
     pkgs.unzip
     pkgs.uv
     pkgs.wrangler
@@ -64,7 +60,6 @@
     pkgs.xwayland-satellite
     pkgs.zed-editor-fhs
     pkgs.zellij
-    pkgs.zoom-us
     # nixbox:packages:end
   ];
 }

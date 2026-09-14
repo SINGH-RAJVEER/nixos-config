@@ -171,6 +171,8 @@
         };
 
         gnome.gnome-keyring.enable = true;
+
+        usbmuxd.enable = true;
     };
 
     programs = {

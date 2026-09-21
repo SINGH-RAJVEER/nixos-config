@@ -49,7 +49,7 @@ binds {
     Mod+T { spawn "ghostty"; }
     Mod+Space { spawn-sh "noctalia msg panel-toggle launcher"; }
     Super+Return { spawn "noctalia" "msg" "session" "lock"; }
-    Mod+E { spawn "nautilus"; }
+    Mod+E { spawn "pcmanfm"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
@@ -170,7 +170,7 @@ output "eDP-2" {
 // layout
 
 layout {
-    gaps 0
+    gaps 3
 
     center-focused-column "on-overflow"
 
@@ -189,7 +189,7 @@ layout {
     }
 
     border {
-        off
+        width 1
     }
 }
 
@@ -205,6 +205,6 @@ prefer-no-csd
 screenshot-path "~/Pictures/Screenshots/%Y-%m-%d %H-%M-%S.png"
 
 window-rule {
-    geometry-corner-radius 0
+    geometry-corner-radius 3
     clip-to-geometry true
 }

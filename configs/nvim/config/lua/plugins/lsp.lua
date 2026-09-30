@@ -12,17 +12,6 @@ return {
 	{
 		'neovim/nvim-lspconfig',
 		dependencies = {
-			{ 'mason-org/mason.nvim', opts = {} },
-			{ 'mason-org/mason-lspconfig.nvim', opts = {} },
-			{
-				'WhoIsSethDaniel/mason-tool-installer.nvim',
-				init = function()
-					if not vim.env.CC and vim.fn.executable('gcc') == 0 and vim.fn.executable('clang') == 1 then
-						vim.env.CC = 'clang'
-					end
-				end,
-				opts = { ensure_installed = { 'gopls', 'golangci-lint', 'goimports' } },
-			},
 			{ 'j-hui/fidget.nvim', opts = {} },
 			'saghen/blink.cmp',
 		},
@@ -113,11 +102,6 @@ return {
 				server.capabilities = require('blink.cmp').get_lsp_capabilities(server.capabilities)
 				vim.lsp.config(server_name, server)
 			end
-
-			require('mason-lspconfig').setup {
-				automatic_enable = { exclude = { 'pyright' } },
-			}
-			vim.lsp.enable('pyright', false)
 
 			for server_name in pairs(servers) do
 				vim.lsp.enable(server_name)

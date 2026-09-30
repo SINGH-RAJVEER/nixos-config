@@ -1,42 +1,52 @@
 { pkgs, ... }: {
-    programs.neovim = {
-        enable = true;
-        withNodeJs = true;
-        withPython3 = true;
-        withRuby = false;
-        sideloadInitLua = true;
+	programs.neovim = {
+		enable = true;
+		withNodeJs = true;
+		withPython3 = true;
+		withRuby = false;
+		sideloadInitLua = true;
 
-        extraPackages = with pkgs; [
-            # LSP servers
-            lua-language-server
-            basedpyright
-            typescript-language-server
-            tailwindcss-language-server
-            terraform
-            terraform-ls
-            biome
+		extraPackages = with pkgs; [
+			# LSP servers
+			lua-language-server
+			basedpyright
+			typescript-language-server
+			tailwindcss-language-server
+			terraform
+			terraform-ls
+			biome
+			gopls
+			rust-analyzer
 
-            # Formatters
-            stylua
-            black
-            google-java-format
+			# Formatters
+			stylua
+			black
+			google-java-format
+			gotools
+			rustfmt
 
-            # Linters
-            ruff
+			# Linters
+			ruff
+			golangci-lint
 
-            # Python project and virtual-environment management
-            uv
-        ];
+			# Plugin build and image dependencies
+			gnumake
+			gcc
+			imagemagick
 
-        extraPython3Packages = ps: with ps; [
-            pynvim
-            jupyter-client
-            nbformat
-        ];
-    };
+			# Python project and virtual-environment management
+			uv
+		];
 
-    xdg.configFile."nvim" = {
-        source = ./config;
-        recursive = true;
-    };
+		extraPython3Packages = ps: with ps; [
+			pynvim
+			jupyter-client
+			nbformat
+		];
+	};
+
+	xdg.configFile."nvim" = {
+		source = ./config;
+		recursive = true;
+	};
 }

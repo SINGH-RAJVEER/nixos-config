@@ -2,6 +2,7 @@
 
 {
     imports = [
+        ./nixbox-home-flakes.nix
         ./nixbox-home-packages.nix
         ./configs/starship.nix
         ./configs/nvim/nvim.nix
@@ -18,13 +19,8 @@
     };
 
     home.packages = with pkgs; [
-        inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
         inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
-        inputs.helium-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
         inputs.sidra.packages."${pkgs.stdenv.hostPlatform.system}".default
-        inputs.nix-bun.packages.${pkgs.stdenv.hostPlatform.system}.default
-        inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.chatgpt
-        inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.claude-desktop
     ];
 
     dconf.settings = {

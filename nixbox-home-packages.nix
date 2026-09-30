@@ -3,18 +3,17 @@
 {
   home.packages = [
     # nixbox:packages:start
-    pkgs._1password-gui
     pkgs.bat
     pkgs.brightnessctl
-    pkgs.btop
+    pkgs.bun
     pkgs.clang
     pkgs.claude-code
     pkgs.codex
+    pkgs.datadog-pup
     pkgs.delta
     pkgs.devenv
     pkgs.discord
     pkgs.exfatprogs
-    pkgs.eza
     pkgs.fd
     pkgs.fzf
     pkgs.gh
@@ -27,19 +26,16 @@
     pkgs.jq
     pkgs.jujutsu
     pkgs.just
-    pkgs.kubectl
     pkgs.lmstudio
     pkgs.mission-center
     pkgs.mpv
     pkgs.nautilus
-    pkgs.ncdu
-    pkgs.nil
-    pkgs.nixd
     pkgs.obsidian
     pkgs.onlyoffice-desktopeditors
     pkgs.opencode
     pkgs.openssl
     pkgs.pavucontrol
+    pkgs.pcmanfm
     pkgs.podman-compose
     pkgs.podman-desktop
     pkgs.python3
@@ -47,7 +43,6 @@
     pkgs.qbittorrent
     pkgs.ripgrep
     pkgs.rustup
-    pkgs.sbctl
     pkgs.seahorse
     pkgs.t3code
     pkgs.terraform

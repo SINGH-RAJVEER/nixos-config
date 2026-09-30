@@ -2,6 +2,7 @@
 
 {
     imports = [
+        ./nixbox-system-flakes.nix
         ./nixbox-system-packages.nix
         ./hardware-configuration.nix
     ];

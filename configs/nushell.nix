@@ -115,6 +115,7 @@
             j = "zellij";
             hd = "hunk diff";
             bt = "btop";
+            ds = "devenv shell";
 
             # Safety
             rm = "rm -i";

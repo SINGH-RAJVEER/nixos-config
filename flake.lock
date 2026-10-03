@@ -146,11 +146,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1790762106,
-        "narHash": "sha256-YIbwtPRv2yhAJ2NR5Jjfk6t3SoQdO4/vEmDWyR8Iby8=",
+        "lastModified": 1791064381,
+        "narHash": "sha256-iAlZBkUGXBM8vWccFoBBIamp+ci1ysjYUgga3MlG+W8=",
         "owner": "SINGH-RAJVEER",
         "repo": "nixbox",
-        "rev": "3105eeeb05c4f419edf12bb3f261e326a4a3fff3",
+        "rev": "0b1eee42fbbd2fcd50b3dc8ef040d4f86664cec3",
         "type": "github"
       },
       "original": {

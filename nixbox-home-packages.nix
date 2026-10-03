@@ -7,7 +7,6 @@
     pkgs.brightnessctl
     pkgs.claude-code
     pkgs.codex
-    pkgs.delta
     pkgs.devenv
     pkgs.discord
     pkgs.dunst
@@ -23,8 +22,6 @@
     pkgs.mangowc
     pkgs.mission-center
     pkgs.mpv
-    pkgs.nwg-displays
-    pkgs.nwg-look
     pkgs.obsidian
     pkgs.onlyoffice-desktopeditors
     pkgs.opencode

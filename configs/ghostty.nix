@@ -5,6 +5,8 @@
         settings = {
             theme = "Dimidium";
             confirm-close-surface = false;
+            working-directory = "home";
+            window-inherit-working-directory = false;
             font-family = [ "3270 Nerd Font Mono" ];
             font-size =18;
         };

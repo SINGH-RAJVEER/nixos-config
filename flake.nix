@@ -63,8 +63,6 @@
                             pkiBundle = "/var/lib/sbctl";
                         };
                     })
-
-                    # inputs.niri-session-manager.nixosModules.niri-session-manager
                 ];
             };
         };

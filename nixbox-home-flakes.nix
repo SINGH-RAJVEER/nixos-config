@@ -8,6 +8,7 @@
 	home.packages = [
 		# nixbox:flake-packages:start
 		inputs.nixbox.packages.${pkgs.stdenv.hostPlatform.system}.default # github:SINGH-RAJVEER/nixbox
+		inputs.nixbox.packages.${pkgs.stdenv.hostPlatform.system}.nixbox-gui # github:SINGH-RAJVEER/nixbox
 		inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default # github:noctalia-dev/noctalia
 		inputs.helium-browser.packages.${pkgs.stdenv.hostPlatform.system}.default # github:oxcl/nix-flake-helium-browser
 		# nixbox:flake-packages:end

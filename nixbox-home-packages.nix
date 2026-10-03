@@ -13,6 +13,7 @@
     pkgs.delta
     pkgs.devenv
     pkgs.discord
+    pkgs.dunst
     pkgs.exfatprogs
     pkgs.fd
     pkgs.fzf
@@ -20,16 +21,17 @@
     pkgs.git
     pkgs.go
     pkgs.google-cloud-sdk
-    pkgs.grok-build
     pkgs.hunk
+    pkgs.ironbar
     pkgs.jdk
-    pkgs.jq
     pkgs.jujutsu
     pkgs.just
     pkgs.lmstudio
+    pkgs.mangowc
     pkgs.mission-center
     pkgs.mpv
-    pkgs.nautilus
+    pkgs.nwg-displays
+    pkgs.nwg-look
     pkgs.obsidian
     pkgs.onlyoffice-desktopeditors
     pkgs.opencode
@@ -51,7 +53,6 @@
     pkgs.unzip
     pkgs.uv
     pkgs.wrangler
-    pkgs.xh
     pkgs.xwayland-satellite
     pkgs.zed-editor-fhs
     pkgs.zellij

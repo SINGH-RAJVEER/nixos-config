@@ -6,6 +6,7 @@
         ./nixbox-home-packages.nix
         ./configs/starship.nix
         ./configs/nvim/nvim.nix
+        ./configs/helix.nix
         ./configs/niri/niri.nix
         ./configs/ghostty.nix
         ./configs/nushell.nix

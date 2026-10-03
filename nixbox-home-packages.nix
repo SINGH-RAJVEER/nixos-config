@@ -5,11 +5,8 @@
     # nixbox:packages:start
     pkgs.bat
     pkgs.brightnessctl
-    pkgs.bun
-    pkgs.clang
     pkgs.claude-code
     pkgs.codex
-    pkgs.datadog-pup
     pkgs.delta
     pkgs.devenv
     pkgs.discord
@@ -19,13 +16,9 @@
     pkgs.fzf
     pkgs.gh
     pkgs.git
-    pkgs.go
-    pkgs.google-cloud-sdk
     pkgs.hunk
     pkgs.ironbar
-    pkgs.jdk
     pkgs.jujutsu
-    pkgs.just
     pkgs.lmstudio
     pkgs.mangowc
     pkgs.mission-center
@@ -38,23 +31,14 @@
     pkgs.openssl
     pkgs.pavucontrol
     pkgs.pcmanfm
-    pkgs.podman-compose
     pkgs.podman-desktop
-    pkgs.python3
-    pkgs.python3Packages.huggingface-hub
     pkgs.qbittorrent
     pkgs.ripgrep
-    pkgs.rustup
     pkgs.seahorse
     pkgs.t3code
-    pkgs.terraform
     pkgs.thunderbird
     pkgs.tor-browser
-    pkgs.unzip
-    pkgs.uv
-    pkgs.wrangler
     pkgs.xwayland-satellite
-    pkgs.zed-editor-fhs
     pkgs.zellij
     # nixbox:packages:end
   ];

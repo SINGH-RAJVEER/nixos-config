@@ -71,6 +71,7 @@
                 "text/xml" = browser;
                 "x-scheme-handler/http" = browser;
                 "x-scheme-handler/https" = browser;
+				"application/pdf" = "onlyoffice-desktopeditors.desktop";
 				"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" = "onlyoffice-desktopeditors.desktop";
 				"application/vnd.openxmlformats-officedocument.wordprocessingml.document" = "onlyoffice-desktopeditors.desktop";
 				"application/vnd.openxmlformats-officedocument.presentationml.presentation" = "onlyoffice-desktopeditors.desktop";

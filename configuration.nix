@@ -174,6 +174,8 @@
         gnome.gnome-keyring.enable = true;
 
         usbmuxd.enable = true;
+
+        tailscale.enable = true;
     };
 
     programs = {

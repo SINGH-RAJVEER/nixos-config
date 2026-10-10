@@ -9,22 +9,18 @@
     pkgs.codex
     pkgs.devenv
     pkgs.discord
-    pkgs.dunst
     pkgs.exfatprogs
     pkgs.fd
     pkgs.fzf
     pkgs.gh
     pkgs.git
     pkgs.hunk
-    pkgs.ironbar
     pkgs.jujutsu
     pkgs.lmstudio
-    pkgs.mangowc
     pkgs.mission-center
     pkgs.mpv
     pkgs.obsidian
     pkgs.onlyoffice-desktopeditors
-    pkgs.opencode
     pkgs.openssl
     pkgs.pavucontrol
     pkgs.pcmanfm
@@ -32,6 +28,7 @@
     pkgs.qbittorrent
     pkgs.ripgrep
     pkgs.seahorse
+    pkgs.steam
     pkgs.t3code
     pkgs.thunderbird
     pkgs.tor-browser

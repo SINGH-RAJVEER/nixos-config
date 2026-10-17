@@ -4,37 +4,21 @@
     inputs = {
         nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-        home-manager = {
-            url = "github:nix-community/home-manager/master";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
+        home-manager.url = "github:nix-community/home-manager/master";
 
-        lanzaboote = {
-            url = "github:nix-community/lanzaboote/v1.1.0";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
+        lanzaboote.url = "github:nix-community/lanzaboote/v1.1.0";
 
-        noctalia = {
-            url = "github:noctalia-dev/noctalia";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
+        noctalia.url = "github:noctalia-dev/noctalia";
 
-        zen-browser = {
-            url = "github:0xc000022070/zen-browser-flake";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
+        zen-browser.url = "github:0xc000022070/zen-browser-flake";
 
-        helium-browser = {
-            url = "github:oxcl/nix-flake-helium-browser";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
+        helium-browser.url = "github:oxcl/nix-flake-helium-browser";
 
         sidra.url = "github:wimpysworld/sidra";
 
-        nixbox = {
-            url = "github:SINGH-RAJVEER/nixbox";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
+		llm-agents.url = "github:numtide/llm-agents.nix";
+
+        nixbox.url = "github:SINGH-RAJVEER/nixbox";
     };
 
     outputs = { self, nixpkgs, home-manager, lanzaboote, ... }@inputs: {

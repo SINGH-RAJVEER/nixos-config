@@ -27,7 +27,6 @@
         consoleLogLevel = 0;
 
         initrd = {
-            verbose = false;
             kernelModules = [ "amdgpu" ];
         };
 
@@ -53,6 +52,16 @@
         ];
 
         kernelPackages = pkgs.linuxPackages_latest;
+
+        kernel.sysctl = {
+            "vm.swappiness" = 180;
+        };
+    };
+
+    zramSwap = {
+        enable = true;
+        algorithm = "zstd";
+        memoryPercent = 50;
     };
 
     powerManagement.enable = true;
@@ -174,8 +183,6 @@
         gnome.gnome-keyring.enable = true;
 
         usbmuxd.enable = true;
-
-        tailscale.enable = true;
     };
 
     programs = {

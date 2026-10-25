@@ -87,14 +87,14 @@
             def update [] {
                 nix flake update --flake /home/rajveer/.config/nixos
                 if $env.LAST_EXIT_CODE == 0 {
-                    sudo nixos-rebuild switch --flake /home/rajveer/.config/nixos#nixos
+                    sudo nixos-rebuild switch --flake /home/rajveer/.config/nixos#nixos -L --show-trace
                 }
             }
         '';
 
         shellAliases = {
             # NixOS
-            build = "sudo nixos-rebuild switch --flake /home/rajveer/.config/nixos#nixos";
+            build = "sudo nixos-rebuild switch --flake /home/rajveer/.config/nixos#nixos -L --show-trace";
 
             # Navigation
             ".." = "cd ..";

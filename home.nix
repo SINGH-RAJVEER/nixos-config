@@ -2,7 +2,7 @@
 
 {
     imports = [
-        ./nixbox-home-flakes.nix
+        
         ./nixbox-home-packages.nix
         ./configs/starship.nix
         ./configs/nvim/nvim.nix

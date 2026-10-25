@@ -1,54 +1,88 @@
 {
-    description = "NixOS flake";
+	description = "NixOS flake";
 
-    inputs = {
-        nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+	inputs = {
+		nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-        home-manager.url = "github:nix-community/home-manager/master";
+		home-manager = {
+			url = "github:nix-community/home-manager/master";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 
-        lanzaboote.url = "github:nix-community/lanzaboote/v1.1.0";
+		lanzaboote = {
+			url = "github:nix-community/lanzaboote/v1.1.0";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 
-        noctalia.url = "github:noctalia-dev/noctalia";
+		noctalia = {
+			url = "github:noctalia-dev/noctalia";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 
-        zen-browser.url = "github:0xc000022070/zen-browser-flake";
+		zen-browser = {
+			url = "github:0xc000022070/zen-browser-flake";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 
-        helium-browser.url = "github:oxcl/nix-flake-helium-browser";
+		helium-browser = {
+			url = "github:oxcl/nix-flake-helium-browser";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 
-        sidra.url = "github:wimpysworld/sidra";
+		sidra = {
+			url = "github:wimpysworld/sidra";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 
-		llm-agents.url = "github:numtide/llm-agents.nix";
+		llm-agents = {
+			url = "github:numtide/llm-agents.nix";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 
-        nixbox.url = "github:SINGH-RAJVEER/nixbox";
-    };
+		odysseus = {
+			url = "github:KangaZero/odysseus-nix";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 
-    outputs = { self, nixpkgs, home-manager, lanzaboote, ... }@inputs: {
-        nixosConfigurations = {
-            "nixos" = nixpkgs.lib.nixosSystem {
-                specialArgs = {
-                    inherit inputs;
-                };
-                modules = [
-                    ./configuration.nix
+		nixbox = {
+			url = "github:SINGH-RAJVEER/nixbox/dev";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 
-                    home-manager.nixosModules.home-manager
+		nix-t3code = {
+			url = "github:limwa/nix-t3code";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
+	};
 
-                    lanzaboote.nixosModules.lanzaboote
+	outputs = { self, nixpkgs, home-manager, lanzaboote, ... }@inputs: {
+		nixosConfigurations = {
+			"nixos" = nixpkgs.lib.nixosSystem {
+				specialArgs = {
+					inherit inputs;
+				};
+				modules = [
+					./configuration.nix
 
-                    ({ pkgs, lib, ... }: {
+					home-manager.nixosModules.home-manager
 
-                        environment.systemPackages = [
-                            pkgs.sbctl
-                        ];
+					lanzaboote.nixosModules.lanzaboote
 
-                        boot.loader.systemd-boot.enable = lib.mkForce false;
+					({ pkgs, lib, ... }: {
 
-                        boot.lanzaboote = {
-                            enable = true;
-                            pkiBundle = "/var/lib/sbctl";
-                        };
-                    })
-                ];
-            };
-        };
-    };
+						environment.systemPackages = [
+							pkgs.sbctl
+						];
+
+						boot.loader.systemd-boot.enable = lib.mkForce false;
+
+						boot.lanzaboote = {
+							enable = true;
+							pkiBundle = "/var/lib/sbctl";
+						};
+					})
+				];
+			};
+		};
+	};
 }

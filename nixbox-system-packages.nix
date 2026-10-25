@@ -3,6 +3,7 @@
 {
 	environment.systemPackages = [
 		# nixbox:packages:start
+		pkgs.git-lfs
 		# nixbox:packages:end
 	];
 }

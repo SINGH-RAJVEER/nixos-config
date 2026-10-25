@@ -39,11 +39,6 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-		odysseus = {
-			url = "github:KangaZero/odysseus-nix";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
-
 		nixbox = {
 			url = "github:SINGH-RAJVEER/nixbox/dev";
 			inputs.nixpkgs.follows = "nixpkgs";
@@ -51,6 +46,11 @@
 
 		nix-t3code = {
 			url = "github:limwa/nix-t3code";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
+
+		delta-nix = {
+			url = "github:zed-industries/delta-nix";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 	};
